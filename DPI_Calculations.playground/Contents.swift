@@ -1,36 +1,37 @@
 import Foundation
 
 struct ScreenData {
-    private var id: Int = 0
-    private var company:String = ""
-    private var model:String = ""
-    private var year: Int = 0
+    var id: Int = 0
+    var company:String = ""
+    var model:String = ""
+    var year: Int = 0
     
-    private var screenSizeInInch:Float = 0
-    private var ratio: (x: Float, y: Float) = (0,0)
+    var screenSizeInInch:Float = 0
+    var ratio: (x: Float, y: Float) = (0,0)
     
-    private var width_cm:Float = 0
-    private var height_cm:Float = 0
+    var width_cm:Float = 0
+    var height_cm:Float = 0
+    var diagonal_cm:Float = 0
     
-    private var width_in:Float = 0
-    private var height_in:Float = 0
+    var width_inch:Float = 0
+    var height_inch:Float = 0
+    var diagonal_inch:Float = 0
     
-    private var resolution_X:Int = 0
-    private var resolution_Y:Int = 0
+    var resolution_X:Int = 0
+    var resolution_Y:Int = 0
     
     init(pixelsWidth:Int, pixelsHeight:Int, inch:Float){
-        
+        self.resolution_X = pixelsWidth
+        self.resolution_Y = pixelsHeight
+        self.diagonal_inch = inch
     }
     
-    func setPhisicalSIze(hCm:Float, wCm:Float, hInch:Float, ) {
-        self.height_cm =
-        self.width_cm =
-        self.height_in =
-        self.width_in =
-        
-    }
-    
-    
+    mutating func setPhisicalSIze(hCm:Float, wCm:Float, hInch:Float, wInch:Float) {
+        self.height_cm = hCm
+        self.width_cm = wCm
+        self.height_inch = hInch
+        self.width_inch = wInch
+    }    
 }
 
 class CalculateManager{
@@ -42,10 +43,15 @@ class CalculateManager{
         var screenDataObj = ScreenData(pixelsWidth: width, pixelsHeight: height, inch: inch)
         
         let pixelNumber = numberOfPixels(width: width, height: height)
-        let mPixelNumer = numberOfMegaPixels(OnScreen: number)
-        calculateRatio(width: width, height: height)
-        calculateScreenWidthAndHeight(x: width, y: height, inch: inch)
-        calculatePpi(xPixel: width, yPixels: height, inch: inch)
+        let mPixelNumer = numberOfMegaPixels(OnScreen: pixelNumber)
+        
+        let ratio = calculateRatio(width: width, height: height)
+        let screenSize = calculateScreenWidthAndHeight(x: width, y: height, inch: inch)
+        
+        let ppi = calculatePpi(xPixel: width, yPixels: height, inch: inch)
+        
+        
+        
         
         return screenDataObj
     }
