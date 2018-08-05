@@ -12,7 +12,6 @@ class RootViewController: UIViewController {
     private var currentViewController: UIViewController
 
     init() {
-
         currentViewController = MainViewController()
         super.init(nibName: nil, bundle: nil)
     }

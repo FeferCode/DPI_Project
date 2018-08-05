@@ -10,11 +10,26 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        createMonitor()
+    var mainView: MainView {
+        return view as! MainView
+    }
+
+    override func loadView() {
+        let contentView = MainView(frame: .zero)
+        contentView.button.addTarget(self, action: Selector(("createMonitor")), for: .touchUpOutside)
+
+        view = contentView
+    }
+
+    override func viewWillLayoutSubviews() {
+        mainView.stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8).isActive = true
 
     }
+
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
 
     func createMonitor(){
         let display = ScreenDataBuilder  { builder in

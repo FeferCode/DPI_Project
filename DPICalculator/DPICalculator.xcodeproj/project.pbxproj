@@ -85,8 +85,8 @@
 		6026AA1A211771250049A0EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6026AA25211789410049A0EA /* RootViewController */,
 				60A323D0202F1F5B00B732E4 /* AppDelegate.swift */,
+				6026AA25211789410049A0EA /* RootViewController */,
 				60A323E5202F604E00B732E4 /* MainController */,
 				6026AA17211770B30049A0EA /* View */,
 			);
