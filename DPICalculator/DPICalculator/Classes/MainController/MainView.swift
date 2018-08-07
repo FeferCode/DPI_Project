@@ -21,10 +21,15 @@ class MainView: UIView {
     }
 
     override init(frame: CGRect) {
-        self.testView = UIView()
-        self.testView1 = UIView()
-        self.testView2 = UIView()
-        self.testView3 = UIView()
+        testView = UIView()
+        testView1 = UIView()
+        testView2 = UIView()
+        testView3 = UIView()
+
+        self.testView.translatesAutoresizingMaskIntoConstraints = false
+        self.testView1.translatesAutoresizingMaskIntoConstraints = false
+        self.testView2.translatesAutoresizingMaskIntoConstraints = false
+        self.testView3.translatesAutoresizingMaskIntoConstraints = false
 
         super.init(frame: frame)
 
@@ -32,11 +37,12 @@ class MainView: UIView {
         self.addSubview(testView1)
         self.addSubview(testView2)
         self.addSubview(testView3)
+
         self.updateConstraints()
     }
 
     override func updateConstraints() {
-        self.backgroundColor = UIColor.green
+        self.backgroundColor = UIColor.black
         self.testView.backgroundColor = UIColor.green
         self.testView1.backgroundColor = UIColor.yellow
         self.testView2.backgroundColor = UIColor.orange
@@ -45,33 +51,37 @@ class MainView: UIView {
         self.testView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self).offset(20)
             make.left.equalTo(self).offset(20)
-//            make.bottom.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(20)
-            make.height.equalTo(20)
+            make.bottom.equalTo(testView1).offset(-20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(200)
         }
 
         self.testView1.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(testView).offset(20)
             make.left.equalTo(self).offset(20)
-//            make.bottom.equalTo(testView2).offset(20)
-            make.right.equalTo(self).offset(20)
-            make.height.equalTo(20)
+            make.bottom.equalTo(testView2).offset(-20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(200)
         }
 
         self.testView2.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(testView1).offset(20)
             make.left.equalTo(self).offset(20)
-//            make.bottom.equalTo(testView3).offset(20)
-            make.right.equalTo(self).offset(20)
-            make.height.equalTo(20)
+            make.bottom.equalTo(testView3).offset(-20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(200)
         }
 
         self.testView3.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(testView2).offset(20)
             make.left.equalTo(self).offset(20)
-            make.right.equalTo(self).offset(20)
-            make.height.equalTo(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(200)
         }
         super.updateConstraints()
+    }
+
+    override func awakeFromNib() {
+        self.updateConstraints()
     }
 }

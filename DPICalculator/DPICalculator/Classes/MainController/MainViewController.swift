@@ -10,8 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-//    var mainView: MainView
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -22,9 +20,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.loadView()
-//        self.mainView = MainView()
-//        self.view = mainView
-
         self.view = MainView()
     }
 
