@@ -190,6 +190,7 @@
 				60A323C9202F1F5B00B732E4 /* Sources */,
 				60A323CA202F1F5B00B732E4 /* Frameworks */,
 				60A323CB202F1F5B00B732E4 /* Resources */,
+				89F0DED0DCBF6C92A4FBFE54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +248,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		89F0DED0DCBF6C92A4FBFE54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9601DD01E7E29F6EE670266D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

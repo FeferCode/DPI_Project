@@ -10,26 +10,23 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    var mainView: MainView {
-        return view as! MainView
+//    var mainView: MainView
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
-    override func loadView() {
-        let contentView = MainView(frame: .zero)
-        contentView.button.addTarget(self, action: Selector(("createMonitor")), for: .touchUpOutside)
-
-        view = contentView
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    override func viewWillLayoutSubviews() {
-        mainView.stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8).isActive = true
+    override func viewDidLoad() {
+        super.loadView()
+//        self.mainView = MainView()
+//        self.view = mainView
 
+        self.view = MainView()
     }
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
 
     func createMonitor(){
         let display = ScreenDataBuilder  { builder in

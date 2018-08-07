@@ -7,56 +7,71 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainView: UIView {
 
-    let usernameTextField: UITextField
-    let passwordTextField: UITextField
-    let button: UIButton
-    let stackView: UIStackView
-
-    override init(frame: CGRect) {
-        usernameTextField = UITextField(frame: .zero)
-        usernameTextField.placeholder = NSLocalizedString("Username", comment: "")
-        usernameTextField.borderStyle = .line
-
-        passwordTextField = UITextField(frame: .zero)
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.placeholder = NSLocalizedString("Password", comment: "")
-        passwordTextField.borderStyle = .line
-
-        button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.backgroundColor = .gray
-        button.tintColor = .white
-        button.layer.cornerRadius = 5
-
-        let textFieldStackView = UIStackView(arrangedSubviews: [usernameTextField, passwordTextField])
-        textFieldStackView.axis = .vertical
-        textFieldStackView.spacing = 10
-        textFieldStackView.distribution = .fillEqually
-
-        stackView = UIStackView(arrangedSubviews: [textFieldStackView, button])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 20
-
-        super.init(frame: frame)
-        backgroundColor = .red
-
-        addSubview(stackView)
-
-        // MARK: - Layout
-        let views = ["stackView": stackView]
-        var layoutConstraints = [NSLayoutConstraint]()
-        layoutConstraints += NSLayoutConstraint.constraints(withVisualFormat: "|-[stackView]-|", options: [], metrics: nil, views: views)
-        layoutConstraints.append(usernameTextField.heightAnchor.constraint(equalToConstant: 30))
-        layoutConstraints.append(button.heightAnchor.constraint(equalToConstant: 40))
-        NSLayoutConstraint.activate(layoutConstraints)
-    }
+    var testView:UIView
+    var testView1:UIView
+    var testView2:UIView
+    var testView3:UIView
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override init(frame: CGRect) {
+        self.testView = UIView()
+        self.testView1 = UIView()
+        self.testView2 = UIView()
+        self.testView3 = UIView()
+
+        super.init(frame: frame)
+
+        self.addSubview(testView)
+        self.addSubview(testView1)
+        self.addSubview(testView2)
+        self.addSubview(testView3)
+        self.updateConstraints()
+    }
+
+    override func updateConstraints() {
+        self.backgroundColor = UIColor.green
+        self.testView.backgroundColor = UIColor.green
+        self.testView1.backgroundColor = UIColor.yellow
+        self.testView2.backgroundColor = UIColor.orange
+        self.testView3.backgroundColor = UIColor.red
+
+        self.testView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(self).offset(20)
+            make.left.equalTo(self).offset(20)
+//            make.bottom.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(20)
+            make.height.equalTo(20)
+        }
+
+        self.testView1.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(testView).offset(20)
+            make.left.equalTo(self).offset(20)
+//            make.bottom.equalTo(testView2).offset(20)
+            make.right.equalTo(self).offset(20)
+            make.height.equalTo(20)
+        }
+
+        self.testView2.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(testView1).offset(20)
+            make.left.equalTo(self).offset(20)
+//            make.bottom.equalTo(testView3).offset(20)
+            make.right.equalTo(self).offset(20)
+            make.height.equalTo(20)
+        }
+
+        self.testView3.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(testView2).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(20)
+            make.height.equalTo(20)
+        }
+        super.updateConstraints()
+    }
 }
