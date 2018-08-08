@@ -13,6 +13,8 @@
 		6026AA27211789650049A0EA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026AA26211789650049A0EA /* MainView.swift */; };
 		6035F9BD2047D9C4004F5AED /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BC2047D9C4004F5AED /* DisplayData.swift */; };
 		6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */; };
+		606893CE211AE0D400A91A4B /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893CD211AE0D400A91A4B /* ExampleViewController.swift */; };
+		606893D0211AE0E600A91A4B /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893CF211AE0E600A91A4B /* ExampleView.swift */; };
 		60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D0202F1F5B00B732E4 /* AppDelegate.swift */; };
 		60A323D3202F1F5B00B732E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D2202F1F5B00B732E4 /* RootViewController.swift */; };
 		60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D7202F1F5B00B732E4 /* DPICalculator.xcdatamodeld */; };
@@ -31,6 +33,8 @@
 		6026AA26211789650049A0EA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6035F9BC2047D9C4004F5AED /* DisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayData.swift; sourceTree = "<group>"; };
 		6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataBuilder.swift; sourceTree = "<group>"; };
+		606893CD211AE0D400A91A4B /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		606893CF211AE0E600A91A4B /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		60A323CD202F1F5B00B732E4 /* DPICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A323D0202F1F5B00B732E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A323D2202F1F5B00B732E4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -75,20 +79,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		6026AA17211770B30049A0EA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		6026AA1A211771250049A0EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				60A323D0202F1F5B00B732E4 /* AppDelegate.swift */,
 				6026AA25211789410049A0EA /* RootViewController */,
 				60A323E5202F604E00B732E4 /* MainController */,
-				6026AA17211770B30049A0EA /* View */,
+				606893CC211AE0A100A91A4B /* ExampleViewController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -110,6 +107,15 @@
 				6026AA18211770F00049A0EA /* RootView.swift */,
 			);
 			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		606893CC211AE0A100A91A4B /* ExampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				606893CD211AE0D400A91A4B /* ExampleViewController.swift */,
+				606893CF211AE0E600A91A4B /* ExampleView.swift */,
+			);
+			path = ExampleViewController;
 			sourceTree = "<group>";
 		};
 		60A323C4202F1F5B00B732E4 = {
@@ -293,8 +299,10 @@
 			files = (
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				6026AA27211789650049A0EA /* MainView.swift in Sources */,
+				606893CE211AE0D400A91A4B /* ExampleViewController.swift in Sources */,
 				6026AA24211789360049A0EA /* MainViewController.swift in Sources */,
 				60A323D3202F1F5B00B732E4 /* RootViewController.swift in Sources */,
+				606893D0211AE0E600A91A4B /* ExampleView.swift in Sources */,
 				60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				6026AA19211770F00049A0EA /* RootView.swift in Sources */,

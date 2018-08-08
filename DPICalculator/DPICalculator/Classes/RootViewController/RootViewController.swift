@@ -9,6 +9,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    static let shared:RootViewController = RootViewController()
     private var currentViewController: UIViewController
 
     init() {
@@ -27,6 +28,7 @@ class RootViewController: UIViewController {
         currentViewController.view.frame = view.bounds
         view.addSubview(currentViewController.view)
         currentViewController.didMove(toParentViewController: self)
+        currentViewController.updateViewConstraints()
     }
 
     private func replaceCurrentViewController(for newViewController: UIViewController) {
@@ -34,6 +36,7 @@ class RootViewController: UIViewController {
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParentViewController()
         currentViewController = newViewController
+        currentViewController.updateViewConstraints()
     }
 
     private func animateFadeTransition(to newViewController: UIViewController, completion: (() -> Void)? = nil) {
@@ -57,6 +60,16 @@ class RootViewController: UIViewController {
             completion?()
         }
     }
+
+    @objc func showExampleViewController(){
+        let newViewController = ExampleViewController()
+        addChildViewController(newViewController)
+        newViewController.view.frame = view.bounds
+        view.addSubview(newViewController.view)
+        newViewController.didMove(toParentViewController: self)
+        replaceCurrentViewController(for: newViewController)
+    }
+
 
     
 }
