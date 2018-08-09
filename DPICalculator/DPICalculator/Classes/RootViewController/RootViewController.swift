@@ -61,16 +61,12 @@ class RootViewController: UIViewController {
         }
     }
 
-    @objc func showExampleViewController(){
+    func showExampleViewControllerTest(){
         let newViewController = ExampleViewController()
-        addChildViewController(newViewController)
-        newViewController.view.frame = view.bounds
-        view.addSubview(newViewController.view)
-        newViewController.didMove(toParentViewController: self)
-        replaceCurrentViewController(for: newViewController)
+        newViewController.updateViewConstraints()
+        let navigation = UINavigationController(rootViewController: newViewController)
+        let topViewController = getMostTopViewController()
+        topViewController?.present(navigation, animated: true, completion: nil)
     }
-
-
-    
 }
 

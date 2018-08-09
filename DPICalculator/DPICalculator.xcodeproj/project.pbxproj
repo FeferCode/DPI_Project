@@ -15,6 +15,11 @@
 		6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */; };
 		606893CE211AE0D400A91A4B /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893CD211AE0D400A91A4B /* ExampleViewController.swift */; };
 		606893D0211AE0E600A91A4B /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893CF211AE0E600A91A4B /* ExampleView.swift */; };
+		606893D2211B1D2100A91A4B /* DPINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D1211B1D2100A91A4B /* DPINavigationController.swift */; };
+		606893D5211C2D2F00A91A4B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D4211C2D2F00A91A4B /* BaseViewController.swift */; };
+		606893D7211C2D4C00A91A4B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D6211C2D4C00A91A4B /* BaseNavigationController.swift */; };
+		606893D9211C455A00A91A4B /* RootViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D8211C455A00A91A4B /* RootViewController+Actions.swift */; };
+		606893DB211C45DA00A91A4B /* RootViewController+TestActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893DA211C45DA00A91A4B /* RootViewController+TestActions.swift */; };
 		60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D0202F1F5B00B732E4 /* AppDelegate.swift */; };
 		60A323D3202F1F5B00B732E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D2202F1F5B00B732E4 /* RootViewController.swift */; };
 		60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D7202F1F5B00B732E4 /* DPICalculator.xcdatamodeld */; };
@@ -35,6 +40,11 @@
 		6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataBuilder.swift; sourceTree = "<group>"; };
 		606893CD211AE0D400A91A4B /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		606893CF211AE0E600A91A4B /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		606893D1211B1D2100A91A4B /* DPINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPINavigationController.swift; sourceTree = "<group>"; };
+		606893D4211C2D2F00A91A4B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		606893D6211C2D4C00A91A4B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		606893D8211C455A00A91A4B /* RootViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Actions.swift"; sourceTree = "<group>"; };
+		606893DA211C45DA00A91A4B /* RootViewController+TestActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+TestActions.swift"; sourceTree = "<group>"; };
 		60A323CD202F1F5B00B732E4 /* DPICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A323D0202F1F5B00B732E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A323D2202F1F5B00B732E4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -82,10 +92,12 @@
 		6026AA1A211771250049A0EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				606893D3211C2D0E00A91A4B /* Base Classes */,
 				60A323D0202F1F5B00B732E4 /* AppDelegate.swift */,
 				6026AA25211789410049A0EA /* RootViewController */,
 				60A323E5202F604E00B732E4 /* MainController */,
 				606893CC211AE0A100A91A4B /* ExampleViewController */,
+				606893D1211B1D2100A91A4B /* DPINavigationController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -104,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				60A323D2202F1F5B00B732E4 /* RootViewController.swift */,
+				606893D8211C455A00A91A4B /* RootViewController+Actions.swift */,
+				606893DA211C45DA00A91A4B /* RootViewController+TestActions.swift */,
 				6026AA18211770F00049A0EA /* RootView.swift */,
 			);
 			path = RootViewController;
@@ -116,6 +130,15 @@
 				606893CF211AE0E600A91A4B /* ExampleView.swift */,
 			);
 			path = ExampleViewController;
+			sourceTree = "<group>";
+		};
+		606893D3211C2D0E00A91A4B /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				606893D4211C2D2F00A91A4B /* BaseViewController.swift */,
+				606893D6211C2D4C00A91A4B /* BaseNavigationController.swift */,
+			);
+			path = "Base Classes";
 			sourceTree = "<group>";
 		};
 		60A323C4202F1F5B00B732E4 = {
@@ -297,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				606893D2211B1D2100A91A4B /* DPINavigationController.swift in Sources */,
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				6026AA27211789650049A0EA /* MainView.swift in Sources */,
 				606893CE211AE0D400A91A4B /* ExampleViewController.swift in Sources */,
@@ -304,11 +328,15 @@
 				60A323D3202F1F5B00B732E4 /* RootViewController.swift in Sources */,
 				606893D0211AE0E600A91A4B /* ExampleView.swift in Sources */,
 				60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */,
+				606893D9211C455A00A91A4B /* RootViewController+Actions.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				6026AA19211770F00049A0EA /* RootView.swift in Sources */,
 				60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */,
 				6035F9BD2047D9C4004F5AED /* DisplayData.swift in Sources */,
+				606893DB211C45DA00A91A4B /* RootViewController+TestActions.swift in Sources */,
 				60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */,
+				606893D5211C2D2F00A91A4B /* BaseViewController.swift in Sources */,
+				606893D7211C2D4C00A91A4B /* BaseNavigationController.swift in Sources */,
 				60E0E9AD203BFC8A0086629C /* ScreenDataBuilder.swift in Sources */,
 				60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */,
 			);

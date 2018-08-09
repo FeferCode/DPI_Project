@@ -41,8 +41,7 @@ class MainView: UIView {
         self.addSubview(testView2)
         self.addSubview(testView3)
 
-        self.testButton.titleLabel?.text = "Open Example View"
-        self.testButton.addTarget(self, action: #selector(RootViewController.shared.showExampleViewController), for: .touchUpInside)
+        self.setupButton()
         self.addSubview(testButton)
     }
 
@@ -61,44 +60,48 @@ class MainView: UIView {
 
         self.testView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(superView).offset(200)
-            make.left.equalTo(superView).offset(20)
-            make.bottom.equalTo(testView1).offset(-20)
             make.right.equalTo(superView).offset(-20)
             make.height.equalTo(50)
         }
 
         self.testView1.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(testView).offset(20)
+            make.top.equalTo(testView).offset(60)
             make.left.equalTo(superView).offset(20)
-            make.bottom.equalTo(testView2).offset(-20)
             make.right.equalTo(superView).offset(-20)
             make.height.equalTo(50)
         }
 
         self.testView2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(testView1).offset(20)
+            make.top.equalTo(testView1).offset(60)
             make.left.equalTo(superView).offset(20)
-            make.bottom.equalTo(testView3).offset(-20)
             make.right.equalTo(superView).offset(-20)
             make.height.equalTo(50)
         }
 
         self.testView3.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(testView2).offset(20)
+            make.top.equalTo(testView2).offset(60)
             make.left.equalTo(superView).offset(20)
-            make.bottom.equalTo(testButton).offset(-20)
             make.right.equalTo(superView).offset(-20)
             make.height.equalTo(50)
         }
 
         self.testButton.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(testView3).offset(20)
+            make.top.equalTo(testView3).offset(60)
             make.left.equalTo(superView).offset(20)
             make.right.equalTo(superView).offset(-20)
             make.height.equalTo(50)
-//            make.width.equalTo(100)
         }
 
         super.updateConstraints()
+    }
+
+    func setupButton(){
+        self.testButton.titleLabel?.text = "Open Example View"
+        self.testButton.addTarget(self, action: #selector(self.actionButton), for: .touchUpInside)
+    }
+
+    @objc func actionButton(){
+        let root = RootViewController.shared
+        root.showExampleViewControllerTest()
     }
 }
