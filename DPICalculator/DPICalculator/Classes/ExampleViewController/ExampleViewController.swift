@@ -8,19 +8,16 @@
 
 import UIKit
 
-class ExampleViewController: UIViewController {
+class ExampleViewController: BaseViewController {
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    override func loadView() {
+        super.loadView()
+        self.baseView = ExampleView()
+        self.view = baseView
     }
 
     override func viewDidLoad() {
-        super.loadView()
-        self.view = ExampleView()
+        
     }
 
 }

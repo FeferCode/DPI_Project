@@ -26,7 +26,7 @@ class MainView: UIView {
         testView1 = UIView()
         testView2 = UIView()
         testView3 = UIView()
-        testButton = UIButton(type: .infoDark)
+        testButton = UIButton()
 
         self.testView.translatesAutoresizingMaskIntoConstraints = false
         self.testView1.translatesAutoresizingMaskIntoConstraints = false
@@ -46,17 +46,18 @@ class MainView: UIView {
     }
 
     override func updateConstraints() {
+
+        guard let superView = superview else {
+            print("No superview in MainView")
+            super.updateConstraints()
+            return
+        }
+
         self.backgroundColor = UIColor.white
         self.testView.backgroundColor = UIColor.green
         self.testView1.backgroundColor = UIColor.yellow
         self.testView2.backgroundColor = UIColor.orange
         self.testView3.backgroundColor = UIColor.red
-
-        guard let superView = superview else {
-            print("No superview")
-            super.updateConstraints()
-            return
-        }
 
         self.testView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(superView).offset(200)
@@ -96,7 +97,14 @@ class MainView: UIView {
     }
 
     func setupButton(){
-        self.testButton.titleLabel?.text = "Open Example View"
+//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+//        button.backgroundColor = .green
+//        button.setTitle("Test Button", for: .normal)
+//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+
+        
+        self.testButton.setTitle("Open Example View", for: .normal)
+        self.testButton.backgroundColor = .blue
         self.testButton.addTarget(self, action: #selector(self.actionButton), for: .touchUpInside)
     }
 

@@ -39,17 +39,17 @@ class ExampleView: UIView {
     }
 
     override func updateConstraints() {
+        guard let superView = superview else {
+            print("No superview in ExampleView")
+            super.updateConstraints()
+            return
+        }
+
         self.backgroundColor = UIColor.black
         self.testView.backgroundColor = UIColor.green
         self.testView1.backgroundColor = UIColor.yellow
         self.testView2.backgroundColor = UIColor.orange
         self.testView3.backgroundColor = UIColor.red
-
-        guard let superView = superview else {
-            print("No superview")
-            super.updateConstraints()
-            return
-        }
 
         self.testView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(superView)

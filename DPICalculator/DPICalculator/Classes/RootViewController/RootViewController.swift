@@ -10,11 +10,11 @@ import UIKit
 
 class RootViewController: UIViewController {
     static let shared:RootViewController = RootViewController()
-    private var currentViewController: UIViewController
+    private var currentViewController = UIViewController()
 
     init() {
-        currentViewController = MainViewController()
         super.init(nibName: nil, bundle: nil)
+        currentViewController = MainViewController()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,11 +39,11 @@ class RootViewController: UIViewController {
         currentViewController.updateViewConstraints()
     }
 
-    private func animateFadeTransition(to newViewController: UIViewController, completion: (() -> Void)? = nil) {
-        currentViewController.willMove(toParentViewController: nil)
+    func animateFadeTransition(to newViewController: UIViewController, completion: (() -> Void)? = nil) {
+        self.currentViewController.willMove(toParentViewController: nil)
 
         addChildViewController(newViewController)
-        currentViewController.view.frame = newViewController.view.bounds
+        self.currentViewController.view.frame = newViewController.view.bounds
 
         transition(from: currentViewController,
                    to: newViewController,
@@ -61,12 +61,6 @@ class RootViewController: UIViewController {
         }
     }
 
-    func showExampleViewControllerTest(){
-        let newViewController = ExampleViewController()
-        newViewController.updateViewConstraints()
-        let navigation = UINavigationController(rootViewController: newViewController)
-        let topViewController = getMostTopViewController()
-        topViewController?.present(navigation, animated: true, completion: nil)
-    }
+    
 }
 
