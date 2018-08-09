@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DPICalculator/Classes/MainController/MainView.swift"
-            timestampString = "555538045.239768"
+            timestampString = "555538574.343385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "updateConstraints()"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "actionButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

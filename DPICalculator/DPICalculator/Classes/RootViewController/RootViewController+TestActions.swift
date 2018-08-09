@@ -16,7 +16,12 @@ internal extension RootViewController {
         newViewController.updateViewConstraints()
         let navigation = UINavigationController(rootViewController: newViewController)
         let topViewController = getMostTopViewController()
-        topViewController?.present(navigation, animated: true, completion: nil)
+
+
+        if let viewController = topViewController {
+            navigation.topViewController?.view.updateConstraints()
+            viewController.present(navigation, animated: true, completion: nil)
+        }
     }
 
     private func getMostTopViewController() -> UIViewController? {

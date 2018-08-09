@@ -17,7 +17,6 @@ class ExampleViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
-        
-    }
 
+    }
 }

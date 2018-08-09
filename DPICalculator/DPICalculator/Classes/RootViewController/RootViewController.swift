@@ -31,7 +31,7 @@ class RootViewController: UIViewController {
         currentViewController.updateViewConstraints()
     }
 
-    private func replaceCurrentViewController(for newViewController: UIViewController) {
+    func replaceCurrentViewController(for newViewController: UIViewController) {
         currentViewController.willMove(toParentViewController: nil)
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParentViewController()

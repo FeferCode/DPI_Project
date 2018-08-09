@@ -97,12 +97,6 @@ class MainView: UIView {
     }
 
     func setupButton(){
-//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-//        button.backgroundColor = .green
-//        button.setTitle("Test Button", for: .normal)
-//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-
-        
         self.testButton.setTitle("Open Example View", for: .normal)
         self.testButton.backgroundColor = .blue
         self.testButton.addTarget(self, action: #selector(self.actionButton), for: .touchUpInside)
@@ -110,6 +104,7 @@ class MainView: UIView {
 
     @objc func actionButton(){
         let root = RootViewController.shared
-        root.showExampleViewControllerTest()
+        var newVC = ExampleViewController()
+        root.replaceCurrentViewController(for: newVC)
     }
 }
