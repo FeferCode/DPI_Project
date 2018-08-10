@@ -104,7 +104,6 @@ class MainView: UIView {
 
     @objc func actionButton(){
         let root = RootViewController.shared
-        var newVC = ExampleViewController()
-        root.replaceCurrentViewController(for: newVC)
+        root.showExampleViewControllerTest()
     }
 }

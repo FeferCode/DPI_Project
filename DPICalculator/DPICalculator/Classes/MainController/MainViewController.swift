@@ -12,12 +12,15 @@ class MainViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
+    }
+
+    override func viewDidLoad() {
         self.baseView = MainView()
         self.view = baseView
     }
 
-    override func viewDidLoad() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        self.baseView.updateConstraints()
     }
 
     func createMonitor(){

@@ -16,6 +16,10 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.backgroundColor = .white
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 

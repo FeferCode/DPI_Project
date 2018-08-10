@@ -13,13 +13,10 @@ internal extension RootViewController {
 
     func showExampleViewControllerTest(){
         let newViewController = ExampleViewController()
-        newViewController.updateViewConstraints()
         let navigation = UINavigationController(rootViewController: newViewController)
         let topViewController = getMostTopViewController()
 
-
         if let viewController = topViewController {
-            navigation.topViewController?.view.updateConstraints()
             viewController.present(navigation, animated: true, completion: nil)
         }
     }
@@ -31,4 +28,8 @@ internal extension RootViewController {
         return nil
     }
 
+    func closeExampleViewController() {
+        let topViewController = getMostTopViewController()
+        topViewController?.dismiss(animated: true, completion: nil)
+    }
 }

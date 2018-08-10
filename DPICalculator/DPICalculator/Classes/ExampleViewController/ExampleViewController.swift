@@ -12,11 +12,14 @@ class ExampleViewController: BaseViewController {
 
     override func loadView() {
         super.loadView()
+    }
+
+    override func viewDidLoad() {
         self.baseView = ExampleView()
         self.view = baseView
     }
 
-    override func viewDidLoad() {
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.baseView.updateConstraints()
     }
 }
