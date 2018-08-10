@@ -18,12 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = RootViewController()
-        rootViewController.view.backgroundColor = UIColor.red
-        window!.rootViewController = rootViewController
+        let rootViewController = MainViewController()
+        let navigationController = DPINavigationController(rootViewController: rootViewController)
+        window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         return true
     }
+
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        let rootViewController = RootViewController()
+//        rootViewController.view.backgroundColor = UIColor.red
+//        window!.rootViewController = rootViewController
+//        window!.makeKeyAndVisible()
+//        return true
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
 

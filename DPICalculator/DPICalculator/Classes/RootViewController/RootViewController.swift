@@ -21,6 +21,10 @@ class RootViewController: UIViewController {
         fatalError("init(coder:) not yet implemented")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.backgroundColor = .red
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

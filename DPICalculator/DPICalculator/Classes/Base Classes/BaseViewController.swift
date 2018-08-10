@@ -24,5 +24,4 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
 
     }
-
 }
