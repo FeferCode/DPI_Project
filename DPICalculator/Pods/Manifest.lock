@@ -1,22 +1,22 @@
 PODS:
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
-  - ChameleonFramework/Default (2.1.0)
+  - Colours (5.13.0):
+    - Colours/ObjC (= 5.13.0)
+  - Colours/ObjC (5.13.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - ChameleonFramework
+  - Colours
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - ChameleonFramework
+    - Colours
     - SnapKit
 
 SPEC CHECKSUMS:
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 64a06c0e7c1e99d2c5d5fd70aa57ab609b86f593
+PODFILE CHECKSUM: 949d782526e45a70c0f65ca383a506bcddcba834
 
 COCOAPODS: 1.5.0

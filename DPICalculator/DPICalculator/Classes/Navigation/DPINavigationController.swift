@@ -7,24 +7,19 @@
 //
 
 import UIKit
+//import ChameleonFramework
 
 class DPINavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        UINavigationBar.appearance().barTintColor = UIAppColorSet.getColor(.tomato)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
     }
 
     func pushViewController(_ viewController: viewControllerNavigation, title: String, animated: Bool) {
@@ -36,7 +31,6 @@ class DPINavigationController: UINavigationController {
     func setupNextNavigationButtons(for next: String){
         let nextViewController = UIBarButtonItem(title: next, style: .plain, target: self, action: #selector(nextViewControllerAction))
         navigationItem.rightBarButtonItem = nextViewController
-//        self.navigationBar.barT
     }
 
     @objc private func nextViewControllerAction(){
