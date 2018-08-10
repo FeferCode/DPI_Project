@@ -25,16 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let rootViewController = RootViewController()
-//        rootViewController.view.backgroundColor = UIColor.red
-//        window!.rootViewController = rootViewController
-//        window!.makeKeyAndVisible()
-//        return true
-//    }
-
     func applicationWillResignActive(_ application: UIApplication) {
 
     }

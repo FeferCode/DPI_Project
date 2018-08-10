@@ -43,8 +43,8 @@ class MainViewController: BaseViewController {
     }
 
     @objc private func nextViewControllerAction(){
-        let nextViewController = ExampleViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
+        if let navigationController = navigationController as? DPINavigationController {
+            navigationController.pushViewController(.example, title: "Example ViewController", animated: true)
+        }
     }
-
 }
