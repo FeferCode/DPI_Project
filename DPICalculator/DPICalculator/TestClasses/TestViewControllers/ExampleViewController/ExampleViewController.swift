@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExampleViewController: BaseViewController {
+class ExampleViewController: DPIBaseViewController {
 
     override func loadView() {
         super.loadView()

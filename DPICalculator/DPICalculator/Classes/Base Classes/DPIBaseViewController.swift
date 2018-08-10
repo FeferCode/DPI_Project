@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class DPIBaseViewController: UIViewController {
 
     var baseView = UIView()
 

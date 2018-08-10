@@ -1,14 +1,14 @@
 //
-//  MainViewController.swift
+//  DPIMainViewController.swift
 //  DPICalculator
 //
-//  Created by Jakub Majewski on 05.08.2018.
+//  Created by Jakub Majewski on 11.08.2018.
 //  Copyright © 2018 Jakub Majewski. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class DPIMainViewController: DPIBaseViewController {
 
     override func loadView() {
         super.loadView()
@@ -43,8 +43,9 @@ class MainViewController: BaseViewController {
     }
 
     @objc private func nextViewControllerAction(){
-        if let navigationController = navigationController as? DPINavigationController {
+        if let navigationController = navigationController as? BaseNavigationController {
             navigationController.pushViewController(.example, title: "Example ViewController", animated: true)
         }
     }
+
 }
