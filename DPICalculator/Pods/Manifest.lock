@@ -2,21 +2,29 @@ PODS:
   - Colours (5.13.0):
     - Colours/ObjC (= 5.13.0)
   - Colours/ObjC (5.13.0)
+  - Font-Awesome-Swift (1.7.2)
+  - LTMorphingLabel (0.5.6)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Colours
+  - Font-Awesome-Swift
+  - LTMorphingLabel
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Colours
+    - Font-Awesome-Swift
+    - LTMorphingLabel
     - SnapKit
 
 SPEC CHECKSUMS:
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
+  Font-Awesome-Swift: 83ab9db365379ee6025167cec67bdc5d3226a811
+  LTMorphingLabel: bdb51d4682e9822da89da6f567bd8aa456fd6650
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 949d782526e45a70c0f65ca383a506bcddcba834
+PODFILE CHECKSUM: 7c1499d1ef2a38ab16c880ced6df78e727e77f9b
 
 COCOAPODS: 1.5.0

@@ -1,15 +1,15 @@
 //
-//  DPIMainView.swift
+//  ExampleView.swift
 //  DPICalculator
 //
-//  Created by Jakub Majewski on 11.08.2018.
+//  Created by Jakub Majewski on 08.08.2018.
 //  Copyright © 2018 Jakub Majewski. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class DPIMainView: UIView {
+class SecondExampleView: UIView {
+
     var testView:UIView
     var testView1:UIView
     var testView2:UIView
@@ -39,15 +39,13 @@ class DPIMainView: UIView {
         self.addSubview(testView1)
         self.addSubview(testView2)
         self.addSubview(testView3)
-
         self.setupButton()
         self.addSubview(testButton)
     }
 
     override func updateConstraints() {
-
         guard let superView = superview else {
-            print("No superview in MainView")
+            print("No superview in ExampleView")
             super.updateConstraints()
             return
         }
@@ -96,13 +94,13 @@ class DPIMainView: UIView {
     }
 
     func setupButton(){
-        self.testButton.setTitle("Open Example View", for: .normal)
+        self.testButton.setTitle("Close Example View", for: .normal)
         self.testButton.backgroundColor = .blue
         self.testButton.addTarget(self, action: #selector(self.actionButton), for: .touchUpInside)
     }
 
     @objc func actionButton(){
         let root = RootViewController.shared
-        root.showExampleViewControllerTest()
+        root.closeExampleViewController()
     }
 }

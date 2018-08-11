@@ -14,7 +14,7 @@ class RootViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        currentViewController = MainViewController()
+        currentViewController = FirstExampleViewController()
     }
 
     required init?(coder aDecoder: NSCoder) {

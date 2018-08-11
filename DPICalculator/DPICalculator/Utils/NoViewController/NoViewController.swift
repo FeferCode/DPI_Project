@@ -8,16 +8,14 @@
 
 import UIKit
 
-class NoViewController: UIViewController {
+class NoViewController: DPIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
-
 }

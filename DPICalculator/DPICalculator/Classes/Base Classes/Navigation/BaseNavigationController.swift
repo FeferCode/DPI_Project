@@ -7,23 +7,33 @@
 //
 
 import UIKit
-//import ChameleonFramework
 
 class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().barTintColor = UIAppColorSet.getColor(.tomato)
+        UINavigationBar.appearance().barTintColor = UIAppColorSet.getColor(.watermelon)
+//        self.extendedLayoutIncludesOpaqueBars = false
+//        self.navigationBar.isTranslucent = true
+//        UINavigationBar.appearance().barTintColor = UIColor.clear
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white,
+                                                            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 24)]
+
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
-    func pushViewController(_ viewController: viewControllerNavigation, title: String, animated: Bool) {
+    func pushViewController(_ viewController: viewControllerNavigationEnum, title: String, animated: Bool) {
         let newViewController = DPIViewControllers.getViewController(viewController)
+        super.pushViewController(newViewController, animated: true)
+        self.navigationItem.title = title
+    }
+
+    func pushExampleViewController(_ viewController: exampleViewControllerNavigationEnum, title: String, animated: Bool) {
+        let newViewController = DPIViewControllers.getExampleViewController(viewController)
         super.pushViewController(newViewController, animated: true)
         self.navigationItem.title = title
     }
@@ -34,7 +44,7 @@ class BaseNavigationController: UINavigationController {
     }
 
     @objc private func nextViewControllerAction(){
-        let nextViewController = ExampleViewController()
+        let nextViewController = SecondExampleViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }

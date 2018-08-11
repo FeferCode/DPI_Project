@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ExampleViewController: DPIBaseViewController {
+class SecondExampleViewController: DPIBaseViewController {
 
     override func loadView() {
         super.loadView()
     }
 
     override func viewDidLoad() {
-        self.baseView = ExampleView()
+        self.baseView = SecondExampleView()
         self.view = baseView
     }
 

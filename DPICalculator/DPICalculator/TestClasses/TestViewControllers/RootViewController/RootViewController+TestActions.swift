@@ -12,7 +12,7 @@ import UIKit
 internal extension RootViewController {
 
     func showExampleViewControllerTest(){
-        let newViewController = ExampleViewController()
+        let newViewController = SecondExampleViewController()
         let navigation = UINavigationController(rootViewController: newViewController)
         let topViewController = getMostTopViewController()
 

@@ -13,6 +13,8 @@ import UIKit
 final class UIAppColorSet {
     static func getColor(_ colorSet:colorSet) -> UIColor {
         switch colorSet {
+        case .white:
+            return UIColor.white
         case .watermelon:
             return UIColor.watermelon()
         case .tomato:
@@ -26,6 +28,7 @@ final class UIAppColorSet {
 }
 
 enum colorSet {
+    case white
     case watermelon
     case tomato
     case grapefruit

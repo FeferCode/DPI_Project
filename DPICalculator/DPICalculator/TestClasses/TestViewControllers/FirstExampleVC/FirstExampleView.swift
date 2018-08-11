@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class MainView: UIView {
+class FirstExampleView: UIView {
 
     var testView:UIView
     var testView1:UIView
