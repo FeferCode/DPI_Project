@@ -46,7 +46,7 @@ class DPIMainViewController: DPIBaseViewController {
     }
 
     private func setupTableView(){
-        myTableView.register(DPIBaseTableViewCell.self, forCellReuseIdentifier: "MyCell")
+        myTableView.register(DPIBaseTableViewCell.self, forCellReuseIdentifier: "MainCell")
         myTableView.dataSource = self
         myTableView.delegate = self
     }

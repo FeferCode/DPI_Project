@@ -59,7 +59,7 @@ class DPIMainView: UIView {
             make.top.equalTo(snp.topMargin).offset(3)
             make.right.equalToSuperview().offset(-3)
             make.left.equalToSuperview().offset(3)
-            make.bottom.equalToSuperview().offset(-3)
+            make.bottom.equalTo(snp.bottomMargin).offset(-3)
         }
 
         self.tableView.snp.makeConstraints { (make) -> Void in

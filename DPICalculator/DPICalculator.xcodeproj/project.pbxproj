@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		15707C2A612833FD230FCAFA /* Pods_DPICalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD76061BF6D78574090EF696 /* Pods_DPICalculator.framework */; };
 		600687E1211D8FA700A0158E /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E0211D8FA700A0158E /* BaseViewControllerProtocol.swift */; };
-		600687E6211E32DF00A0158E /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E5211E32DF00A0158E /* Navigation.swift */; };
+		600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E5211E32DF00A0158E /* NavigationEnum.swift */; };
 		600687EA211E356600A0158E /* NoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E9211E356600A0158E /* NoViewController.swift */; };
 		600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687EB211E483900A0158E /* UIAppColorSet.swift */; };
 		600687F1211E528600A0158E /* DPIMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687F0211E528600A0158E /* DPIMainViewController.swift */; };
@@ -33,6 +33,8 @@
 		60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D7202F1F5B00B732E4 /* DPICalculator.xcdatamodeld */; };
 		60A323DB202F1F5B00B732E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A323DA202F1F5B00B732E4 /* Assets.xcassets */; };
 		60A323DE202F1F5B00B732E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A323DC202F1F5B00B732E4 /* LaunchScreen.storyboard */; };
+		60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C79B212035A700787132 /* BaseTabBarViewController.swift */; };
+		60D0C79E2120392500787132 /* AppDelegate+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C79D2120392500787132 /* AppDelegate+Setup.swift */; };
 		60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9A9203BFC740086629C /* ScreenData.swift */; };
 		60E0E9AD203BFC8A0086629C /* ScreenDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AC203BFC8A0086629C /* ScreenDataBuilder.swift */; };
 		60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AF203BFE9C0086629C /* CalculationManager.swift */; };
@@ -42,7 +44,7 @@
 /* Begin PBXFileReference section */
 		034E1F224334B4A6365E3826 /* Pods-DPICalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPICalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator.release.xcconfig"; sourceTree = "<group>"; };
 		600687E0211D8FA700A0158E /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
-		600687E5211E32DF00A0158E /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		600687E5211E32DF00A0158E /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 		600687E9211E356600A0158E /* NoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoViewController.swift; sourceTree = "<group>"; };
 		600687EB211E483900A0158E /* UIAppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppColorSet.swift; sourceTree = "<group>"; };
 		600687F0211E528600A0158E /* DPIMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIMainViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		60A323DA202F1F5B00B732E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A323DD202F1F5B00B732E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60A323DF202F1F5B00B732E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60D0C79B212035A700787132 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		60D0C79D2120392500787132 /* AppDelegate+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Setup.swift"; sourceTree = "<group>"; };
 		60E0E9A9203BFC740086629C /* ScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenData.swift; sourceTree = "<group>"; };
 		60E0E9AC203BFC8A0086629C /* ScreenDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDataBuilder.swift; sourceTree = "<group>"; };
 		60E0E9AF203BFE9C0086629C /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
@@ -117,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				606893D1211B1D2100A91A4B /* BaseNavigationController.swift */,
-				600687E5211E32DF00A0158E /* Navigation.swift */,
+				600687E5211E32DF00A0158E /* NavigationEnum.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				60A323D0202F1F5B00B732E4 /* AppDelegate.swift */,
+				60D0C79D2120392500787132 /* AppDelegate+Setup.swift */,
 				600687F5211E532C00A0158E /* Main */,
 				606893D3211C2D0E00A91A4B /* Base Classes */,
 			);
@@ -215,6 +220,7 @@
 		606893D3211C2D0E00A91A4B /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
+				60D0C79A2120356D00787132 /* TabBar */,
 				600687E4211E180E00A0158E /* Navigation */,
 				609596132120288A00CE6E31 /* ViewController */,
 				60959614212028A600CE6E31 /* View */,
@@ -291,6 +297,14 @@
 				6026AA26211789650049A0EA /* FirstExampleView.swift */,
 			);
 			path = FirstExampleVC;
+			sourceTree = "<group>";
+		};
+		60D0C79A2120356D00787132 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				60D0C79B212035A700787132 /* BaseTabBarViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		60E0E9A8203BFC560086629C /* Model */ = {
@@ -439,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				606893D2211B1D2100A91A4B /* BaseNavigationController.swift in Sources */,
+				60D0C79E2120392500787132 /* AppDelegate+Setup.swift in Sources */,
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
 				6026AA27211789650049A0EA /* FirstExampleView.swift in Sources */,
@@ -448,7 +463,7 @@
 				60A323D3202F1F5B00B732E4 /* RootViewController.swift in Sources */,
 				600687E1211D8FA700A0158E /* BaseViewControllerProtocol.swift in Sources */,
 				606893D0211AE0E600A91A4B /* SecondExampleView.swift in Sources */,
-				600687E6211E32DF00A0158E /* Navigation.swift in Sources */,
+				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */,
 				606893D9211C455A00A91A4B /* RootViewController+TestActions.swift in Sources */,
 				604D7115211F3B5F00C4EABE /* DPIBaseTableViewCell.swift in Sources */,
@@ -462,6 +477,7 @@
 				60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */,
 				604D710F211F1DE100C4EABE /* DPIMainViewController+TableView.swift in Sources */,
 				606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */,
+				60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */,
 				60E0E9AD203BFC8A0086629C /* ScreenDataBuilder.swift in Sources */,
 				600687EA211E356600A0158E /* NoViewController.swift in Sources */,
 				60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */,

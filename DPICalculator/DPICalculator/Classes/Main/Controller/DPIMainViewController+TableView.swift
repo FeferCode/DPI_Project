@@ -21,7 +21,7 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(myArray[indexPath.row])"
         cell.textLabel?.textColor = UIColor.white
         cell.backgroundColor = UIColor.clear
