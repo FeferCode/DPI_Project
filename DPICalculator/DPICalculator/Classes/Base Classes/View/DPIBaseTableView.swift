@@ -11,7 +11,7 @@ import UIKit
 class DPIBaseTableView: UITableView {
 
     override func draw(_ rect: CGRect) {
-        self.layer.cornerRadius = 30
+        self.layer.cornerRadius = 36
         self.layer.maskedCorners = [.layerMaxXMaxYCorner,
                                     .layerMinXMaxYCorner,
                                     .layerMaxXMinYCorner,

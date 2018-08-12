@@ -12,7 +12,10 @@ class DPIBaseContainerView: UIView {
 
     override func draw(_ rect: CGRect) {
         self.layer.cornerRadius = 40
-        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        self.layer.maskedCorners = [.layerMinXMinYCorner,
+                                    .layerMaxXMinYCorner,
+                                    .layerMinXMaxYCorner,
+                                    .layerMaxXMaxYCorner]
         self.clipsToBounds = true
     }
 

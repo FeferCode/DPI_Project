@@ -56,17 +56,17 @@ class DPIMainView: UIView {
 
     private func setupConstraints(){
         self.containerView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(snp.topMargin)
+            make.top.equalTo(snp.topMargin).offset(3)
             make.right.equalToSuperview().offset(-3)
             make.left.equalToSuperview().offset(3)
             make.bottom.equalToSuperview().offset(-3)
         }
 
         self.tableView.snp.makeConstraints { (make) -> Void in
-            make.top.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
-            make.left.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
+            make.top.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.left.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
         }
     }
 }
