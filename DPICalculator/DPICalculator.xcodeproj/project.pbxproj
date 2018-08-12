@@ -216,11 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				600687E4211E180E00A0158E /* Navigation */,
-				606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */,
-				604D710A211EF67B00C4EABE /* DPIBaseContainerView.swift */,
-				604D710C211F02F600C4EABE /* DPITopSeparatorView.swift */,
-				604D7112211F301A00C4EABE /* DPIBaseTableView.swift */,
-				604D7114211F3B5F00C4EABE /* DPIBaseTableViewCell.swift */,
+				609596132120288A00CE6E31 /* ViewController */,
+				60959614212028A600CE6E31 /* View */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -233,6 +230,25 @@
 				600687EB211E483900A0158E /* UIAppColorSet.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		609596132120288A00CE6E31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		60959614212028A600CE6E31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				604D710A211EF67B00C4EABE /* DPIBaseContainerView.swift */,
+				604D710C211F02F600C4EABE /* DPITopSeparatorView.swift */,
+				604D7112211F301A00C4EABE /* DPIBaseTableView.swift */,
+				604D7114211F3B5F00C4EABE /* DPIBaseTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		60A323C4202F1F5B00B732E4 = {
@@ -585,7 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.DPICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -601,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.DPICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
