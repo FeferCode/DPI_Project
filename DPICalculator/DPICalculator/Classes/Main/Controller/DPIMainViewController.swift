@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//, UITableViewDelegate, UITableViewDataSource
+
 class DPIMainViewController: DPIBaseViewController {
 
     let myArray: NSArray = ["First","Second","Third"]
@@ -16,9 +16,8 @@ class DPIMainViewController: DPIBaseViewController {
     override func viewDidLoad() {
         setupViewsForController()
         self.view = baseView
-        setupNextNavigationButtons(for: "Test")
-        title = "Main"
-
+//        setupNextNavigationButtons(for: "Test")
+//        navigationController?.title = "Main"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +28,6 @@ class DPIMainViewController: DPIBaseViewController {
     func setupNextNavigationButtons(for next: String){
         let nextViewController = UIBarButtonItem(title: next, style: .plain, target: self, action: #selector(testViewControllerAction))
         navigationItem.rightBarButtonItem = nextViewController
-
     }
 
     @objc private func testViewControllerAction(){

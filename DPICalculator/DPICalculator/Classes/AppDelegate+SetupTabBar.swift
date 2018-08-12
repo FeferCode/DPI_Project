@@ -13,14 +13,14 @@ import Font_Awesome_Swift
 extension AppDelegate {
     func setupTabBarViewControllers() -> [UIViewController]{
         let arrayOfViewControllers  = [DPIMainViewController(),
-                                       DPIMainViewController(),
-                                       DPIMainViewController()]
+                                       NoViewController(),
+                                       NoViewController()]
         return arrayOfViewControllers
     }
 
     func customiseTabItems(tabBar: UITabBar) {
 
-        var itemsTitle:[String] = ["Calculator", "Calendar", "About"]
+        var itemsTitle:[String] = ["Calculator", "History", "About"]
         var itemsImage:[FAType] = [.FACalculator, .FACalendar, .FASafari]
 
         for i in 0...2 {

@@ -5,6 +5,8 @@
 //  Created by Jakub Majewski on 10.08.2018.
 //  Copyright © 2018 Jakub Majewski. All rights reserved.
 //
+//  ==>  Need to change this file!!  <==
+//  ==>        Base concept!!        <==
 
 import Foundation
 import UIKit

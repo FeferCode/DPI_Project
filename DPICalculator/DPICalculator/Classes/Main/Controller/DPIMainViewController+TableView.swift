@@ -21,10 +21,8 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = "\(myArray[indexPath.row])"
-        cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = UIColor.clear
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath as IndexPath) as! DPIBaseTableViewCell
+        setupCell(cell)
         return cell
     }
 
@@ -32,5 +30,23 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
         print("Row number: \(indexPath.row)")
     }
 
+    func setupCell(_ cell: DPIBaseTableViewCell){
+        if let label = cell.dpiLabel {
+            label.textColor = UIAppColorSet.getColor(.white)
+            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.text = textForEnum.calculate.description
+        }
 
+        if let field = cell.dpiField {
+            field.textColor = UIAppColorSet.getColor(.white)
+            field.backgroundColor = UIAppColorSet.getColor(.clear)
+            field.text = textForEnum.calculate.description
+        }
+
+        if let button = cell.dpiButton {
+            button.tintColor = UIAppColorSet.getColor(.white)
+            button.backgroundColor = UIAppColorSet.getColor(.clear)
+            button.setTitle(textForEnum.calculate.description, for: .normal)
+        }
+    }
 }

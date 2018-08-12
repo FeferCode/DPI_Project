@@ -16,25 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        let rootViewController = DPIViewControllers.getViewController(.mainViewController)
+//        let navigationController = BaseNavigationController(rootViewController: rootViewController)
+
         window = UIWindow(frame: UIScreen.main.bounds)
         let tabBarViewController = BaseTabBarViewController()
         tabBarViewController.viewControllers = setupTabBarViewControllers()
         self.customiseTabItems(tabBar: tabBarViewController.tabBar)
         let navigationController = BaseNavigationController(rootViewController: tabBarViewController)
 
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let tabBarViewController = BaseTabBarViewController()
-//        tabBarViewController.viewControllers = setupTabBarViewControllers()
-//        self.customiseTabItems(tabBar: tabBarViewController.tabBar)
-//        let navigationController = BaseNavigationController(rootViewController: tabBarViewController)
-
         window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         return true
     }
-
-
-
 
     func applicationWillTerminate(_ application: UIApplication) {
 
