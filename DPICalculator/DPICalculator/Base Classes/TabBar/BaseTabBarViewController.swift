@@ -13,11 +13,11 @@ class BaseTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UITabBar.appearance().backgroundColor = UIColor.clear
+        UITabBar.appearance().backgroundColor = UIAppColorSet.getColor(.white)
         UITabBar.appearance().barTintColor = UIAppColorSet.getColor(.watermelon)
         UITabBar.appearance().tintColor = UIAppColorSet.getColor(.white)
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barStyle = .default
-
+        self.title = "DPI Calculator"
     }
 }

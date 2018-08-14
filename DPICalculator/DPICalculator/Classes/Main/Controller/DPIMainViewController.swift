@@ -11,35 +11,22 @@ import UIKit
 class DPIMainViewController: DPIBaseViewController {
 
     var myTableView: DPIBaseTableView!
-    let tableViewData: []
+    var tableViewData: [DPIMainTableDataModel]!
 
     override func viewDidLoad() {
         setupViewsForController()
         self.view = baseView
-//        setupNextNavigationButtons(for: "Test")
-//        navigationController?.title = "Main"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.baseView.updateConstraints()
     }
 
-    //MARK :- Setup for navigation bar button
-    func setupNextNavigationButtons(for next: String){
-        let nextViewController = UIBarButtonItem(title: next, style: .plain, target: self, action: #selector(testViewControllerAction))
-        navigationItem.rightBarButtonItem = nextViewController
-    }
-
-    @objc private func testViewControllerAction(){
-        if let navigationController = navigationController as? BaseNavigationController {
-            navigationController.pushExampleViewController(.firstVC, title: "Example ViewController", animated: true)
-        }
-    }
-
     //MARK :- Setup Views
     private func setupViewsForController(){
+        self.generateTestData()
         self.baseView = DPIMainView()
-        self.myTableView = (baseView as! DPIMainView).tableView as! DPIBaseTableView
+        self.myTableView = (baseView as! DPIMainView).tableView
         setupTableView()
     }
 

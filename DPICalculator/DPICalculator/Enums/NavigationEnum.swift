@@ -16,11 +16,6 @@ enum viewControllerNavigationEnum {
     case noVC
 }
 
-enum exampleViewControllerNavigationEnum {
-    case firstVC
-    case secondVC
-}
-
 enum navigationIconStyle {
     case dark
     case light
@@ -34,15 +29,6 @@ final class DPIViewControllers {
             return DPIMainViewController()
         case .noVC:
             return NoViewController()
-        }
-    }
-
-    static func getExampleViewController(_ viewController:exampleViewControllerNavigationEnum) -> UIViewController {
-        switch viewController {
-        case .firstVC:
-            return FirstExampleViewController()
-        case .secondVC:
-            return SecondExampleViewController()
         }
     }
 }

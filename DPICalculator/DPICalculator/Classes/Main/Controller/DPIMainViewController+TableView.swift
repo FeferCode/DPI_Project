@@ -11,31 +11,42 @@ import UIKit
 
 extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
-        print("Value: \(myArray[indexPath.row])")
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
+        return tableViewData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        switch tableViewData[indexPath.row].cellType {
+        case .withButton:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
             return cell
-        case 1:
+        case .withTextField:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
             return cell
-        default:
+        case .withLabel:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextLabelCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
+            return cell
+        case .withImage:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextLabelCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
             return cell
         }
     }
 
-    func provideCell(for row: Int) -> UITableViewCell {
-        
+    //MARK: - Only for testing
+    func generateTestData(){
+        let obj1 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withImage,
+                                         image: UIImage(assetIdentifier: UIImage.AssetIdentifier.aspect_ratio_light),
+                                         title: "Raz")
+        let obj2 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withLabel,
+                                         image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_light),
+                                         title: "Dwa")
+        let obj3 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withLabel,
+                                         image: UIImage(assetIdentifier: UIImage.AssetIdentifier.height_light),
+                                         title: "Trzy")
+        let obj4 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withButton,
+                                         image: UIImage(assetIdentifier: UIImage.AssetIdentifier.calculate_light),
+                                         title: "Cztery")
+        self.tableViewData = [obj1, obj2, obj3, obj4]
     }
 }
 

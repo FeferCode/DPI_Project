@@ -30,21 +30,6 @@ class BaseNavigationController: UINavigationController {
         let newViewController = DPIViewControllers.getViewController(viewController)
         super.pushViewController(newViewController, animated: true)
         self.navigationItem.title = title
-    }
-
-    func pushExampleViewController(_ viewController: exampleViewControllerNavigationEnum, title: String, animated: Bool) {
-        let newViewController = DPIViewControllers.getExampleViewController(viewController)
-        super.pushViewController(newViewController, animated: true)
-        self.navigationItem.title = title
-    }
-
-    func setupNextNavigationButtons(for next: String){
-        let nextViewController = UIBarButtonItem(title: next, style: .plain, target: self, action: #selector(nextViewControllerAction))
-        navigationItem.rightBarButtonItem = nextViewController
-    }
-
-    @objc private func nextViewControllerAction(){
-        let nextViewController = SecondExampleViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
+        self.tabBarController?.navigationController?.title = title
     }
 }
