@@ -10,8 +10,8 @@ import UIKit
 
 class DPIMainViewController: DPIBaseViewController {
 
-    let myArray: NSArray = ["First","Second","Third"]
     var myTableView: DPIBaseTableView!
+    let tableViewData: []
 
     override func viewDidLoad() {
         setupViewsForController()
@@ -44,7 +44,9 @@ class DPIMainViewController: DPIBaseViewController {
     }
 
     private func setupTableView(){
-        myTableView.register(DPIBaseTableViewCell.self, forCellReuseIdentifier: "MainCell")
+        myTableView.register(DPIBaseTableViewCellWithButton.self, forCellReuseIdentifier: "ButtonCell")
+        myTableView.register(DPIBaseTableViewCellWithTextField.self, forCellReuseIdentifier: "TextFieldCell")
+        myTableView.register(DPIBaseTableViewCellWithTextLabel.self, forCellReuseIdentifier: "TextLabelCell")
         myTableView.dataSource = self
         myTableView.delegate = self
     }
