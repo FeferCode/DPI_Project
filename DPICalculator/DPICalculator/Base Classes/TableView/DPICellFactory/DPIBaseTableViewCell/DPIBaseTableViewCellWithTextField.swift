@@ -10,8 +10,9 @@ import UIKit
 
 class DPIBaseTableViewCellWithTextField: UITableViewCell {
 
+    var dpiCellData: DPIMainTableDataModel?
     var dpiField: UITextField?
-    var dpiImage: UIImageView?
+    var dpiImage: UIImage?
 
     override func awakeFromNib() {
         super.awakeFromNib()

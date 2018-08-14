@@ -51,6 +51,7 @@ class DPIMainView: UIView {
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.layer.borderWidth = 1
         self.tableView.layer.borderColor = UIAppColorSet.getColor(.white).cgColor
+        self.tableView.rowHeight = 60
 
     }
 

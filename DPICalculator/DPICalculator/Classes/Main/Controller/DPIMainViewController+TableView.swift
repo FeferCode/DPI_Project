@@ -16,18 +16,23 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch tableViewData[indexPath.row].cellType {
+        let cellData = tableViewData[indexPath.row]
+        switch cellData.cellType {
         case .withButton:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
+            cell.dpiCellData = cellData
             return cell
         case .withTextField:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
+            cell.dpiCellData = cellData
             return cell
         case .withLabel:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextLabelCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
+            cell.dpiCellData = cellData
             return cell
         case .withImage:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextLabelCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
+            cell.dpiCellData = cellData
             return cell
         }
     }

@@ -10,8 +10,9 @@ import UIKit
 
 class DPIBaseTableViewCellWithButton: UITableViewCell {
 
+    var dpiCellData: DPIMainTableDataModel?
     var dpiButton:  UIButton?
-    var dpiImage:   UIImageView?
+    var dpiImage:   UIImage?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,13 @@ class DPIBaseTableViewCellWithButton: UITableViewCell {
             button.tintColor = UIAppColorSet.getColor(.white)
             button.backgroundColor = UIAppColorSet.getColor(.clear)
             button.setTitle(textForEnum.calculate.description, for: .normal)
+            button.setImage(dpiCellData?.cellImage, for: .normal)
+
+            button.setTitle("textForEnum.calculate.description", for: .highlighted)
+            button.setImage(dpiCellData?.cellImage, for: .highlighted)
+
+            button.setImagePosition(at: .left, withAdjustment: nil)
+            button.imageView?.contentMode = .scaleAspectFit
         }
     }
 

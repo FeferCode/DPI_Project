@@ -10,8 +10,9 @@ import UIKit
 
 class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
 
+    var dpiCellData: DPIMainTableDataModel?
     var dpiLabel: UILabel?
-    var dpiImage: UIImageView?
+    var dpiImage: UIImage?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,7 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
             label.textColor = UIAppColorSet.getColor(.white)
             label.backgroundColor = UIAppColorSet.getColor(.clear)
             label.text = textForEnum.calculate.description
+            label.addImage(uiImage: (dpiCellData?.cellImage)!, afterLabel: false)
         }
     }
 

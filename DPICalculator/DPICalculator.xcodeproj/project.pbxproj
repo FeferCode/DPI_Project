@@ -28,6 +28,9 @@
 		605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */; };
 		605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2121234B4700EED3CD /* MainTableDataModel.swift */; };
 		605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */; };
+		605A9F2721237C8800EED3CD /* UILabel+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2621237C8800EED3CD /* UILabel+Image.swift */; };
+		605A9F292123861400EED3CD /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F282123861400EED3CD /* UIButton+Image.swift */; };
+		605A9F2B21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */; };
 		606893D2211B1D2100A91A4B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D1211B1D2100A91A4B /* BaseNavigationController.swift */; };
 		606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */; };
 		60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D0202F1F5B00B732E4 /* AppDelegate.swift */; };
@@ -65,6 +68,9 @@
 		605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTextLabel.swift; sourceTree = "<group>"; };
 		605A9F2121234B4700EED3CD /* MainTableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataModel.swift; sourceTree = "<group>"; };
 		605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AssetIdentifier.swift"; sourceTree = "<group>"; };
+		605A9F2621237C8800EED3CD /* UILabel+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Image.swift"; sourceTree = "<group>"; };
+		605A9F282123861400EED3CD /* UIButton+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
+		605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment+SetImageHeight.swift"; sourceTree = "<group>"; };
 		606893D1211B1D2100A91A4B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseViewController.swift; sourceTree = "<group>"; };
 		60A323CD202F1F5B00B732E4 /* DPICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */,
+				605A9F2621237C8800EED3CD /* UILabel+Image.swift */,
+				605A9F282123861400EED3CD /* UIButton+Image.swift */,
+				605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -472,10 +481,12 @@
 				60D0C79E2120392500787132 /* AppDelegate+SetupTabBar.swift in Sources */,
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
+				605A9F292123861400EED3CD /* UIButton+Image.swift in Sources */,
 				605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* TextForEnum.swift in Sources */,
+				605A9F2B21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift in Sources */,
 				605A9F17212319E700EED3CD /* DPITableViewCellProtocol.swift in Sources */,
 				600687E1211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
@@ -492,6 +503,7 @@
 				60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */,
 				604D710F211F1DE100C4EABE /* DPIMainViewController+TableView.swift in Sources */,
 				606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */,
+				605A9F2721237C8800EED3CD /* UILabel+Image.swift in Sources */,
 				60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */,
 				605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */,
 				60E0E9AD203BFC8A0086629C /* ScreenDataBuilder.swift in Sources */,
