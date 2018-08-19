@@ -12,7 +12,7 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
 
     var dpiCellData: DPIMainTableDataModel?
     var dpiLabel: UILabel?
-    var dpiImage: UIImage?
+    var dpiImage: UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,16 +30,26 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
         if let label = self.dpiLabel {
             label.textColor = UIAppColorSet.getColor(.white)
             label.backgroundColor = UIAppColorSet.getColor(.clear)
-            label.text = textForEnum.calculate.description
-            label.addImage(uiImage: (dpiCellData?.cellImage)!, afterLabel: false)
+            if let data = dpiCellData {
+                label.text = data.cellText
+                dpiImage?.addImage(data.cellImage!)
+            }
         }
     }
 
     internal override func updateConstraints() {
+
+        self.dpiImage?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(snp.topMargin).offset(3)
+            make.right.equalToSuperview().offset(-20)
+            make.left.equalToSuperview().offset(20)
+            make.bottom.equalTo(snp.bottomMargin).offset(-3)
+        }
+
         self.dpiLabel?.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.topMargin).offset(3)
-            make.right.equalToSuperview().offset(-3)
-            make.left.equalToSuperview().offset(3)
+            make.right.equalToSuperview().offset(-20)
+            make.left.equalToSuperview().offset(20)
             make.bottom.equalTo(snp.bottomMargin).offset(-3)
         }
         self.backgroundColor = UIAppColorSet.getColor(.clear)

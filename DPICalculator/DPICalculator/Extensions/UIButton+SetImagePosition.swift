@@ -17,6 +17,8 @@ extension UIButton {
         let width = frame.size.width
         var imgWidth = self.imageView?.frame.size.width
 
+        print("_adj: \(_adj)\nwidth:\(width)\nimgWidth: \(String(describing: imgWidth))")
+
         switch pos {
         case .center:
             self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

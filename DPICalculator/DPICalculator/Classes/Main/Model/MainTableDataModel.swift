@@ -12,13 +12,14 @@ import UIKit
 struct DPIMainTableDataModel {
     let cellType: DPIBaseTableViewStyleEnum
     let cellImage: UIImage?
-    let cellTitle: String?
-//    let cellPlaceholder: String?
+    let cellText: String?
+    let cellTextPlaceholder: String?
 
-    init(type: DPIBaseTableViewStyleEnum, image: UIImage, title: String){
+    init(type: DPIBaseTableViewStyleEnum, image: UIImage?, text: String?, placeholder:String?){
         self.cellType = type
         self.cellImage = image
-        self.cellTitle = title
+        self.cellText = text
+        self.cellTextPlaceholder = placeholder
     }
 }
 

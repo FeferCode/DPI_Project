@@ -15,7 +15,10 @@ extension UILabel
     {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = uiImage
-        attachment.setImageHeight(height: 20)
+        attachment.bounds = CGRect(x: 0,
+                                y: 0,
+                                width: self.font.pointSize,
+                                height: self.font.pointSize)
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
 
         if (bolAfterLabel)

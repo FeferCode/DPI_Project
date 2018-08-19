@@ -34,6 +34,8 @@ class DPIMainViewController: DPIBaseViewController {
         myTableView.register(DPIBaseTableViewCellWithButton.self, forCellReuseIdentifier: "ButtonCell")
         myTableView.register(DPIBaseTableViewCellWithTextField.self, forCellReuseIdentifier: "TextFieldCell")
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self, forCellReuseIdentifier: "TextLabelCell")
+        myTableView.register(DPIBaseTableViewCellWithImageView.self, forCellReuseIdentifier: "ImageViewCell")
+        myTableView.allowsSelection = false
         myTableView.dataSource = self
         myTableView.delegate = self
     }

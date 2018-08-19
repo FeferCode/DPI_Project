@@ -20,6 +20,8 @@
 		604D710D211F02F600C4EABE /* DPITopSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D710C211F02F600C4EABE /* DPITopSeparatorView.swift */; };
 		604D710F211F1DE100C4EABE /* DPIMainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D710E211F1DE100C4EABE /* DPIMainViewController+TableView.swift */; };
 		604D7113211F301A00C4EABE /* DPIBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D7112211F301A00C4EABE /* DPIBaseTableView.swift */; };
+		604FA51E2129939A00C7E995 /* UIImageView+AddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA51D2129939A00C7E995 /* UIImageView+AddImage.swift */; };
+		604FA5202129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA51F2129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift */; };
 		605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1121230D3700EED3CD /* DPICellFactory.swift */; };
 		605A9F15212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */; };
 		605A9F17212319E700EED3CD /* DPITableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F16212319E700EED3CD /* DPITableViewCellProtocol.swift */; };
@@ -29,8 +31,7 @@
 		605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2121234B4700EED3CD /* MainTableDataModel.swift */; };
 		605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */; };
 		605A9F2721237C8800EED3CD /* UILabel+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2621237C8800EED3CD /* UILabel+Image.swift */; };
-		605A9F292123861400EED3CD /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F282123861400EED3CD /* UIButton+Image.swift */; };
-		605A9F2B21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */; };
+		605A9F292123861400EED3CD /* UIButton+SetImagePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F282123861400EED3CD /* UIButton+SetImagePosition.swift */; };
 		606893D2211B1D2100A91A4B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D1211B1D2100A91A4B /* BaseNavigationController.swift */; };
 		606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */; };
 		60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A323D0202F1F5B00B732E4 /* AppDelegate.swift */; };
@@ -60,6 +61,8 @@
 		604D710C211F02F600C4EABE /* DPITopSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPITopSeparatorView.swift; sourceTree = "<group>"; };
 		604D710E211F1DE100C4EABE /* DPIMainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIMainViewController+TableView.swift"; sourceTree = "<group>"; };
 		604D7112211F301A00C4EABE /* DPIBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableView.swift; sourceTree = "<group>"; };
+		604FA51D2129939A00C7E995 /* UIImageView+AddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AddImage.swift"; sourceTree = "<group>"; };
+		604FA51F2129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithImageView.swift; sourceTree = "<group>"; };
 		605A9F1121230D3700EED3CD /* DPICellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICellFactory.swift; sourceTree = "<group>"; };
 		605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithButton.swift; sourceTree = "<group>"; };
 		605A9F16212319E700EED3CD /* DPITableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPITableViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -69,8 +72,7 @@
 		605A9F2121234B4700EED3CD /* MainTableDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDataModel.swift; sourceTree = "<group>"; };
 		605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AssetIdentifier.swift"; sourceTree = "<group>"; };
 		605A9F2621237C8800EED3CD /* UILabel+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Image.swift"; sourceTree = "<group>"; };
-		605A9F282123861400EED3CD /* UIButton+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
-		605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment+SetImageHeight.swift"; sourceTree = "<group>"; };
+		605A9F282123861400EED3CD /* UIButton+SetImagePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+SetImagePosition.swift"; sourceTree = "<group>"; };
 		606893D1211B1D2100A91A4B /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		606893D4211C2D2F00A91A4B /* DPIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseViewController.swift; sourceTree = "<group>"; };
 		60A323CD202F1F5B00B732E4 /* DPICalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPICalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,12 +130,12 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		600687E4211E180E00A0158E /* Navigation */ = {
+		600687E4211E180E00A0158E /* BaseNavigation */ = {
 			isa = PBXGroup;
 			children = (
 				606893D1211B1D2100A91A4B /* BaseNavigationController.swift */,
 			);
-			path = Navigation;
+			path = BaseNavigation;
 			sourceTree = "<group>";
 		};
 		600687E8211E353E00A0158E /* NoViewController */ = {
@@ -191,23 +193,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		605A9F1021230CFD00EED3CD /* DPICellFactory */ = {
-			isa = PBXGroup;
-			children = (
-				605A9F1121230D3700EED3CD /* DPICellFactory.swift */,
-				605A9F1321230D4C00EED3CD /* DPIBaseTableViewCell */,
-			);
-			path = DPICellFactory;
-			sourceTree = "<group>";
-		};
-		605A9F1321230D4C00EED3CD /* DPIBaseTableViewCell */ = {
+		605A9F1321230D4C00EED3CD /* BaseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */,
 				605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */,
 				605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */,
+				604FA51F2129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift */,
 			);
-			path = DPIBaseTableViewCell;
+			path = BaseTableViewCell;
 			sourceTree = "<group>";
 		};
 		605A9F2021234AEA00EED3CD /* Model */ = {
@@ -223,8 +217,8 @@
 			children = (
 				605A9F242123655000EED3CD /* UIImage+AssetIdentifier.swift */,
 				605A9F2621237C8800EED3CD /* UILabel+Image.swift */,
-				605A9F282123861400EED3CD /* UIButton+Image.swift */,
-				605A9F2A21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift */,
+				605A9F282123861400EED3CD /* UIButton+SetImagePosition.swift */,
+				604FA51D2129939A00C7E995 /* UIImageView+AddImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,11 +226,11 @@
 		606893D3211C2D0E00A91A4B /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
-				60D0C79F2120B12800787132 /* TableView */,
-				60D0C79A2120356D00787132 /* TabBar */,
-				600687E4211E180E00A0158E /* Navigation */,
+				60D0C79F2120B12800787132 /* BaseTableView */,
+				60D0C79A2120356D00787132 /* BaseTabBar */,
+				600687E4211E180E00A0158E /* BaseNavigation */,
 				609596132120288A00CE6E31 /* BaseViewController */,
-				60959614212028A600CE6E31 /* View */,
+				60959614212028A600CE6E31 /* BaseView */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -259,13 +253,13 @@
 			path = BaseViewController;
 			sourceTree = "<group>";
 		};
-		60959614212028A600CE6E31 /* View */ = {
+		60959614212028A600CE6E31 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
 				604D710A211EF67B00C4EABE /* DPIBaseContainerView.swift */,
 				604D710C211F02F600C4EABE /* DPITopSeparatorView.swift */,
 			);
-			path = View;
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		60A323C4202F1F5B00B732E4 = {
@@ -303,21 +297,22 @@
 			path = DPICalculator;
 			sourceTree = "<group>";
 		};
-		60D0C79A2120356D00787132 /* TabBar */ = {
+		60D0C79A2120356D00787132 /* BaseTabBar */ = {
 			isa = PBXGroup;
 			children = (
 				60D0C79B212035A700787132 /* BaseTabBarViewController.swift */,
 			);
-			path = TabBar;
+			path = BaseTabBar;
 			sourceTree = "<group>";
 		};
-		60D0C79F2120B12800787132 /* TableView */ = {
+		60D0C79F2120B12800787132 /* BaseTableView */ = {
 			isa = PBXGroup;
 			children = (
 				604D7112211F301A00C4EABE /* DPIBaseTableView.swift */,
-				605A9F1021230CFD00EED3CD /* DPICellFactory */,
+				605A9F1121230D3700EED3CD /* DPICellFactory.swift */,
+				605A9F1321230D4C00EED3CD /* BaseTableViewCell */,
 			);
-			path = TableView;
+			path = BaseTableView;
 			sourceTree = "<group>";
 		};
 		60D0C7A42120B34100787132 /* Enums */ = {
@@ -481,22 +476,23 @@
 				60D0C79E2120392500787132 /* AppDelegate+SetupTabBar.swift in Sources */,
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
-				605A9F292123861400EED3CD /* UIButton+Image.swift in Sources */,
+				605A9F292123861400EED3CD /* UIButton+SetImagePosition.swift in Sources */,
 				605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* TextForEnum.swift in Sources */,
-				605A9F2B21238E3E00EED3CD /* NSTextAttachment+SetImageHeight.swift in Sources */,
 				605A9F17212319E700EED3CD /* DPITableViewCellProtocol.swift in Sources */,
 				600687E1211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
 				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */,
+				604FA51E2129939A00C7E995 /* UIImageView+AddImage.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				600687F1211E528600A0158E /* DPIMainViewController.swift in Sources */,
 				600687F3211E52E400A0158E /* DPIMainView.swift in Sources */,
 				604D710D211F02F600C4EABE /* DPITopSeparatorView.swift in Sources */,
 				60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */,
+				604FA5202129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift in Sources */,
 				605A9F1D2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift in Sources */,
 				604D7113211F301A00C4EABE /* DPIBaseTableView.swift in Sources */,
 				6035F9BD2047D9C4004F5AED /* DisplayData.swift in Sources */,

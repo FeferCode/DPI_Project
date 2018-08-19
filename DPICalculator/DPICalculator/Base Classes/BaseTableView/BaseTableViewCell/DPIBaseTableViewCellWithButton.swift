@@ -1,5 +1,5 @@
 //
-//  DPIBaseTableViewCellWithTextField.swift
+//  DPITableViewCellWithButton.swift
 //  DPICalculator
 //
 //  Created by Jakub Majewski on 14.08.2018.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class DPIBaseTableViewCellWithTextField: UITableViewCell {
+class DPIBaseTableViewCellWithButton: UITableViewCell {
 
     var dpiCellData: DPIMainTableDataModel?
-    var dpiField: UITextField?
-    var dpiImage: UIImage?
+    var dpiButton:  UIButton?
+    var dpiImage:   UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,21 +21,25 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
 
     override func didMoveToSuperview() {
         self.configureButton()
-        self.addSubview(self.dpiField!)
+        self.addSubview(self.dpiButton!)
         self.updateConstraints()
     }
 
     private func configureButton() {
-        self.dpiField = UITextField()
-        if let textField = self.dpiField{
-            textField.tintColor = UIAppColorSet.getColor(.white)
-            textField.backgroundColor = UIAppColorSet.getColor(.clear)
-            textField.text = textForEnum.calculate.description
+        self.dpiButton = UIButton()
+        if let button = self.dpiButton{
+            button.tintColor = UIAppColorSet.getColor(.white)
+            button.backgroundColor = UIAppColorSet.getColor(.clear)
+            button.setTitle(textForEnum.calculate.description, for: .normal)
+            if let data = dpiCellData {
+                dpiButton?.setTitle(data.cellText, for: .normal)
+                dpiImage?.addImage(data.cellImage!)
+            }
         }
     }
 
     internal override func updateConstraints() {
-        self.dpiField?.snp.makeConstraints { (make) -> Void in
+        self.dpiButton?.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.topMargin).offset(3)
             make.right.equalToSuperview().offset(-3)
             make.left.equalToSuperview().offset(3)
@@ -44,5 +48,4 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
         self.backgroundColor = UIAppColorSet.getColor(.clear)
         super.updateConstraints()
     }
-
 }
