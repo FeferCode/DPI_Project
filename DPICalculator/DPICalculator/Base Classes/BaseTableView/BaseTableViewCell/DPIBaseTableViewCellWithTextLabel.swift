@@ -20,13 +20,23 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
     }
 
     override func didMoveToSuperview() {
-        self.configureButton()
+        self.configureCell()
         self.addSubview(self.dpiLabel!)
-        self.updateConstraints()
+        self.addSubview(self.dpiImage!)
+        setupConstrains()
     }
 
-    private func configureButton() {
+    func setupCellData(_ data: DPIMainTableDataModel) {
+        if let dpiLabel = self.dpiLabel, let image = self.dpiImage {
+            dpiLabel.text = data.cellText
+            image.addImage(data.cellImage!)
+        }
+    }
+
+    private func configureCell() {
+        self.backgroundColor = UIAppColorSet.getColor(.clear)
         self.dpiLabel = UILabel()
+        self.dpiImage = UIImageView()
         if let label = self.dpiLabel {
             label.textColor = UIAppColorSet.getColor(.white)
             label.backgroundColor = UIAppColorSet.getColor(.clear)
@@ -37,8 +47,7 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
         }
     }
 
-    internal override func updateConstraints() {
-
+    private func setupConstrains() {
         self.dpiImage?.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.topMargin).offset(3)
             make.right.equalToSuperview().offset(-20)
@@ -52,7 +61,6 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
             make.left.equalToSuperview().offset(20)
             make.bottom.equalTo(snp.bottomMargin).offset(-3)
         }
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
         super.updateConstraints()
     }
 

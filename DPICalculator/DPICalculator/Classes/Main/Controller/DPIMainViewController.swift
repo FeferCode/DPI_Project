@@ -36,6 +36,8 @@ class DPIMainViewController: DPIBaseViewController {
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self, forCellReuseIdentifier: "TextLabelCell")
         myTableView.register(DPIBaseTableViewCellWithImageView.self, forCellReuseIdentifier: "ImageViewCell")
         myTableView.allowsSelection = false
+        myTableView.separatorInset = UIEdgeInsets.zero
+        myTableView.isScrollEnabled = false
         myTableView.dataSource = self
         myTableView.delegate = self
     }

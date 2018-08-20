@@ -10,6 +10,15 @@ import Foundation
 import Colours
 import UIKit
 
+enum colorSet {
+    case clear
+    case white
+    case black
+    case baseNavigationColor
+    case baseBackgroundColor
+
+}
+
 final class UIAppColorSet {
     static func getColor(_ colorSet:colorSet) -> UIColor {
         switch colorSet {
@@ -17,23 +26,24 @@ final class UIAppColorSet {
             return UIColor.clear
         case .white:
             return UIColor.white
-        case .watermelon:
-            return UIColor.watermelon()
-        case .tomato:
-            return UIColor.tomato()
-        case .grapefruit:
-            return UIColor.grapefruit()
-        case .strawberry:
-            return UIColor.strawberry()
+        case .black:
+            return UIColor.black
+        case .baseNavigationColor:
+            return UIColor.denim()
+        case .baseBackgroundColor:
+            return UIColor.pastelBlue()
         }
     }
 }
 
-enum colorSet {
-    case clear
-    case white
-    case watermelon
-    case tomato
-    case grapefruit
-    case strawberry
-}
+//enum blueColorSet {
+//    case robinEgg
+//    case pastelBlue
+//    case skyBlue
+//    case indigo //<- good
+//    case denim
+//    case blueberry
+//    case cornflower
+//    case wave
+//
+//}

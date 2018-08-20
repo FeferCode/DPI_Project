@@ -14,7 +14,7 @@ class BaseTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         UITabBar.appearance().backgroundColor = UIAppColorSet.getColor(.white)
-        UITabBar.appearance().barTintColor = UIAppColorSet.getColor(.watermelon)
+        UITabBar.appearance().barTintColor = UIAppColorSet.getColor(.baseNavigationColor)
         UITabBar.appearance().tintColor = UIAppColorSet.getColor(.white)
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barStyle = .default

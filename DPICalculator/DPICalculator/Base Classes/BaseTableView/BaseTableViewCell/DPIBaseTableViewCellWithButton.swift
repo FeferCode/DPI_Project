@@ -16,36 +16,42 @@ class DPIBaseTableViewCellWithButton: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func didMoveToSuperview() {
-        self.configureButton()
+        self.configureCell()
         self.addSubview(self.dpiButton!)
-        self.updateConstraints()
+        self.setupConstrains()
     }
 
-    private func configureButton() {
-        self.dpiButton = UIButton()
+    func setupCellData(_ data: DPIMainTableDataModel) {
+        if let button = self.dpiButton {
+            button.setTitle(data.cellText, for: .normal)
+            button.setTitle(textForEnum.calculate.description, for: .normal)
+            dpiImage?.addImage(data.cellImage!)
+        }
+    }
+
+    private func configureCell() {
+        self.backgroundColor = UIAppColorSet.getColor(.clear)
+        self.dpiButton = BaseButton()
         if let button = self.dpiButton{
             button.tintColor = UIAppColorSet.getColor(.white)
             button.backgroundColor = UIAppColorSet.getColor(.clear)
-            button.setTitle(textForEnum.calculate.description, for: .normal)
-            if let data = dpiCellData {
-                dpiButton?.setTitle(data.cellText, for: .normal)
-                dpiImage?.addImage(data.cellImage!)
-            }
+
+            button.setTitleColor(UIAppColorSet.getColor(.baseNavigationColor), for: .highlighted)
         }
     }
 
-    internal override func updateConstraints() {
+    private func setupConstrains() {
         self.dpiButton?.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(snp.topMargin).offset(3)
-            make.right.equalToSuperview().offset(-3)
-            make.left.equalToSuperview().offset(3)
-            make.bottom.equalTo(snp.bottomMargin).offset(-3)
+            make.top.equalTo(0)
+            make.right.equalToSuperview().offset(-50)
+            make.left.equalToSuperview().offset(50)
+            make.bottom.equalTo(0)
         }
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
+
         super.updateConstraints()
     }
+
 }

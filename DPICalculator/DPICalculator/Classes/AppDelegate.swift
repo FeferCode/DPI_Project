@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        let rootViewController = DPIViewControllers.getViewController(.mainViewController)
-//        let navigationController = BaseNavigationController(rootViewController: rootViewController)
-
         window = UIWindow(frame: UIScreen.main.bounds)
         let tabBarViewController = BaseTabBarViewController()
         tabBarViewController.viewControllers = setupTabBarViewControllers()
@@ -27,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = BaseNavigationController(rootViewController: tabBarViewController)
 
         window!.rootViewController = navigationController
+        window!.tintColor = UIAppColorSet.getColor(.white)
         window!.makeKeyAndVisible()
         return true
     }

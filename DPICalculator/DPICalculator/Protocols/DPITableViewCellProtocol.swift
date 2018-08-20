@@ -8,6 +8,13 @@
 
 import Foundation
 
-protocol DPITableViewCellProtocol {
-    
-}
+//protocol DPITableViewCellProtocol {
+//    var dpiCellData: DPIMainTableDataModel?
+//    func setupCellData(_ data: DPIMainTableDataModel)
+//
+//}
+//
+//extension DPITableViewCellProtocol {
+//    private func configureCell(){}
+//    private func setupConstrains(){}
+//}

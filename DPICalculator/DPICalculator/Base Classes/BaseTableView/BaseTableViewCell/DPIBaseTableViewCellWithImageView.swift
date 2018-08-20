@@ -15,26 +15,28 @@ class DPIBaseTableViewCellWithImageView: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func didMoveToSuperview() {
-        self.configureImageView()
+        self.configureCell()
         self.addSubview(self.dpiImage!)
-        self.updateConstraints()
+        self.setupConstrains()
     }
 
-    private func configureImageView() {
-        self.dpiImage = UIImageView()
+    func setupCellData(_ data: DPIMainTableDataModel) {
         if let image = self.dpiImage {
-            image.backgroundColor = UIAppColorSet.getColor(.clear)
-            if let data = dpiCellData {
-                image.addImage(data.cellImage!)
-            }
+            image.addImage(data.cellImage!)
         }
     }
 
-    internal override func updateConstraints() {
+    private func configureCell() {
+        self.dpiImage = UIImageView()
+        if let image = self.dpiImage {
+            image.backgroundColor = UIAppColorSet.getColor(.clear)
+        }
+    }
+
+    private func setupConstrains() {
         self.dpiImage?.snp.makeConstraints { (make) -> Void in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()

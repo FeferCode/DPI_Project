@@ -23,42 +23,45 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
         self.configureCell()
         self.addSubview(self.dpiField!)
         self.addSubview(self.dpiImage!)
-        self.updateConstraints()
+        self.setupConstrains()
+    }
+
+    func setupCellData(_ data: DPIMainTableDataModel) {
+        if let textField = self.dpiField, let image = self.dpiImage {
+            textField.placeholder = data.cellTextPlaceholder
+            image.addImage(data.cellImage!)
+        }
     }
 
     private func configureCell() {
+        self.backgroundColor = UIAppColorSet.getColor(.clear)
         self.dpiField = UITextField()
         self.dpiImage = UIImageView()
-        if let textField = self.dpiField, let image = self.dpiImage {
+        if let textField = self.dpiField {
 
             textField.tintColor = UIAppColorSet.getColor(.white)
             textField.backgroundColor = UIAppColorSet.getColor(.clear)
             textField.textColor = UIAppColorSet.getColor(.white)
             textField.keyboardType = .numberPad
-            textField.textAlignment = .center
-
-            if let data = dpiCellData {
-                textField.placeholder = data.cellTextPlaceholder
-                image.addImage(data.cellImage!)
-            }
+            textField.textAlignment = .left
+            textField.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
     }
 
-    internal override func updateConstraints() {
+    private func setupConstrains(){
         self.dpiImage?.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
-            make.height.equalTo(50)
-            make.width.equalTo(50)
-            make.left.equalTo(snp.leftMargin).offset(10)
+            make.height.equalTo(20)
+            make.width.equalTo(20)
+            make.left.equalToSuperview().offset(50)
         }
 
         self.dpiField?.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
-            make.right.equalTo(snp.rightMargin)
-            make.left.equalTo(100)
-
+            make.right.equalToSuperview().offset(-50)
+            make.left.equalToSuperview().offset(100)
+            make.top.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
         }
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
-        super.updateConstraints()
     }
 }

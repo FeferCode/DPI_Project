@@ -17,7 +17,7 @@ class DPIBaseViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = UIAppColorSet.getColor(.white)
     }
 
     override func didReceiveMemoryWarning() {
