@@ -53,13 +53,14 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
             make.centerY.equalToSuperview()
             make.height.equalTo(20)
             make.width.equalTo(20)
-            make.left.equalToSuperview().offset(50)
+            make.leading.equalToSuperview().offset(50)
         }
 
         self.dpiField?.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().offset(-50)
-            make.left.equalToSuperview().offset(100)
+            make.leading.equalToSuperview().offset(100)
+            make.trailing.equalToSuperview().offset(-50)
+
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
         }

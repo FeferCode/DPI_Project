@@ -32,11 +32,17 @@ extension DPIMainViewController {
                                          text: nil,
                                          placeholder: textForEnum.diagonalInInch.description)
 
-        let obj4 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withButton,
+        let obj4 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withTwoTextFields,
+                                         image: UIImage(assetIdentifier: UIImage.AssetIdentifier.aspect_ratio_dark),
+                                         text: nil,
+                                         placeholder: textForEnum.diagonalInInch.description)
+
+        let obj5 = DPIMainTableDataModel(type: DPIBaseTableViewStyleEnum.withButton,
                                          image: UIImage(assetIdentifier: UIImage.AssetIdentifier.calculate_light),
                                          text: textForEnum.calculate.description,
                                          placeholder: nil)
 
-        self.tableViewData = [obj0, obj1, obj2, obj3, obj4]
+
+        self.tableViewData = [obj0, obj1, obj2, obj3, obj4, obj5]
     }
 }

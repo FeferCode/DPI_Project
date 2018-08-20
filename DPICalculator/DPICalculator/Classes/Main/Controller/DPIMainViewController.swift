@@ -31,10 +31,17 @@ class DPIMainViewController: DPIBaseViewController {
     }
 
     private func setupTableView(){
-        myTableView.register(DPIBaseTableViewCellWithButton.self, forCellReuseIdentifier: "ButtonCell")
-        myTableView.register(DPIBaseTableViewCellWithTextField.self, forCellReuseIdentifier: "TextFieldCell")
-        myTableView.register(DPIBaseTableViewCellWithTextLabel.self, forCellReuseIdentifier: "TextLabelCell")
-        myTableView.register(DPIBaseTableViewCellWithImageView.self, forCellReuseIdentifier: "ImageViewCell")
+        myTableView.register(DPIBaseTableViewCellWithButton.self,
+                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withButton.rawValue)
+        myTableView.register(DPIBaseTableViewCellWithTextField.self,
+                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withTextField.rawValue)
+        myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,
+                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withTwoTextFields.rawValue)
+        myTableView.register(DPIBaseTableViewCellWithTextLabel.self,
+                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withLabel.rawValue)
+        myTableView.register(DPIBaseTableViewCellWithImageView.self,
+                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withImage.rawValue)
+
         myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero
         myTableView.isScrollEnabled = false

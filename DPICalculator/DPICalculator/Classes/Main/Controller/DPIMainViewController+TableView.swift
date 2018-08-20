@@ -19,19 +19,23 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
         let cellData = tableViewData[indexPath.row]
         switch cellData.cellType {
         case .withButton:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewStyleEnum.withButton.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
             cell.setupCellData(cellData)
             return cell
         case .withTextField:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
+            cell.setupCellData(cellData)
+            return cell
+        case .withTwoTextFields:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewStyleEnum.withTwoTextFields.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTwoTextFields
             cell.setupCellData(cellData)
             return cell
         case .withLabel:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TextLabelCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewStyleEnum.withLabel.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
             cell.setupCellData(cellData)
             return cell
         case .withImage:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell", for: indexPath as IndexPath) as! DPIBaseTableViewCellWithImageView
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewStyleEnum.withImage.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithImageView
             cell.setupCellData(cellData)
             return cell
         }
@@ -44,4 +48,10 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
         return 30
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        UIView.animate(withDuration: 2.0) {
+            cell.transform = CGAffineTransform.identity
+        }
+    }
 }

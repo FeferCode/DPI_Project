@@ -12,6 +12,7 @@ enum DPIBaseTableViewStyleEnum:String {
     case withButton = "withButton"
     case withLabel = "withLabel"
     case withTextField = "withTextField"
+    case withTwoTextFields = "withTwoTextFields"
     case withImage = "withImage"
 }
 
