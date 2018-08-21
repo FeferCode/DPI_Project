@@ -32,15 +32,15 @@ class DPIMainViewController: DPIBaseViewController {
 
     private func setupTableView(){
         myTableView.register(DPIBaseTableViewCellWithButton.self,
-                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withButton.rawValue)
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withButton.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextField.self,
-                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withTextField.rawValue)
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,
-                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withTwoTextFields.rawValue)
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTwoTextFields.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self,
-                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withLabel.rawValue)
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue)
         myTableView.register(DPIBaseTableViewCellWithImageView.self,
-                             forCellReuseIdentifier: DPIBaseTableViewStyleEnum.withImage.rawValue)
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue)
 
         myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero

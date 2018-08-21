@@ -10,7 +10,6 @@ import UIKit
 
 class DPIBaseTableViewCellWithTextField: UITableViewCell {
 
-    var dpiCellData: DPIMainTableDataModel?
     var dpiField: UITextField?
     var dpiImage: UIImageView?
 
@@ -20,25 +19,26 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
     }
 
     override func didMoveToSuperview() {
-        self.configureCell()
+        self.configureCellSubViews()
         self.addSubview(self.dpiField!)
         self.addSubview(self.dpiImage!)
         self.setupConstrains()
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
-        if let textField = self.dpiField, let image = self.dpiImage {
-            textField.placeholder = data.cellTextPlaceholder
-            image.addImage(data.cellImage!)
+        if let text = data.first?.cellTextPlaceholder {
+            self.dpiField?.placeholder = text
+        }
+        if let image = data.first?.cellImage {
+            self.dpiImage?.addImage(image)
         }
     }
 
-    private func configureCell() {
+    private func configureCellSubViews() {
         self.backgroundColor = UIAppColorSet.getColor(.clear)
         self.dpiField = UITextField()
         self.dpiImage = UIImageView()
         if let textField = self.dpiField {
-
             textField.tintColor = UIAppColorSet.getColor(.white)
             textField.backgroundColor = UIAppColorSet.getColor(.clear)
             textField.textColor = UIAppColorSet.getColor(.white)

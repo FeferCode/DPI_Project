@@ -10,7 +10,6 @@ import UIKit
 
 class DPIBaseTableViewCellWithButton: UITableViewCell {
 
-    var dpiCellData: DPIMainTableDataModel?
     var dpiButton:  UIButton?
     var dpiImage:   UIImageView?
 
@@ -19,20 +18,23 @@ class DPIBaseTableViewCellWithButton: UITableViewCell {
     }
 
     override func didMoveToSuperview() {
-        self.configureCell()
+        self.configureCellSubViews()
         self.addSubview(self.dpiButton!)
         self.setupConstrains()
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
-        if let button = self.dpiButton {
-            button.setTitle(data.cellText, for: .normal)
-            button.setTitle(textForEnum.calculate.description, for: .normal)
-            dpiImage?.addImage(data.cellImage!)
+
+        if let title = data.first?.cellText {
+            self.dpiButton?.setTitle(title, for: .normal)
         }
+        if let image = data.first?.cellImage {
+            dpiImage?.addImage(image)
+        }
+
     }
 
-    private func configureCell() {
+    private func configureCellSubViews() {
         self.backgroundColor = UIAppColorSet.getColor(.clear)
         self.dpiButton = BaseButton()
         if let button = self.dpiButton{

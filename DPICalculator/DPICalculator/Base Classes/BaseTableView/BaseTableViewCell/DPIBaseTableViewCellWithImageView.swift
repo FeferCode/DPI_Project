@@ -10,7 +10,6 @@ import UIKit
 
 class DPIBaseTableViewCellWithImageView: UITableViewCell {
 
-    var dpiCellData: DPIMainTableDataModel?
     var dpiImage: UIImageView?
 
     override func awakeFromNib() {
@@ -18,18 +17,18 @@ class DPIBaseTableViewCellWithImageView: UITableViewCell {
     }
 
     override func didMoveToSuperview() {
-        self.configureCell()
+        self.configureCellSubViews()
         self.addSubview(self.dpiImage!)
         self.setupConstrains()
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
-        if let image = self.dpiImage {
-            image.addImage(data.cellImage!)
+        if let image = data.first?.cellImage {
+             self.dpiImage?.addImage(image)
         }
     }
 
-    private func configureCell() {
+    private func configureCellSubViews() {
         self.dpiImage = UIImageView()
         if let image = self.dpiImage {
             image.backgroundColor = UIAppColorSet.getColor(.clear)

@@ -1,0 +1,37 @@
+//
+//  DPIMainViewController+CellForRow.swift
+//  DPICalculator
+//
+//  Created by Jakub Majewski on 21.08.2018.
+//  Copyright © 2018 Jakub Majewski. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension DPIMainViewController {
+    func cellForRow(_ cellData: DPIMainTableDataModel, _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+        switch cellData.cellType {
+        case .withButton:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withButton.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
+            cell.setupCellData(cellData)
+            return cell
+        case .withTextField:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
+            cell.setupCellData(cellData)
+            return cell
+        case .withTwoTextFields:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTwoTextFields.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTwoTextFields
+            cell.setupCellData(cellData)
+            return cell
+        case .withLabel:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
+            cell.setupCellData(cellData)
+            return cell
+        case .withImage:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithImageView
+            cell.setupCellData(cellData)
+            return cell
+        }
+    }
+}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DPIBaseTableViewStyleEnum:String {
+enum DPIBaseTableViewCellStyleEnum:String {
     case withButton = "withButton"
     case withLabel = "withLabel"
     case withTextField = "withTextField"
