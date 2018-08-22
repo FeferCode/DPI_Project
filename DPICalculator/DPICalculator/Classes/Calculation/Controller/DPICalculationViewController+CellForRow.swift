@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension DPIMainViewController {
+extension DPICalculationViewController {
     func cellForRow(_ cellData: DPIMainTableDataModel, _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         switch cellData.cellType {
         case .withButton:

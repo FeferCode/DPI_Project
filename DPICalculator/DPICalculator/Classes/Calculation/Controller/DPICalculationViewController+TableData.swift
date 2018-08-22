@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension DPIMainViewController {
+extension DPICalculationViewController {
     //MARK: - Only for testing
     func generateTestData(){
         let obj0 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withImage,

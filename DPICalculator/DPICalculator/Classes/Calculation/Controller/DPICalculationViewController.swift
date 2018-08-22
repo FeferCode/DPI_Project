@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPIMainViewController: DPIBaseViewController {
+class DPICalculationViewController: DPIBaseViewController {
 
     var myTableView: DPIBaseTableView!
     var tableViewData: [DPIMainTableDataModel]!

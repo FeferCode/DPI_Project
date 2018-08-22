@@ -26,7 +26,7 @@ final class DPIViewControllers {
     static func getViewController(_ viewController:viewControllerNavigationEnum) -> UIViewController {
         switch viewController {
         case .mainViewController:
-            return DPIMainViewController()
+            return DPICalculationViewController()
         case .noVC:
             return NoViewController()
         }

@@ -9,11 +9,23 @@
 import Foundation
 import UIKit
 
-extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSource {
 
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewData.count
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return tableViewData.count
+        default:
+            return 0
+        }
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -22,9 +34,6 @@ extension DPIMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if ((tableView.cellForRow(at: indexPath) as? DPIBaseTableViewCellWithButton) != nil) {
-            return 60
-        }
         return 30
     }
 
