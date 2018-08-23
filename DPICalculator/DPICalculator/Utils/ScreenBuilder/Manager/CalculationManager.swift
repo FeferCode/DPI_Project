@@ -9,30 +9,53 @@
 import Foundation
 
 class CalculationManager {
-    public static let share = CalculationManager()
-    private init(){
-        
+//    public static let share = CalculationManager()
+//    private init(){
+//
+//    }
+
+    func calculateAllData(ForScreen data:BaseScreenData) -> ScreenData {
+        var screenData = ScreenData()
+        screenData.setBaseData(data)
+
+        let ratio = calculateRatio(OnScreen: data)
+        screenData.setRatio(x: ratio.x,
+                            y: ratio.y,
+                            aspectRatio: ratio.aspectRatio)
+
+        let screenSize = calculateScreenSize(OnScreen: data)
+        screenData.setScreenSize(xInch: screenSize.xInch,
+                                 yInch: screenSize.yInch,
+                                 xCm: screenSize.xCm,
+                                 yCm: screenSize.yCm)
+
+        screenData.setWorkSurface(cm: (screenSize.xCm * screenSize.yCm),
+                                  inch: (screenSize.xInch * screenSize.yInch))
+
+        let pixels = numberOfPixels(OnScreen: data)
+        let megaPixels = numberOfMegaPixels(OnScreen: data)
+        screenData.setNumberOf(pixels: pixels,
+                               megaPixels: megaPixels)
+
+        let ppi = calculatePpi(OnScreen: data)
+        screenData.setPPI(ppi)
+        return screenData
     }
-    
-    func calculateAllData(ForScreen data:ScreenData){
-        
-    }
-    
-    
+
     
     //Calculate number of pixels in screen
-    func numberOfPixels(OnScreen data:ScreenData) -> Int {
+    private func numberOfPixels(OnScreen data:BaseScreenData) -> Int {
         return data.resolution.x * data.resolution.y
     }
     
     //Calculate roundet number of megapixels in screen
-    func numberOfMegaPixels(OnScreen data:ScreenData) -> Float {
+    private func numberOfMegaPixels(OnScreen data:BaseScreenData) -> Float {
         let number = data.resolution.x * data.resolution.y
         return (Float(number) / 1000).rounded(FloatingPointRoundingRule.awayFromZero) / 1000
     }
     
     //Calculate ratio and aspect ratio
-    func calculateRatio(OnScreen: ScreenData) -> (x:Int, y:Int, aspectRatio:Float) {
+    private func calculateRatio(OnScreen: BaseScreenData) -> (x:Int, y:Int, aspectRatio:Float) {
         var aspectRatio:Float
         
         if OnScreen.resolution.x > OnScreen.resolution.y {
@@ -58,7 +81,7 @@ class CalculationManager {
         return ((Int(aspectRatio * divider)), Int(divider))
     }
     
-    func calculateScreenWidthAndHeight(OnScreen: ScreenData)  -> (xInch:Float, yInch:Float, xCm:Float, yCm:Float) {
+    private func calculateScreenSize(OnScreen: BaseScreenData)  -> (xInch:Float, yInch:Float, xCm:Float, yCm:Float) {
         let x = OnScreen.resolution.x
         let y = OnScreen.resolution.y
         let inch = OnScreen.screenDiagonalInInch
@@ -76,7 +99,7 @@ class CalculationManager {
     }
     
     //Calculate PPI
-    func calculatePpi(OnScreen:ScreenData) -> Float{
+    private func calculatePpi(OnScreen:BaseScreenData) -> Float{
         let ppi = (pow(Float(OnScreen.resolution.x), 2) + pow(Float(OnScreen.resolution.y), 2)).squareRoot() / OnScreen.screenDiagonalInInch
         let roundetPpi = ppi.rounded()
         return roundetPpi

@@ -26,23 +26,30 @@ extension DPICalculationViewController: DPICellDelegate {
 
     //MARK :- For testing right now
     private func calculate(){
-        if dataForCalculation.x != 0, dataForCalculation.y != 0, dataForCalculation.diagonal != 0 {
+        guard dataForCalculation.x != 0,
+            dataForCalculation.y != 0,
+            dataForCalculation.diagonal != 0 else { return }
 
-            createMonitor(x: dataForCalculation.x,
-                          y: dataForCalculation.y,
-                          diagonal: dataForCalculation.diagonal)
-        }
+        guard let baseScreenData = createMonitor(x: dataForCalculation.x,
+                                                 y: dataForCalculation.y,
+                                                 diagonal: dataForCalculation.diagonal) else { return }
+
+        let screenData = CalculationManager().calculateAllData(ForScreen: baseScreenData)
+        screenData.printTypesOfProperties()
+
     }
 
-    private func createMonitor(x:Int, y:Int, diagonal:Float){
-        let display = ScreenDataBuilder  { builder in
+    private func createMonitor(x:Int, y:Int, diagonal:Float) -> BaseScreenData?{
+        let display = BaseScreenDataBuilder  { builder in
             builder.resolution.x = x
             builder.resolution.y = y
             builder.screenDiagonalInInch = diagonal
         }
 
-        if let monitor = ScreenData(builder: display) {
+        if let monitor = BaseScreenData(builder: display) {
             print(monitor.description)
+            return monitor
         }
+        return nil
     }
 }

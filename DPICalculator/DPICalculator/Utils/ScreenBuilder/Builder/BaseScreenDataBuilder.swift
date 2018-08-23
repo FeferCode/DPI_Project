@@ -8,14 +8,15 @@
 
 import Foundation
 
-class ScreenDataBuilder {
+class BaseScreenDataBuilder {
     
     var resolution: (x:Int?,y:Int?)
     var screenDiagonalInInch:Float?
     
-    typealias BuilderClosure = (ScreenDataBuilder) -> ()
+    typealias BuilderClosure = (BaseScreenDataBuilder) -> ()
     
     init(builder: BuilderClosure) {
         builder(self)
     }
 }
+

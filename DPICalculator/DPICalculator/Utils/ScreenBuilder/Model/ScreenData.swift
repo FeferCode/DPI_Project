@@ -2,76 +2,76 @@
 //  ScreenData.swift
 //  DPICalculator
 //
-//  Created by Jakub Majewski on 20.02.2018.
+//  Created by Jakub Majewski on 23.08.2018.
 //  Copyright © 2018 Jakub Majewski. All rights reserved.
 //
 
 import Foundation
 
+struct ScreenData {
 
-struct ScreenData: CustomStringConvertible {
-    
-    var resolution: (x:Int,y:Int)
-    var screenDiagonalInInch:Float
-    var data:Date
-    
-    init?(builder: ScreenDataBuilder){
-        if let x = builder.resolution.x, let y = builder.resolution.y, let diagonal = builder.screenDiagonalInInch {
-            resolution.x = x
-            resolution.y = y
-            screenDiagonalInInch = diagonal
-            data = Date()
-        } else {
-            return nil
-        }
+    public private(set) var resolution: (x:Int,y:Int) = (0,0)
+    public private(set) var screenDiagonalInInch:Float = 0
+    public private(set) var ratio: (x: Int, y: Int) = (0,0)
+    public private(set) var aspectRatio: Float = 0
+
+    public private(set) var screenSizeInCm:(x:Float,y:Float) = (0,0)
+    public private(set) var screenSizeInInch:(x:Float,y:Float) = (0,0)
+
+    public private(set) var workSurfaceInCm:Float = 0
+    public private(set) var workSurfaceInInch:Float = 0
+
+    public private(set) var numberOfPixels:Int = 0
+    public private(set) var numberOfMegaPixels:Float = 0
+    public private(set) var PPI:Float = 0
+
+    mutating func setBaseData(_ data:BaseScreenData){
+        self.resolution.x = data.resolution.x
+        self.resolution.y = data.resolution.y
+        self.screenDiagonalInInch = data.screenDiagonalInInch
     }
-    var description:String {
-        return "Resolution: \(resolution.x)x\(resolution.y) with \(screenDiagonalInInch)\""
+
+    mutating func setRatio(x:Int, y:Int, aspectRatio:Float){
+        self.ratio.x = x
+        self.ratio.y = y
+        self.aspectRatio = aspectRatio
+    }
+
+    mutating func setScreenSize(xInch:Float, yInch:Float, xCm:Float, yCm:Float){
+        self.screenSizeInCm.x = xCm
+        self.screenSizeInCm.y = yCm
+        self.screenSizeInInch.x = xInch
+        self.screenSizeInInch.y = yInch
+    }
+
+    mutating func setWorkSurface(cm: Float, inch: Float){
+        self.workSurfaceInCm = cm
+        self.workSurfaceInInch = inch
+    }
+
+    mutating func setNumberOf(pixels: Int, megaPixels: Float){
+        self.numberOfPixels = pixels
+        self.numberOfMegaPixels = megaPixels
+    }
+
+    mutating func setPPI(_ ppi: Float){
+        self.PPI = Float(ppi)
+
+    }
+
+    func printTypesOfProperties(){
+        print("=========================")
+        print("Screen size: \(self.screenDiagonalInInch) inch")
+        print("Resolution: \(self.resolution.x) : \(self.resolution.y)")
+        print("Ratio: \(self.ratio.x) : \(self.ratio.y)")
+        print("Aspect ratio: \(self.aspectRatio)")
+        print("Screen size (cm): \(self.screenSizeInCm.x) : \(self.screenSizeInCm.y)")
+        print("Work surface (cm): \(self.workSurfaceInCm)")
+        print("Screen size (inch): \(self.screenSizeInInch.x) : \(self.screenSizeInInch.y)")
+        print("Work surface (inch): \(self.workSurfaceInInch)")
+        print("Number of pixels: \(self.numberOfPixels)")
+        print("Number of megapiksels: \(self.numberOfMegaPixels) Mpix")
+        print("Screen PPI: \(self.PPI)")
+        print("=========================")
     }
 }
-//internal class ScreenData {
-//    private(set) var id: Int = 0
-//    private(set) var company:String = ""
-//    private(set) var model:String = ""
-//    private(set) var year: Int = 0
-//    private(set) var date: Date = Date()
-//
-//    private(set) var resolution: (x:Int,y:Int) = (0,0)
-//    private(set) var screenDiagonalInInch:Float = 0
-//    private(set) var ratio: (x: Int, y: Int) = (0,0)
-//    private(set) var aspectRatio: (x: Float, y: Float) = (0,0)
-//
-//    private(set) var screenSizeInCm:(x:Float,y:Float) = (0,0)
-//    private(set) var screenSizeInInch:(x:Float,y:Float) = (0,0)
-//
-//    private(set) var workSurfaceInCm:Float = 0
-//    private(set) var workSurfaceInInch:Float = 0
-//
-//    private(set) var numberOfPixels:Int = 0
-//    private(set) var numberOfMegaPixels:Float = 0
-//    private(set) var PPI:Float = 0
-//
-//
-//
-//    func printTypesOfProperties(){
-//        print("=========================")
-//        print("ID: \(self.id)")
-//        print("Create date: \(self.date)")
-//        print("Company: \(self.company)")
-//        print("Model: \(self.model)")
-//        print("Year of production: \(self.year)")
-//        print("Screen size: \(self.screenDiagonalInInch) inch")
-//        print("Resolution: \(self.resolution.x) : \(self.resolution.y)")
-//        print("Ratio\(self.ratio)")
-//        print("Aspect ratio: \(self.aspectRatio.x):\(self.aspectRatio.y)")
-//        print("Screen size (cm): \(self.screenSizeInCm.x) : \(self.screenSizeInCm.y)")
-//        print("Work surface (cm):\(self.workSurfaceInCm)")
-//        print("Screen size (inch): \(self.screenSizeInInch.x) : \(self.screenSizeInInch.y)")
-//        print("Work surface (inch): \(self.workSurfaceInInch)")
-//        print("Number of pixels: \(self.numberOfPixels)")
-//        print("Number of megapiksels: \(self.numberOfMegaPixels) Mpix")
-//        print("Screen PPI: \(self.PPI)")
-//        print()
-//    }
-//}
-
