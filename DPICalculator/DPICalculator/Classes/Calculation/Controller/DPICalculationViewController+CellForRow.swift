@@ -19,6 +19,7 @@ extension DPICalculationViewController {
         case .withTextField:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
             cell.setupCellData(cellData)
+            cell.delegate = self
             return cell
         case .withTwoTextFields:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTwoTextFields.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTwoTextFields

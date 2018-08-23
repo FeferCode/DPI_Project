@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSource {
+extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSource, DPICellDelegate {
 
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,8 +39,13 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-        UIView.animate(withDuration: 2.0) {
+        UIView.animate(withDuration: 1.0) {
             cell.transform = CGAffineTransform.identity
         }
+    }
+
+    //MARK: - event from cell
+    func userEndEditingCell(dataType: DPIUserCellDataEnum, value: Float) {
+        print("\(dataType):\(value)")
     }
 }

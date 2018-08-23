@@ -8,10 +8,13 @@
 
 import UIKit
 
-class DPIBaseTableViewCellWithTextField: UITableViewCell {
+class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
 
     var dpiField: UITextField?
     var dpiImage: UIImageView?
+
+    weak var delegate: DPICellDelegate?
+    var cellDataType: DPIUserCellDataEnum?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +35,9 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
         if let image = data.first?.cellImage {
             self.dpiImage?.addImage(image)
         }
+        if let dataType = data.first?.cellDataType {
+            self.cellDataType = dataType
+        }
     }
 
     private func configureCellSubViews() {
@@ -45,6 +51,7 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
             textField.keyboardType = .numberPad
             textField.textAlignment = .left
             textField.font = UIFont.boldSystemFont(ofSize: 12.0)
+            textField.delegate = self
         }
     }
 
@@ -64,5 +71,15 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell {
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
         }
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let dataType = self.cellDataType, let value = dpiField?.text else {
+            return
+        }
+        guard let numberValue = Float(String(format:"%.2f", (Float)(value)!)) else {
+            return
+        }
+        delegate?.userEndEditingCell(dataType: dataType, value: numberValue)
     }
 }

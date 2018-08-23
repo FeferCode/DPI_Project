@@ -30,10 +30,12 @@ struct DPIMainTableCellDataModel {
     let cellImage: UIImage?
     let cellText: String?
     let cellTextPlaceholder: String?
+    let cellDataType:DPIUserCellDataEnum?
 
-    init(image: UIImage?, text: String?, placeholder:String?){
+    init(image: UIImage?, text: String?, placeholder:String?, dataType: DPIUserCellDataEnum?){
         self.cellImage = image
         self.cellText = text
         self.cellTextPlaceholder = placeholder
+        self.cellDataType = dataType
     }
 }

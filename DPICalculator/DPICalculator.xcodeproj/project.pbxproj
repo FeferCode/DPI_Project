@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15707C2A612833FD230FCAFA /* Pods_DPICalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD76061BF6D78574090EF696 /* Pods_DPICalculator.framework */; };
-		600687E1211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E0211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift */; };
 		600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E5211E32DF00A0158E /* NavigationEnum.swift */; };
 		600687EA211E356600A0158E /* NoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E9211E356600A0158E /* NoViewController.swift */; };
 		600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687EB211E483900A0158E /* UIAppColorSet.swift */; };
@@ -28,7 +27,7 @@
 		604FA528212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */; };
 		605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1121230D3700EED3CD /* DPICellFactory.swift */; };
 		605A9F15212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */; };
-		605A9F17212319E700EED3CD /* DPITableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F16212319E700EED3CD /* DPITableViewCellProtocol.swift */; };
+		605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F16212319E700EED3CD /* DPICellDelegate.swift */; };
 		605A9F1921231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1821231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift */; };
 		605A9F1D2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */; };
 		605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		034E1F224334B4A6365E3826 /* Pods-DPICalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPICalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator.release.xcconfig"; sourceTree = "<group>"; };
-		600687E0211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseViewControllerProtocol.swift; sourceTree = "<group>"; };
 		600687E5211E32DF00A0158E /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 		600687E9211E356600A0158E /* NoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoViewController.swift; sourceTree = "<group>"; };
 		600687EB211E483900A0158E /* UIAppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppColorSet.swift; sourceTree = "<group>"; };
@@ -74,7 +72,7 @@
 		604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTwoTextFields.swift; sourceTree = "<group>"; };
 		605A9F1121230D3700EED3CD /* DPICellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICellFactory.swift; sourceTree = "<group>"; };
 		605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithButton.swift; sourceTree = "<group>"; };
-		605A9F16212319E700EED3CD /* DPITableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPITableViewCellProtocol.swift; sourceTree = "<group>"; };
+		605A9F16212319E700EED3CD /* DPICellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICellDelegate.swift; sourceTree = "<group>"; };
 		605A9F1821231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellStyleEnum.swift; sourceTree = "<group>"; };
 		605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTextField.swift; sourceTree = "<group>"; };
 		605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTextLabel.swift; sourceTree = "<group>"; };
@@ -134,8 +132,7 @@
 		600687DF211D8F8600A0158E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				600687E0211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift */,
-				605A9F16212319E700EED3CD /* DPITableViewCellProtocol.swift */,
+				605A9F16212319E700EED3CD /* DPICellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -512,8 +509,7 @@
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* TextForEnum.swift in Sources */,
-				605A9F17212319E700EED3CD /* DPITableViewCellProtocol.swift in Sources */,
-				600687E1211D8FA700A0158E /* DPIBaseViewControllerProtocol.swift in Sources */,
+				605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
 				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				60E0E9AA203BFC740086629C /* ScreenData.swift in Sources */,
