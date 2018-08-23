@@ -11,7 +11,9 @@ import UIKit
 class DPICalculationViewController: DPIBaseViewController {
 
     var myTableView: DPIBaseTableView!
-    var tableViewData: [DPIMainTableDataModel]!
+    var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var calculationsDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0)
 
     override func viewDidLoad() {
         setupViewsForController()
@@ -24,7 +26,7 @@ class DPICalculationViewController: DPIBaseViewController {
 
     //MARK :- Setup Views
     private func setupViewsForController(){
-        self.generateTestData()
+        self.generateCalculationsCells()
         self.baseView = DPIMainView()
         self.myTableView = (baseView as! DPIMainView).tableView
         setupTableView()
@@ -48,19 +50,4 @@ class DPICalculationViewController: DPIBaseViewController {
         myTableView.dataSource = self
         myTableView.delegate = self
     }
-
-    //MARK :- For testing right now
-    func createMonitor(){
-        let display = ScreenDataBuilder  { builder in
-            builder.resolution.x = 3840
-            builder.resolution.y = 2160
-            builder.screenDiagonalInInch = 27
-        }
-
-        if let monitor = ScreenData(builder: display) {
-            print(monitor.description)
-        }
-    }
 }
-
-

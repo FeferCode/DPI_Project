@@ -11,9 +11,9 @@ import Foundation
 
 struct ScreenData: CustomStringConvertible {
     
-    var data:Date
     var resolution: (x:Int,y:Int)
     var screenDiagonalInInch:Float
+    var data:Date
     
     init?(builder: ScreenDataBuilder){
         if let x = builder.resolution.x, let y = builder.resolution.y, let diagonal = builder.screenDiagonalInInch {
