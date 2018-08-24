@@ -21,16 +21,23 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
         case 0:
             return calculetedDataForCell.count
         case 1:
-            return calculationsDataForCell.count
+            return cellsDataForCalculation.count
         default:
-            return 0
+            return 01280
         }
 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellData = calculationsDataForCell[indexPath.row]
-        return cellForRow(cellData, tableView, indexPath)
+        if indexPath.section == 0 {
+            let cellData = calculetedDataForCell[indexPath.row]
+            return cellForRow(cellData, tableView, indexPath)
+        } else {
+            let cellData = cellsDataForCalculation[indexPath.row]
+            return cellForRow(cellData, tableView, indexPath)
+        }
+
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -38,7 +45,8 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+
+        cell.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         UIView.animate(withDuration: 1.0) {
             cell.transform = CGAffineTransform.identity
         }

@@ -59,7 +59,7 @@ struct ScreenData {
 
     }
 
-    func printTypesOfProperties(){
+    func printAllProperties(){
         print("=========================")
         print("Screen size: \(self.screenDiagonalInInch) inch")
         print("Resolution: \(self.resolution.x) : \(self.resolution.y)")

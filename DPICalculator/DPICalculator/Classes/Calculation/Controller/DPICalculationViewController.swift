@@ -12,8 +12,10 @@ class DPICalculationViewController: DPIBaseViewController {
 
     var myTableView: DPIBaseTableView!
     var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
-    var calculationsDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+
     var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0)
+    var screenData: ScreenData?
 
     override func viewDidLoad() {
         setupViewsForController()
@@ -26,7 +28,7 @@ class DPICalculationViewController: DPIBaseViewController {
 
     //MARK :- Setup Views
     private func setupViewsForController(){
-        self.generateCalculationsCells()
+        self.generateDataForCalculationsCells()
         self.baseView = DPIMainView()
         self.myTableView = (baseView as! DPIMainView).tableView
         setupTableView()
@@ -41,6 +43,8 @@ class DPICalculationViewController: DPIBaseViewController {
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTwoTextFields.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue)
+        myTableView.register(DPIBaseTableViewCellWithTwoTextLabels.self,
+                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTwoLabels.rawValue)
         myTableView.register(DPIBaseTableViewCellWithImageView.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue)
 

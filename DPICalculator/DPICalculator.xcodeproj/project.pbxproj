@@ -42,6 +42,7 @@
 		60A323DB202F1F5B00B732E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A323DA202F1F5B00B732E4 /* Assets.xcassets */; };
 		60A323DE202F1F5B00B732E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A323DC202F1F5B00B732E4 /* LaunchScreen.storyboard */; };
 		60BDC888212ED1A5007FD834 /* ScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDC887212ED1A5007FD834 /* ScreenData.swift */; };
+		60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */; };
 		60CE84D7212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */; };
 		60CE84DB212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */; };
 		60CE84DD212ECF000031FF86 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84DC212ECF000031FF86 /* File.swift */; };
@@ -92,6 +93,7 @@
 		60A323DD202F1F5B00B732E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60A323DF202F1F5B00B732E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60BDC887212ED1A5007FD834 /* ScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenData.swift; sourceTree = "<group>"; };
+		60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTwoTextLabels.swift; sourceTree = "<group>"; };
 		60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+Calculations.swift"; sourceTree = "<group>"; };
 		60CE84DC212ECF000031FF86 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				604FA51F2129EBA000C7E995 /* DPIBaseTableViewCellWithImageView.swift */,
 				605A9F14212319C000EED3CD /* DPIBaseTableViewCellWithButton.swift */,
 				605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */,
+				60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */,
 				605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */,
 				604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */,
 			);
@@ -515,6 +518,7 @@
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
 				605A9F292123861400EED3CD /* UIButton+SetImagePosition.swift in Sources */,
+				60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */,
 				605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				60CE84DD212ECF000031FF86 /* File.swift in Sources */,

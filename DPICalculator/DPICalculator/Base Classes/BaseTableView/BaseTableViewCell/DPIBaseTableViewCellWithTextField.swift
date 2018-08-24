@@ -12,13 +12,12 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
 
     var dpiField: UITextField?
     var dpiImage: UIImageView?
-
+    var typingTime: Timer?
     weak var delegate: DPICellDelegate?
     var cellDataType: DPIUserCellDataEnum?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func didMoveToSuperview() {
@@ -53,6 +52,7 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
             textField.font = UIFont.boldSystemFont(ofSize: 12.0)
             textField.delegate = self
         }
+        self.dpiField?.addTarget(self, action: #selector(textFieldDidEditingChanged(_:)), for: .editingChanged)
     }
 
     private func setupConstrains(){
@@ -73,7 +73,16 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
         }
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    @objc func textFieldDidEditingChanged(_ textField: UITextField) {
+        if typingTime != nil {
+            typingTime?.invalidate()
+            typingTime = nil
+        }
+
+        typingTime = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sendDataForCalculation(_:)), userInfo: textField.text!, repeats: false)
+    }
+
+    @objc func sendDataForCalculation(_ timer: Timer) {
         guard let dataType = self.cellDataType, let value = dpiField?.text else {
             return
         }

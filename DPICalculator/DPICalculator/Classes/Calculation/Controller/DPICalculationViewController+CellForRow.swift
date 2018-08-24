@@ -29,6 +29,10 @@ extension DPICalculationViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextLabel
             cell.setupCellData(cellData)
             return cell
+        case .withTwoLabels:
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTwoLabels.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTwoTextLabels
+            cell.setupCellData(cellData)
+            return cell
         case .withImage:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithImageView
             cell.setupCellData(cellData)

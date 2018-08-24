@@ -16,7 +16,6 @@ class DPIBaseTableViewCellWithTwoTextFields: UITableViewCell {
     var dpiImageTwo: UIImageView?
     var dpiFieldTwo: UITextField?
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
 

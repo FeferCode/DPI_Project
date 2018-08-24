@@ -21,6 +21,9 @@ extension DPICalculationViewController: DPICellDelegate {
             dataForCalculation.diagonal = value
         }
         self.calculate()
+        self.generateDataForCells()
+        
+        self.myTableView.reloadSections([0], with: .middle)
     }
 
 
@@ -35,7 +38,8 @@ extension DPICalculationViewController: DPICellDelegate {
                                                  diagonal: dataForCalculation.diagonal) else { return }
 
         let screenData = CalculationManager().calculateAllData(ForScreen: baseScreenData)
-        screenData.printTypesOfProperties()
+        screenData.printAllProperties()
+        self.screenData = screenData
 
     }
 
