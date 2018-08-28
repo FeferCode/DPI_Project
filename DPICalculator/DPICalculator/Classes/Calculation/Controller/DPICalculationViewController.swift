@@ -19,7 +19,6 @@ class DPICalculationViewController: DPIBaseViewController {
 
     override func viewDidLoad() {
         setupViewsForController()
-        self.view = baseView
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,15 +26,12 @@ class DPICalculationViewController: DPIBaseViewController {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1 {
-            let header = UIView()
-            let label = UILabel()
-            label.text = "wtf"
-            header.addSubview(label)
-            header.backgroundColor = UIColor.red
-            return header
-        }
-        return nil
+        return getHeader(for: tableView, section: section)
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 && calculetedDataForCell.count == 0 { return 0 }
+        return 40
     }
 
     //MARK :- Setup Views
@@ -43,10 +39,14 @@ class DPICalculationViewController: DPIBaseViewController {
         self.dataForCalculationsCells()
         self.baseView = DPIMainView()
         self.myTableView = (baseView as! DPIMainView).tableView
+        self.view = baseView
         setupTableView()
     }
 
     private func setupTableView(){
+        myTableView.register(DPIBaseTableViewHeader.self,
+                             forHeaderFooterViewReuseIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue)
+
         myTableView.register(DPIBaseTableViewCellWithTextField.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,

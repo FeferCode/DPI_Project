@@ -23,7 +23,7 @@ extension DPICalculationViewController: DPICellDelegate {
         }
         self.calculate()
         self.calculatedDataForCells()
-        
+
         self.myTableView.reloadSections([0], with: .middle)
     }
 
@@ -59,6 +59,8 @@ extension DPICalculationViewController: DPICellDelegate {
 
     func resetCalculation() {
         self.calculetedDataForCell.removeAll()
+
+//        self.myTableView.performBatchUpdates(<#T##updates: (() -> Void)?##(() -> Void)?##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
         self.myTableView.reloadSections([0], with: .middle)
     }
 }

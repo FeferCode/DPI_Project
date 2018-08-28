@@ -15,3 +15,8 @@ enum DPIBaseTableViewCellStyleEnum:String {
     case withTwoTextFields = "withTwoTextFields"
 }
 
+enum DPIBaseTableViewHeaderFooterEnum:String {
+    case headerView = "headerView"
+    case footerView = "footerView"
+}
+

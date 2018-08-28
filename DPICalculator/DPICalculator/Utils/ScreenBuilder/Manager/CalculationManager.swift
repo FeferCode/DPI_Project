@@ -9,10 +9,6 @@
 import Foundation
 
 class CalculationManager {
-//    public static let share = CalculationManager()
-//    private init(){
-//
-//    }
 
     func calculateAllData(ForScreen data:BaseScreenData) -> ScreenData {
         var screenData = ScreenData()
