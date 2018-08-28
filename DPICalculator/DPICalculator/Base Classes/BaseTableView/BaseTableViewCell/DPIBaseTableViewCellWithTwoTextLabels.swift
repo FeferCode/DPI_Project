@@ -28,16 +28,16 @@ class DPIBaseTableViewCellWithTwoTextLabels: UITableViewCell {
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
+        if let image = data.first?.cellImage {
+            self.dpiImage?.addImage(image)
+        }
+
         if let firstData = data.first {
             self.dpiFirstLabel?.text = firstData.cellText
         }
 
         if let secondData = data.second {
             self.dpiSecondLabel?.text = secondData.cellText
-        }
-
-        if let image = data.first?.cellImage {
-            self.dpiImage?.addImage(image)
         }
     }
 
@@ -67,14 +67,14 @@ class DPIBaseTableViewCellWithTwoTextLabels: UITableViewCell {
             make.height.equalTo(20)
             make.width.equalTo(20)
 
-            make.leading.equalToSuperview().offset(50)
+            make.leading.equalToSuperview().offset(25)
         }
 
         self.dpiFirstLabel?.snp.makeConstraints { (make) -> Void in
             make.centerY.equalToSuperview()
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
-
+            make.width.equalTo(140)
             make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
         }
 
@@ -84,7 +84,7 @@ class DPIBaseTableViewCellWithTwoTextLabels: UITableViewCell {
             make.bottom.equalToSuperview().offset(-5)
 
             make.leading.equalTo(dpiFirstLabel!.snp.trailing).offset(5)
-            make.trailing.equalToSuperview().offset(-50)
+            make.trailing.equalToSuperview().offset(-25)
         }
         super.updateConstraints()
     }

@@ -12,10 +12,6 @@ import UIKit
 extension DPICalculationViewController {
     func cellForRow(_ cellData: DPIMainTableDataModel, _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         switch cellData.cellType {
-        case .withButton:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withButton.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithButton
-            cell.setupCellData(cellData)
-            return cell
         case .withTextField:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
             cell.setupCellData(cellData)
@@ -31,10 +27,6 @@ extension DPICalculationViewController {
             return cell
         case .withTwoLabels:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTwoLabels.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTwoTextLabels
-            cell.setupCellData(cellData)
-            return cell
-        case .withImage:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithImageView
             cell.setupCellData(cellData)
             return cell
         }

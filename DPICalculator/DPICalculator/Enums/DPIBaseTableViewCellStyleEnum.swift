@@ -9,11 +9,9 @@
 import Foundation
 
 enum DPIBaseTableViewCellStyleEnum:String {
-    case withButton = "withButton"
     case withLabel = "withLabel"
     case withTwoLabels = "withTwoLabels"
     case withTextField = "withTextField"
     case withTwoTextFields = "withTwoTextFields"
-    case withImage = "withImage"
 }
 

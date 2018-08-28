@@ -26,17 +26,27 @@ class DPICalculationViewController: DPIBaseViewController {
         self.baseView.updateConstraints()
     }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            let header = UIView()
+            let label = UILabel()
+            label.text = "wtf"
+            header.addSubview(label)
+            header.backgroundColor = UIColor.red
+            return header
+        }
+        return nil
+    }
+
     //MARK :- Setup Views
     private func setupViewsForController(){
-        self.generateDataForCalculationsCells()
+        self.dataForCalculationsCells()
         self.baseView = DPIMainView()
         self.myTableView = (baseView as! DPIMainView).tableView
         setupTableView()
     }
 
     private func setupTableView(){
-        myTableView.register(DPIBaseTableViewCellWithButton.self,
-                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withButton.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextField.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,
@@ -45,8 +55,6 @@ class DPICalculationViewController: DPIBaseViewController {
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextLabels.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTwoLabels.rawValue)
-        myTableView.register(DPIBaseTableViewCellWithImageView.self,
-                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withImage.rawValue)
 
         myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero

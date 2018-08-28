@@ -86,6 +86,12 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
         guard let dataType = self.cellDataType, let value = dpiField?.text else {
             return
         }
+
+        if value.count == 0 {
+            delegate?.resetCalculation()
+            return
+        }
+
         guard let numberValue = Float(String(format:"%.2f", (Float)(value)!)) else {
             return
         }

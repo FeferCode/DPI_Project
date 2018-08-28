@@ -27,10 +27,36 @@ struct DPIMainTableDataModel {
 }
 
 struct DPIMainTableCellDataModel {
-    let cellImage: UIImage?
-    let cellText: String?
-    let cellTextPlaceholder: String?
-    let cellDataType:DPIUserCellDataEnum?
+    public private(set) var  cellImage: UIImage? = nil
+    public private(set) var  cellText: String?  = nil
+    public private(set) var  cellTextPlaceholder: String?  = nil
+    public private(set) var  cellDataType:DPIUserCellDataEnum?  = nil
+
+    init(text: String?){
+        self.cellText = text
+    }
+
+    init(image: UIImage?, text: String?){
+        self.cellImage = image
+        self.cellText = text
+    }
+
+    init(text: String?, dataType: DPIUserCellDataEnum?){
+        self.cellText = text
+        self.cellDataType = dataType
+    }
+
+    init(image: UIImage?, text: String?, dataType: DPIUserCellDataEnum?){
+        self.cellImage = image
+        self.cellText = text
+        self.cellDataType = dataType
+    }
+
+    init(image: UIImage?, placeholder:String?, dataType: DPIUserCellDataEnum?){
+        self.cellImage = image
+        self.cellTextPlaceholder = placeholder
+        self.cellDataType = dataType
+    }
 
     init(image: UIImage?, text: String?, placeholder:String?, dataType: DPIUserCellDataEnum?){
         self.cellImage = image

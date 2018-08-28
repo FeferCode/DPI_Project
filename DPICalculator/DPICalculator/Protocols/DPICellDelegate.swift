@@ -10,6 +10,7 @@ import Foundation
 
 protocol DPICellDelegate: AnyObject {
     func userEndEditingCell(dataType: DPIUserCellDataEnum, value: Float)
+    func resetCalculation()
 }
 
 enum DPIUserCellDataEnum {

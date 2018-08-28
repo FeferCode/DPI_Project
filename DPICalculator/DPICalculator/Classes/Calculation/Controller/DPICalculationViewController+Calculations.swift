@@ -9,6 +9,7 @@
 import Foundation
 
 extension DPICalculationViewController: DPICellDelegate {
+
     //MARK: - event from cell
     func userEndEditingCell(dataType: DPIUserCellDataEnum, value: Float) {
 
@@ -21,7 +22,7 @@ extension DPICalculationViewController: DPICellDelegate {
             dataForCalculation.diagonal = value
         }
         self.calculate()
-        self.generateDataForCells()
+        self.calculatedDataForCells()
         
         self.myTableView.reloadSections([0], with: .middle)
     }
@@ -55,5 +56,10 @@ extension DPICalculationViewController: DPICellDelegate {
             return monitor
         }
         return nil
+    }
+
+    func resetCalculation() {
+        self.calculetedDataForCell.removeAll()
+        self.myTableView.reloadSections([0], with: .middle)
     }
 }

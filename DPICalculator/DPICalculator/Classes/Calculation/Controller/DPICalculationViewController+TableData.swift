@@ -12,132 +12,92 @@ import UIKit
 extension DPICalculationViewController {
     //MARK: - Only for testing
     //MARK: - Cells for displaying data from calculations, section 0
-    func generateDataForCells(){
+    func calculatedDataForCells(){
         guard let data = self.screenData else {
             return
         }
 
-        let obj0 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let resolution = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Resolution: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.resolution)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.resolution.x))x\(String(describing: data.resolution.y))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.resolution.x))x\(String(describing: data.resolution.y))"))
 
-        let obj1 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let ratio = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Ratio: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.ratio)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.ratio.x)):\(String(describing: data.ratio.y))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.ratio.x)):\(String(describing: data.ratio.y))"))
 
-        let obj2 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let aspectRatio = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Aspect ratio: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.aspectRatio)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.aspectRatio))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.aspectRatio))"))
 
-        let obj3 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let pixelsPerInch = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Pixels per inch: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.pixelsPerInch)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.PPI))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.PPI))"))
 
         let obj4 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Screen size (inch): ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.screenSizeInch)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.screenSizeInInch.x))x\(String(describing: data.screenSizeInInch.y))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.screenSizeInInch.x)) x \(String(describing: data.screenSizeInInch.y))"))
+
         let obj5 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Workspace (inch): ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.workspaceInch)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.workSurfaceInInch))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.workSurfaceInInch))"))
 
         let obj6 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Screen size (cm): ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.screenSizeCM)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.screenSizeInCm.x))x\(String(describing: data.screenSizeInCm.y))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.screenSizeInCm.x)) x \(String(describing: data.screenSizeInCm.y))"))
+
         let obj7 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Workspace (cm): ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.workspaceCm)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.workSurfaceInCm))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.workSurfaceInCm))"))
+
         let obj8 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Number of pixels: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.numberOfPixels)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.numberOfPixels))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.numberOfPixels))"))
+
         let obj9 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: "Number of megapixels: ",
-                                                                              placeholder: nil,
-                                                                              dataType: nil),
+                                                                              text: String.textForCalculeted(.numberOfMegapixels)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: "\(String(describing: data.numberOfMegaPixels))",
-                                                                               placeholder: nil,
-                                                                               dataType: nil))
+                                                                               text: "\(String(describing: data.numberOfMegaPixels))"))
 
-
-        self.calculetedDataForCell = [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9]
+        self.calculetedDataForCell = [resolution, ratio, aspectRatio, pixelsPerInch, obj4, obj5, obj6, obj7, obj8, obj9]
     }
     
     //MARK: - cells for calculations, section 1
-    func generateDataForCalculationsCells(){
+    func dataForCalculationsCells(){
 
-        let obj0 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                         firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: nil,
-                                                                              placeholder: textForEnum.xPixel.description,
+        let xPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
+                                            firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
+                                                                              placeholder: String.textForCalculations(.xPixel),
                                                                               dataType: .xPixels))
 
-        let obj1 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                         firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.height_dark),
-                                                                              text: nil,
-                                                                              placeholder: textForEnum.yPixel.description,
+        let yPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
+                                            firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.height_dark),
+                                                                              placeholder: String.textForCalculations(.yPixel),
                                                                               dataType: .yPixels))
 
-        let obj2 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                         firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.aspect_ratio_dark),
-                                                                              text: nil,
-                                                                              placeholder: textForEnum.diagonalInInch.description,
+        let diagonalInInch = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
+                                                   firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.aspect_ratio_dark),
+                                                                              placeholder: String.textForCalculations(.diagonalInInch),
                                                                               dataType: .diagonalInInch))
 
-        self.cellsDataForCalculation = [obj0, obj1, obj2]
+        self.cellsDataForCalculation = [xPixels, yPixels, diagonalInInch]
     }
 }
