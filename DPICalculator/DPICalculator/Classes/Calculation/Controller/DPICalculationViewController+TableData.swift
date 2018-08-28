@@ -41,43 +41,43 @@ extension DPICalculationViewController {
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.PPI))"))
 
-        let obj4 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let screenSizeInInch = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.screenSizeInch)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.screenSizeInInch.x)) x \(String(describing: data.screenSizeInInch.y))"))
 
-        let obj5 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let workSurfaceInInch = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.workspaceInch)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.workSurfaceInInch))"))
 
-        let obj6 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let screenSizeInCm = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.screenSizeCM)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.screenSizeInCm.x)) x \(String(describing: data.screenSizeInCm.y))"))
 
-        let obj7 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let workSurfaceInCm = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.workspaceCm)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.workSurfaceInCm))"))
 
-        let obj8 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let numberOfPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.numberOfPixels)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.numberOfPixels))"))
 
-        let obj9 = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
+        let numberOfMegaPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
                                          firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                               text: String.textForCalculeted(.numberOfMegapixels)),
                                          secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: "\(String(describing: data.numberOfMegaPixels))"))
 
-        self.calculetedDataForCell = [resolution, ratio, aspectRatio, pixelsPerInch, obj4, obj5, obj6, obj7, obj8, obj9]
+        self.calculetedDataForCell = [resolution, ratio, aspectRatio, pixelsPerInch, screenSizeInInch, workSurfaceInInch, screenSizeInCm, workSurfaceInCm, numberOfPixels, numberOfMegaPixels]
     }
     
     //MARK: - cells for calculations, section 1

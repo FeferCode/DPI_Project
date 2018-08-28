@@ -52,7 +52,6 @@ extension DPICalculationViewController: DPICellDelegate {
         }
 
         if let monitor = BaseScreenData(builder: display) {
-            print(monitor.description)
             return monitor
         }
         return nil
