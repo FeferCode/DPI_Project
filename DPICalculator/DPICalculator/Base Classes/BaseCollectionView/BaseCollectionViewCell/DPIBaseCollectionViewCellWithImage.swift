@@ -1,14 +1,14 @@
 //
-//  DPIBaseTableViewCellWithTextLabel.swift
+//  DPIBaseCollectionViewCellWithImage.swift
 //  DPICalculator
 //
-//  Created by Jakub Majewski on 14.08.2018.
+//  Created by Jakub Majewski on 29.08.2018.
 //  Copyright © 2018 Jakub Majewski. All rights reserved.
 //
 
 import UIKit
 
-class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
+class DPIBaseCollectionViewCellWithImage: UICollectionViewCell {
 
     var dpiLabel: UILabel?
     var dpiImage: UIImageView?
@@ -20,18 +20,21 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
 
     override func didMoveToSuperview() {
         self.configureCellSubViews()
-        self.addSubview(self.dpiLabel!)
         self.addSubview(self.dpiImage!)
+        self.addSubview(self.dpiLabel!)
         setupConstrains()
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
-        if let text = data.first?.cellText {
-            self.dpiLabel?.text = text
-        }
+
         if let image = data.first?.cellImage {
             self.dpiImage?.addImage(image)
         }
+
+        if let text = data.first?.cellText {
+            self.dpiLabel?.text = text
+        }
+
     }
 
     private func configureCellSubViews() {
@@ -46,17 +49,16 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
 
     private func setupConstrains() {
         self.dpiImage?.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(snp.topMargin).offset(3)
-            make.right.equalToSuperview().offset(-20)
-            make.left.equalToSuperview().offset(20)
-            make.bottom.equalTo(snp.bottomMargin).offset(-3)
+            make.top.equalTo(snp.topMargin).offset(10)
+            make.leading.equalTo(snp.leftMargin).offset(-10)
+            make.trailing.equalTo(snp.rightMargin).offset(10)
         }
 
         self.dpiLabel?.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(snp.topMargin).offset(3)
-            make.right.equalToSuperview().offset(-20)
-            make.left.equalToSuperview().offset(20)
-            make.bottom.equalTo(snp.bottomMargin).offset(-3)
+            make.top.equalTo(snp.topMargin).offset(10)
+            make.leading.equalTo(snp.leftMargin).offset(-10)
+            make.trailing.equalTo(snp.rightMargin).offset(10)
+//            make.
         }
         super.updateConstraints()
     }

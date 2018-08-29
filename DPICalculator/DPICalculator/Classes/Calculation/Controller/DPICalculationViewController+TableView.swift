@@ -11,7 +11,17 @@ import UIKit
 
 extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSource {
 
+    //MARK: - Headers
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return getHeader(for: tableView, section: section)
+    }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 && calculetedDataForCell.count == 0 { return 0 }
+        return 40
+    }
+
+    //MARK: - Sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -23,18 +33,19 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
         case 1:
             return cellsDataForCalculation.count
         default:
-            return 01280
+            return 0
         }
 
     }
 
+    //MARK: - Cells for rows
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cellData = calculetedDataForCell[indexPath.row]
-            return cellForRow(cellData, tableView, indexPath)
+            return getCellForRow(cellData, tableView, indexPath)
         } else {
             let cellData = cellsDataForCalculation[indexPath.row]
-            return cellForRow(cellData, tableView, indexPath)
+            return getCellForRow(cellData, tableView, indexPath)
         }
 
 
@@ -44,6 +55,7 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
         return 30
     }
 
+    //MARK: - Animations
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
         cell.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)

@@ -18,20 +18,12 @@ class DPICalculationViewController: DPIBaseViewController {
     var screenData: ScreenData?
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupViewsForController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.baseView.updateConstraints()
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return getHeader(for: tableView, section: section)
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 && calculetedDataForCell.count == 0 { return 0 }
-        return 40
     }
 
     //MARK :- Setup Views

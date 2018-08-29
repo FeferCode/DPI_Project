@@ -15,6 +15,14 @@
 		600687F3211E52E400A0158E /* DPIMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687F2211E52E400A0158E /* DPIMainView.swift */; };
 		6008DE992135CB950024F6BA /* DPIBaseTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DE982135CB950024F6BA /* DPIBaseTableViewHeader.swift */; };
 		6008DE9B2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DE9A2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift */; };
+		6008DEA321368F8F0024F6BA /* DPIHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEA221368F8F0024F6BA /* DPIHistoryViewController.swift */; };
+		6008DEA5213690AB0024F6BA /* DPIBaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEA4213690AB0024F6BA /* DPIBaseCollectionView.swift */; };
+		6008DEA7213693B60024F6BA /* DPIHistoryViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEA6213693B60024F6BA /* DPIHistoryViewController+CollectionView.swift */; };
+		6008DEA9213695E90024F6BA /* DPIBaseCollectionViewCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEA8213695E90024F6BA /* DPIBaseCollectionViewCellWithImage.swift */; };
+		6008DEAB213696370024F6BA /* DPIBaseCollectionViewCellWithLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEAA213696370024F6BA /* DPIBaseCollectionViewCellWithLabels.swift */; };
+		6008DEAE2136ADF20024F6BA /* DPIHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEAD2136ADF20024F6BA /* DPIHistoryView.swift */; };
+		6008DEB021371ACB0024F6BA /* DPIBaseCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEAF21371ACB0024F6BA /* DPIBaseCollectionViewHeader.swift */; };
+		6008DEB2213728C80024F6BA /* DPIBaseCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6008DEB1213728C80024F6BA /* DPIBaseCollectionViewFlowLayout.swift */; };
 		6035F9BD2047D9C4004F5AED /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BC2047D9C4004F5AED /* DisplayData.swift */; };
 		6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */; };
 		604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D710A211EF67B00C4EABE /* DPIBaseContainerView.swift */; };
@@ -25,7 +33,6 @@
 		604FA524212B0E2900C7E995 /* DPICalculationViewController+TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA523212B0E2900C7E995 /* DPICalculationViewController+TableData.swift */; };
 		604FA526212B10F900C7E995 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA525212B10F900C7E995 /* BaseButton.swift */; };
 		604FA528212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */; };
-		605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1121230D3700EED3CD /* DPICellFactory.swift */; };
 		605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F16212319E700EED3CD /* DPICellDelegate.swift */; };
 		605A9F1921231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1821231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift */; };
 		605A9F1D2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */; };
@@ -61,6 +68,14 @@
 		600687F2211E52E400A0158E /* DPIMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIMainView.swift; sourceTree = "<group>"; };
 		6008DE982135CB950024F6BA /* DPIBaseTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewHeader.swift; sourceTree = "<group>"; };
 		6008DE9A2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+SectionHeader.swift"; sourceTree = "<group>"; };
+		6008DEA221368F8F0024F6BA /* DPIHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIHistoryViewController.swift; sourceTree = "<group>"; };
+		6008DEA4213690AB0024F6BA /* DPIBaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseCollectionView.swift; sourceTree = "<group>"; };
+		6008DEA6213693B60024F6BA /* DPIHistoryViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		6008DEA8213695E90024F6BA /* DPIBaseCollectionViewCellWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseCollectionViewCellWithImage.swift; sourceTree = "<group>"; };
+		6008DEAA213696370024F6BA /* DPIBaseCollectionViewCellWithLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseCollectionViewCellWithLabels.swift; sourceTree = "<group>"; };
+		6008DEAD2136ADF20024F6BA /* DPIHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIHistoryView.swift; sourceTree = "<group>"; };
+		6008DEAF21371ACB0024F6BA /* DPIBaseCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseCollectionViewHeader.swift; sourceTree = "<group>"; };
+		6008DEB1213728C80024F6BA /* DPIBaseCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		6035F9BC2047D9C4004F5AED /* DisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayData.swift; sourceTree = "<group>"; };
 		6035F9BE2047DCFD004F5AED /* DisplayDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataBuilder.swift; sourceTree = "<group>"; };
 		604D710A211EF67B00C4EABE /* DPIBaseContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseContainerView.swift; sourceTree = "<group>"; };
@@ -71,7 +86,6 @@
 		604FA523212B0E2900C7E995 /* DPICalculationViewController+TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+TableData.swift"; sourceTree = "<group>"; };
 		604FA525212B10F900C7E995 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTwoTextFields.swift; sourceTree = "<group>"; };
-		605A9F1121230D3700EED3CD /* DPICellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICellFactory.swift; sourceTree = "<group>"; };
 		605A9F16212319E700EED3CD /* DPICellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICellDelegate.swift; sourceTree = "<group>"; };
 		605A9F1821231BCD00EED3CD /* DPIBaseTableViewCellStyleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellStyleEnum.swift; sourceTree = "<group>"; };
 		605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTextField.swift; sourceTree = "<group>"; };
@@ -165,6 +179,50 @@
 			path = Calculation;
 			sourceTree = "<group>";
 		};
+		6008DE9C21368B230024F6BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6008DE9D21368B2E0024F6BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6008DEAD2136ADF20024F6BA /* DPIHistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6008DE9E21368B380024F6BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6008DEA221368F8F0024F6BA /* DPIHistoryViewController.swift */,
+				6008DEA6213693B60024F6BA /* DPIHistoryViewController+CollectionView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6008DE9F21368B6F0024F6BA /* BaseCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6008DEA4213690AB0024F6BA /* DPIBaseCollectionView.swift */,
+				6008DEB1213728C80024F6BA /* DPIBaseCollectionViewFlowLayout.swift */,
+				6008DEAF21371ACB0024F6BA /* DPIBaseCollectionViewHeader.swift */,
+				6008DEAC2136A83E0024F6BA /* BaseCollectionViewCell */,
+			);
+			path = BaseCollectionView;
+			sourceTree = "<group>";
+		};
+		6008DEAC2136A83E0024F6BA /* BaseCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6008DEA8213695E90024F6BA /* DPIBaseCollectionViewCellWithImage.swift */,
+				6008DEAA213696370024F6BA /* DPIBaseCollectionViewCellWithLabels.swift */,
+			);
+			path = BaseCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		6026AA1A211771250049A0EA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +299,7 @@
 		606893D3211C2D0E00A91A4B /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6008DE9F21368B6F0024F6BA /* BaseCollectionView */,
 				60D0C79F2120B12800787132 /* BaseTableView */,
 				60D0C79A2120356D00787132 /* BaseTabBar */,
 				600687E4211E180E00A0158E /* BaseNavigation */,
@@ -317,6 +376,9 @@
 		60CE84D8212C26940031FF86 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				6008DE9C21368B230024F6BA /* Model */,
+				6008DE9D21368B2E0024F6BA /* View */,
+				6008DE9E21368B380024F6BA /* Controller */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -340,7 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				604D7112211F301A00C4EABE /* DPIBaseTableView.swift */,
-				605A9F1121230D3700EED3CD /* DPICellFactory.swift */,
 				6008DE982135CB950024F6BA /* DPIBaseTableViewHeader.swift */,
 				605A9F1321230D4C00EED3CD /* BaseTableViewCell */,
 			);
@@ -508,22 +569,27 @@
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
 				60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */,
-				605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */,
+				6008DEAE2136ADF20024F6BA /* DPIHistoryView.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				60CE84DD212ECF000031FF86 /* File.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* String+textFor.swift in Sources */,
+				6008DEA7213693B60024F6BA /* DPIHistoryViewController+CollectionView.swift in Sources */,
+				6008DEB2213728C80024F6BA /* DPIBaseCollectionViewFlowLayout.swift in Sources */,
 				605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
 				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				6008DE9B2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift in Sources */,
 				60E0E9AA203BFC740086629C /* BaseScreenData.swift in Sources */,
+				6008DEA321368F8F0024F6BA /* DPIHistoryViewController.swift in Sources */,
 				604FA51E2129939A00C7E995 /* UIImageView+AddImage.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				600687F1211E528600A0158E /* DPICalculationViewController.swift in Sources */,
+				6008DEA5213690AB0024F6BA /* DPIBaseCollectionView.swift in Sources */,
 				600687F3211E52E400A0158E /* DPIMainView.swift in Sources */,
 				604D710D211F02F600C4EABE /* DPITopSeparatorView.swift in Sources */,
 				60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */,
+				6008DEB021371ACB0024F6BA /* DPIBaseCollectionViewHeader.swift in Sources */,
 				604FA528212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift in Sources */,
 				605A9F1D2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift in Sources */,
 				604D7113211F301A00C4EABE /* DPIBaseTableView.swift in Sources */,
@@ -535,7 +601,9 @@
 				604D710F211F1DE100C4EABE /* DPICalculationViewController+TableView.swift in Sources */,
 				60BDC888212ED1A5007FD834 /* ScreenData.swift in Sources */,
 				606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */,
+				6008DEA9213695E90024F6BA /* DPIBaseCollectionViewCellWithImage.swift in Sources */,
 				604FA524212B0E2900C7E995 /* DPICalculationViewController+TableData.swift in Sources */,
+				6008DEAB213696370024F6BA /* DPIBaseCollectionViewCellWithLabels.swift in Sources */,
 				60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */,
 				605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */,
 				60E0E9AD203BFC8A0086629C /* BaseScreenDataBuilder.swift in Sources */,
