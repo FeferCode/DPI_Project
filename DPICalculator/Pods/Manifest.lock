@@ -3,12 +3,14 @@ PODS:
     - Colours/ObjC (= 5.13.0)
   - Colours/ObjC (5.13.0)
   - Font-Awesome-Swift (1.7.2)
-  - LTMorphingLabel (0.5.6)
-  - SnapKit (4.0.0)
+  - IQKeyboardManagerSwift (6.1.1)
+  - LTMorphingLabel (0.5.7)
+  - SnapKit (4.0.1)
 
 DEPENDENCIES:
   - Colours
   - Font-Awesome-Swift
+  - IQKeyboardManagerSwift
   - LTMorphingLabel
   - SnapKit (~> 4.0)
 
@@ -16,15 +18,17 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Colours
     - Font-Awesome-Swift
+    - IQKeyboardManagerSwift
     - LTMorphingLabel
     - SnapKit
 
 SPEC CHECKSUMS:
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
   Font-Awesome-Swift: 83ab9db365379ee6025167cec67bdc5d3226a811
-  LTMorphingLabel: bdb51d4682e9822da89da6f567bd8aa456fd6650
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  LTMorphingLabel: 9d1c38bd602fe505f264d3e9fdb780995142f275
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 7c1499d1ef2a38ab16c880ced6df78e727e77f9b
+PODFILE CHECKSUM: cd257a5fe4587f5bf0402349097e49aa5b74cff1
 
 COCOAPODS: 1.5.0

@@ -11,5 +11,6 @@ target 'DPICalculator' do
 #  pod 'ChameleonFramework'
   pod 'Font-Awesome-Swift'
   pod 'LTMorphingLabel'
+  pod 'IQKeyboardManagerSwift'
 
 end

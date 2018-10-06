@@ -24,9 +24,17 @@ extension DPICalculationViewController: DPICellDelegate {
         self.calculate()
         self.calculatedDataForCells()
 
-        self.myTableView.reloadSections([0], with: .middle)
+        reloadTableViewRows()
     }
 
+    private func reloadTableViewRows(){
+        if myTableView.numberOfRows(inSection: 0) == 0 {
+            self.myTableView.reloadSections([0], with: .middle)
+        } else {
+            let indexes = (0..<calculetedDataForCell.count).map { IndexPath(row: $0, section: 0) }
+            self.myTableView.reloadRows(at: indexes, with: .middle)
+        }
+    }
 
     //MARK :- For testing right now
     private func calculate(){

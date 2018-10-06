@@ -17,6 +17,10 @@ class DPIHistoryViewController: DPIBaseViewController {
         setupViewsForController()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.baseView.updateConstraints()
+    }
+    
     //MARK :- Setup Views
     private func setupViewsForController(){
         self.baseView = DPIHistoryView()
@@ -26,9 +30,11 @@ class DPIHistoryViewController: DPIBaseViewController {
     }
 
     private func setupCollectionView(){
-        myCollectionView.allowsSelection = false
+//        myCollectionView.allowsSelection = false
 //        myCollectionView.dataSource = self
 //        myCollectionView.delegate = self
+
+        
     }
 
 }
