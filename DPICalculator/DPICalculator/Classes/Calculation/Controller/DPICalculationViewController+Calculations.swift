@@ -27,7 +27,6 @@ extension DPICalculationViewController: DPICellDelegate {
         self.myTableView.reloadSections([0], with: .middle)
     }
 
-
     //MARK :- For testing right now
     private func calculate(){
         guard dataForCalculation.x != 0,
@@ -41,7 +40,6 @@ extension DPICalculationViewController: DPICellDelegate {
         let screenData = CalculationManager().calculateAllData(ForScreen: baseScreenData)
         screenData.printAllProperties()
         self.screenData = screenData
-
     }
 
     private func createMonitor(x:Int, y:Int, diagonal:Float) -> BaseScreenData?{
@@ -59,8 +57,20 @@ extension DPICalculationViewController: DPICellDelegate {
 
     func resetCalculation() {
         self.calculetedDataForCell.removeAll()
+        self.myTableView.reloadSections([0], with: .middle)
+    }
 
-//        self.myTableView.performBatchUpdates(<#T##updates: (() -> Void)?##(() -> Void)?##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+    func userResetCellData(dataType: DPIUserCellDataEnum){
+        switch dataType {
+        case .xPixels:
+            dataForCalculation.x = 0
+        case .yPixels:
+            dataForCalculation.y = 0
+        case .diagonalInInch:
+            dataForCalculation.diagonal = 0
+        }
+        self.screenData = nil
+
         self.myTableView.reloadSections([0], with: .middle)
     }
 }

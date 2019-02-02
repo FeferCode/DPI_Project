@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15707C2A612833FD230FCAFA /* Pods_DPICalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD76061BF6D78574090EF696 /* Pods_DPICalculator.framework */; };
+		60036D4A2205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60036D492205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift */; };
 		600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E5211E32DF00A0158E /* NavigationEnum.swift */; };
 		600687EA211E356600A0158E /* NoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687E9211E356600A0158E /* NoViewController.swift */; };
 		600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600687EB211E483900A0158E /* UIAppColorSet.swift */; };
@@ -42,7 +43,6 @@
 		60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */; };
 		60CE84D7212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */; };
 		60CE84DB212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */; };
-		60CE84DD212ECF000031FF86 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84DC212ECF000031FF86 /* File.swift */; };
 		60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C79B212035A700787132 /* BaseTabBarViewController.swift */; };
 		60D0C79E2120392500787132 /* AppDelegate+SetupTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C79D2120392500787132 /* AppDelegate+SetupTabBar.swift */; };
 		60D0C7A62120B96A00787132 /* String+textFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C7A52120B96A00787132 /* String+textFor.swift */; };
@@ -50,10 +50,12 @@
 		60E0E9AD203BFC8A0086629C /* BaseScreenDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AC203BFC8A0086629C /* BaseScreenDataBuilder.swift */; };
 		60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AF203BFE9C0086629C /* CalculationManager.swift */; };
 		60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9B1203BFEF70086629C /* ConstantValues.swift */; };
+		60F1478622061473009E1C0F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1478522061473009E1C0F /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		034E1F224334B4A6365E3826 /* Pods-DPICalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPICalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator.release.xcconfig"; sourceTree = "<group>"; };
+		60036D492205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+KeyboardFunctions.swift"; sourceTree = "<group>"; };
 		600687E5211E32DF00A0158E /* NavigationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnum.swift; sourceTree = "<group>"; };
 		600687E9211E356600A0158E /* NoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoViewController.swift; sourceTree = "<group>"; };
 		600687EB211E483900A0158E /* UIAppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAppColorSet.swift; sourceTree = "<group>"; };
@@ -90,7 +92,6 @@
 		60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTwoTextLabels.swift; sourceTree = "<group>"; };
 		60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+Calculations.swift"; sourceTree = "<group>"; };
-		60CE84DC212ECF000031FF86 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		60D0C79B212035A700787132 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		60D0C79D2120392500787132 /* AppDelegate+SetupTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SetupTabBar.swift"; sourceTree = "<group>"; };
 		60D0C7A52120B96A00787132 /* String+textFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+textFor.swift"; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		60E0E9AC203BFC8A0086629C /* BaseScreenDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenDataBuilder.swift; sourceTree = "<group>"; };
 		60E0E9AF203BFE9C0086629C /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		60E0E9B1203BFEF70086629C /* ConstantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValues.swift; sourceTree = "<group>"; };
+		60F1478522061473009E1C0F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C4C02823162852AF8C030325 /* Pods-DPICalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPICalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76061BF6D78574090EF696 /* Pods_DPICalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPICalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */,
 				60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */,
 				6008DE9A2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift */,
+				60036D492205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				605A9F2121234B4700EED3CD /* MainTableDataModel.swift */,
-				60CE84DC212ECF000031FF86 /* File.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +257,7 @@
 			children = (
 				600687EB211E483900A0158E /* UIAppColorSet.swift */,
 				60E0E9B1203BFEF70086629C /* ConstantValues.swift */,
+				60F1478522061473009E1C0F /* Device.swift */,
 				6026AA222117890F0049A0EA /* ScreenBuilder */,
 				600687E8211E353E00A0158E /* NoViewController */,
 			);
@@ -510,10 +513,10 @@
 				60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */,
 				605A9F1221230D3700EED3CD /* DPICellFactory.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
-				60CE84DD212ECF000031FF86 /* File.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* String+textFor.swift in Sources */,
 				605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */,
+				60036D4A2205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
 				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				6008DE9B2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift in Sources */,
@@ -533,6 +536,7 @@
 				6008DE992135CB950024F6BA /* DPIBaseTableViewHeader.swift in Sources */,
 				604FA526212B10F900C7E995 /* BaseButton.swift in Sources */,
 				604D710F211F1DE100C4EABE /* DPICalculationViewController+TableView.swift in Sources */,
+				60F1478622061473009E1C0F /* Device.swift in Sources */,
 				60BDC888212ED1A5007FD834 /* ScreenData.swift in Sources */,
 				606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */,
 				604FA524212B0E2900C7E995 /* DPICalculationViewController+TableData.swift in Sources */,
@@ -673,6 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 925758Y7C6;
 				INFOPLIST_FILE = DPICalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.DPICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -689,6 +694,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 925758Y7C6;
 				INFOPLIST_FILE = DPICalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.DPICalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

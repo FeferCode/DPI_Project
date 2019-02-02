@@ -79,7 +79,7 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
             typingTime = nil
         }
 
-        typingTime = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sendDataForCalculation(_:)), userInfo: textField.text!, repeats: false)
+        typingTime = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(sendDataForCalculation(_:)), userInfo: textField.text!, repeats: false)
     }
 
     @objc func sendDataForCalculation(_ timer: Timer) {
@@ -88,6 +88,7 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
         }
 
         if value.count == 0 {
+            delegate?.userResetCellData(dataType: dataType)
             delegate?.resetCalculation()
             return
         }

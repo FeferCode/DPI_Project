@@ -8,10 +8,15 @@
 
 import UIKit
 
-class DPICalculationViewController: DPIBaseViewController {
+class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate {
 
+    var viewHeight = 0
     var myTableView: DPIBaseTableView!
-    var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]() {
+        didSet {
+            hideKeyboard()
+        }
+    }
     var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
 
     var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0)
@@ -19,6 +24,7 @@ class DPICalculationViewController: DPIBaseViewController {
 
     override func viewDidLoad() {
         setupViewsForController()
+        keyboardConfiguration()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +64,9 @@ class DPICalculationViewController: DPIBaseViewController {
 
         myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero
-        myTableView.isScrollEnabled = false
+        if Devices.share.screenSizeType() != ScreenSizeType.iPhone_4_Inch {
+            myTableView.isScrollEnabled = false
+        }
         myTableView.dataSource = self
         myTableView.delegate = self
     }
