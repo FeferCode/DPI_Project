@@ -26,7 +26,7 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
     }
 
     func setupCellData(_ data: DPIMainTableDataModel) {
-        if let text = data.first?.cellText {
+        if (data.first?.cellText) != nil {
             self.dpiLabel?.text = data.first?.cellText
         }
         if let image = data.first?.cellImage {
