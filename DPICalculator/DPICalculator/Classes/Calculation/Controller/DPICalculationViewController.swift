@@ -52,7 +52,6 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate {
     private func setupTableView(){
         myTableView.register(DPIBaseTableViewHeader.self,
                              forHeaderFooterViewReuseIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue)
-
         myTableView.register(DPIBaseTableViewCellWithTextField.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,

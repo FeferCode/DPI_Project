@@ -18,15 +18,15 @@ class Devices{
 
         switch screenSize {
         case ScreenSizeType.iPhone_4_Inch:
-            return 165
+            return 215
         case ScreenSizeType.iPhone_4_7_Inch:
-            return 100
+            return 150
         case ScreenSizeType.iPhone_5_5_Inch:
-            return 50
+            return 100
         case ScreenSizeType.iPhone_5_8_Inch:
-            return 50
+            return 100
         default:
-            return 0
+            return 15
         }
     }
 

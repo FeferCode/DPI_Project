@@ -21,14 +21,21 @@ extension DPICalculationViewController: DPICellDelegate {
         case .diagonalInInch:
             dataForCalculation.diagonal = value
         }
-        self.calculate()
-        self.calculatedDataForCells()
 
+    }
+
+    func calculate() {
+        self.recalculateData()
+    }
+
+    private func recalculateData(){
+        self.calculateData()
+        self.calculatedDataForCells()
         self.myTableView.reloadSections([0], with: .middle)
     }
 
     //MARK :- For testing right now
-    private func calculate(){
+    private func calculateData(){
         guard dataForCalculation.x != 0,
             dataForCalculation.y != 0,
             dataForCalculation.diagonal != 0 else { return }
