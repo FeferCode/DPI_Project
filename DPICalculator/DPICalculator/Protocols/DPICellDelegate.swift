@@ -10,11 +10,11 @@ import Foundation
 
 protocol DPICellDelegate: AnyObject {
     func userEndEditingCell(dataType: DPIUserCellDataEnum, value: Float)
-    func resetCalculation()
     func userResetCellData(dataType: DPIUserCellDataEnum)
-    func calculate()
-    func hideKeyboard()
     func nextTFResponder(tag:Int, next: Bool)
+    func resetCalculation()
+    func hideKeyboard()
+    func calculate()
 }
 
 enum DPIUserCellDataEnum {

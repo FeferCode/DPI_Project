@@ -62,4 +62,13 @@ extension DPICalculationViewController {
         cell.dpiField?.becomeFirstResponder()
     }
 
+    func badHideKeyboard(_ newValue: (x:Int, y:Int, diagonal:Float)) {
+        let screenJump = Devices.share.getScreenJump()
+
+        if (newValue.x == 0 || newValue.y == 0 || newValue.diagonal == 0) && self.viewHeight == -screenJump {
+            print("\n\n\nBad Value\n\n\n")
+            self.myTableView.frame.origin.y += CGFloat(screenJump)
+            self.viewHeight -= screenJump
+        }
+    }
 }

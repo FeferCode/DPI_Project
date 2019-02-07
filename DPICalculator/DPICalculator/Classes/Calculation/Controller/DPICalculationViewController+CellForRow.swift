@@ -13,7 +13,7 @@ extension DPICalculationViewController {
     func cellForRow(_ cellData: DPIMainTableDataModel, _ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         switch cellData.cellType {
         case .withTextField:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWithTextField
+            let cell = tableView.dequeueReusableCell(withIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue, for: indexPath as IndexPath) as! DPICalculationTableViewCellWithTextField
             cell.setupCellData(cellData)
             cell.delegate = self
             return cell

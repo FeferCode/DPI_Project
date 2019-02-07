@@ -12,14 +12,13 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
 
     var viewHeight = 0
     var myTableView: DPIBaseTableView!
-    var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]() {
-        didSet {
-            hideKeyboard()
+    var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
+    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0) {
+        willSet {
+            self.badHideKeyboard(newValue)
         }
     }
-    var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
-
-    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0)
     var screenData: ScreenData?
 
     override func viewDidLoad() {
@@ -55,10 +54,8 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
     private func setupTableView(){
         myTableView.register(DPIBaseTableViewHeader.self,
                              forHeaderFooterViewReuseIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue)
-        myTableView.register(DPIBaseTableViewCellWithTextField.self,
+        myTableView.register(DPICalculationTableViewCellWithTextField.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
-        myTableView.register(DPIBaseTableViewCellWithTwoTextFields.self,
-                             forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTwoTextFields.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTwoTextLabels.self,

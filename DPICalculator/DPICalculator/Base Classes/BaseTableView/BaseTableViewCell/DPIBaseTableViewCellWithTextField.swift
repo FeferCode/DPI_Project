@@ -13,7 +13,6 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
     var dpiField: UITextField?
     var dpiImage: UIImageView?
     var typingTime: Timer?
-    weak var delegate: DPICellDelegate?
     var cellDataType: DPIUserCellDataEnum?
 
     override func awakeFromNib() {
@@ -43,7 +42,6 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
         if let cellTag = data.first?.cellTag {
             self.tag = cellTag
         }
-
     }
 
     private func configureCellSubViews() {
@@ -59,21 +57,6 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
             textField.font = UIFont.boldSystemFont(ofSize: 12.0)
             textField.delegate = self
         }
-        self.dpiField?.addTarget(self, action: #selector(textFieldDidEditingChanged(_:)), for: .editingChanged)
-        addButtons()
-    }
-
-    //MARK :- Button configuration
-    private func addButtons(){
-        let bar = UIToolbar()
-        let back = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(previewTFResponder))
-        let next = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(nextTFResponder))
-        let reset = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(deleteTextFieldData))
-        let calculate = UIBarButtonItem(title: "Calculate", style: .plain, target: self, action: #selector(calculateData))
-        let done = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(hideKeyboard))
-        bar.items = [back, reset, done, calculate, next]
-        bar.sizeToFit()
-        dpiField?.inputAccessoryView = bar
     }
 
     private func setupConstrains(){
@@ -92,44 +75,5 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
             make.top.equalToSuperview().offset(5)
             make.bottom.equalToSuperview().offset(-5)
         }
-    }
-
-    @objc func textFieldDidEditingChanged(_ textField: UITextField) {
-        sendDataForCalculation()
-    }
-
-    @objc func sendDataForCalculation() {
-        guard let dataType = self.cellDataType, let value = dpiField?.text else {
-            return
-        }
-
-        if value.count == 0 {
-            return
-        }
-
-        guard let numberValue = Float(String(format:"%.2f", (Float)(value)!)) else {
-            return
-        }
-        delegate?.userEndEditingCell(dataType: dataType, value: numberValue)
-    }
-
-    @objc func calculateData(){
-        delegate?.calculate()
-    }
-
-    @objc func hideKeyboard(){
-        delegate?.hideKeyboard()
-    }
-
-    @objc func deleteTextFieldData(){
-        self.dpiField?.text?.removeAll()
-    }
-
-    @objc func nextTFResponder(){
-        delegate?.nextTFResponder(tag: self.tag, next: true)
-    }
-
-    @objc func previewTFResponder(){
-        delegate?.nextTFResponder(tag: self.tag, next: false)
     }
 }
