@@ -31,4 +31,17 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         self.navigationItem.rightBarButtonItem = viewController.navigationItem.rightBarButtonItem
     }
+
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        animateTabBarChange(tabBarController: tabBarController, to: viewController)
+        return true
+    }
+
+    func animateTabBarChange(tabBarController: UITabBarController, to viewController: UIViewController) {
+        let fromView: UIView = tabBarController.selectedViewController!.view
+        let toView: UIView = viewController.view
+        if fromView != toView {
+            UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+        }
+    }
 }
