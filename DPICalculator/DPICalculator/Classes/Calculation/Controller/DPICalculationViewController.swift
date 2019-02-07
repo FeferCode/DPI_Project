@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate {
+class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, UITabBarDelegate {
 
     var viewHeight = 0
     var myTableView: DPIBaseTableView!
@@ -28,7 +28,9 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.baseView.updateConstraints()
+        setNavigationBarItem()
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -47,6 +49,7 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate {
         self.myTableView = (baseView as! DPIMainView).tableView
         self.view = baseView
         setupTableView()
+        setNavigationBarItem()
     }
 
     private func setupTableView(){

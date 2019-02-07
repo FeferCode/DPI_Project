@@ -20,6 +20,8 @@ class BaseButton: UIButton {
         self.layer.borderColor = UIAppColorSet.getColor(.white).cgColor
         self.layer.borderWidth = 1
     }
+}
 
+class BaseBarButtonItem:UIBarButtonItem {
 
 }

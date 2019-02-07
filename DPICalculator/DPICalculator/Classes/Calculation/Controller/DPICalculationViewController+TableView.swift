@@ -23,9 +23,8 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
         case 1:
             return cellsDataForCalculation.count
         default:
-            return 01280
+            return 0
         }
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,8 +35,6 @@ extension DPICalculationViewController: UITableViewDelegate, UITableViewDataSour
             let cellData = cellsDataForCalculation[indexPath.row]
             return cellForRow(cellData, tableView, indexPath)
         }
-
-
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

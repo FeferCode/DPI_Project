@@ -19,7 +19,6 @@ extension AppDelegate {
     }
 
     func customiseTabItems(tabBar: UITabBar) {
-
         var itemsTitle:[String] = ["Calculator", "History", "About"]
         var itemsImage:[FAType] = [.FACalculator, .FACalendar, .FASafari]
 
@@ -27,7 +26,6 @@ extension AppDelegate {
             let item = tabBar.items![i]
             item.title = itemsTitle[i]
             item.setFAIcon(icon: itemsImage[i])
-
         }
     }
 }

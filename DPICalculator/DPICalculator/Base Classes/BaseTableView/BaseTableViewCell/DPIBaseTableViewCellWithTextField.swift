@@ -66,11 +66,11 @@ class DPIBaseTableViewCellWithTextField: UITableViewCell, UITextFieldDelegate {
     //MARK :- Button configuration
     private func addButtons(){
         let bar = UIToolbar()
-        let back = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(previewTFResponder))
-        let next = UIBarButtonItem(title: "->", style: .plain, target: self, action: #selector(nextTFResponder))
+        let back = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(previewTFResponder))
+        let next = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(nextTFResponder))
         let reset = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(deleteTextFieldData))
         let calculate = UIBarButtonItem(title: "Calculate", style: .plain, target: self, action: #selector(calculateData))
-        let done = UIBarButtonItem(title: "Hide Keyboard", style: .plain, target: self, action: #selector(hideKeyboard))
+        let done = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(hideKeyboard))
         bar.items = [back, reset, done, calculate, next]
         bar.sizeToFit()
         dpiField?.inputAccessoryView = bar
