@@ -9,9 +9,7 @@
 import Foundation
 
 protocol DPICellDelegate: AnyObject {
-    func userEndEditingCell(dataType: DPIUserCellDataEnum, value: Float)
-    func userResetCellData(dataType: DPIUserCellDataEnum)
-    func nextTFResponder(tag:Int, next: Bool)
+    func changeTFResponder(actual:Int, next: DPIResponderDirectionEnum)
     func resetCalculation()
     func hideKeyboard()
     func calculate()
@@ -21,4 +19,9 @@ enum DPIUserCellDataEnum {
     case xPixels
     case yPixels
     case diagonalInInch
+}
+
+enum DPIResponderDirectionEnum {
+    case next
+    case previous
 }

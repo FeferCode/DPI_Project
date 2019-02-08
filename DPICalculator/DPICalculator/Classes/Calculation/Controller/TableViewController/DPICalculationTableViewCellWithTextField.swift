@@ -14,7 +14,6 @@ class DPICalculationTableViewCellWithTextField: DPIBaseTableViewCellWithTextFiel
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        self.dpiField?.addTarget(self, action: #selector(textFieldDidEditingChanged(_:)), for: .editingChanged)
         addButtons()
     }
 
@@ -32,26 +31,6 @@ class DPICalculationTableViewCellWithTextField: DPIBaseTableViewCellWithTextFiel
         dpiField?.inputAccessoryView = bar
     }
 
-    @objc func textFieldDidEditingChanged(_ textField: UITextField) {
-        sendDataForCalculation()
-    }
-
-    @objc func sendDataForCalculation() {
-        guard let dataType = self.cellDataType, let value = dpiField?.text else {
-            return
-        }
-
-        if value.count == 0 {
-            delegate?.userEndEditingCell(dataType: dataType, value: 0)
-            return
-        }
-
-        guard let numberValue = Float(String(format:"%.2f", (Float)(value)!)) else {
-            return
-        }
-        delegate?.userEndEditingCell(dataType: dataType, value: numberValue)
-    }
-
     @objc func calculateData(){
         delegate?.calculate()
     }
@@ -62,17 +41,13 @@ class DPICalculationTableViewCellWithTextField: DPIBaseTableViewCellWithTextFiel
 
     @objc func deleteTextFieldData(){
         self.dpiField?.text?.removeAll()
-        guard let dataType = self.cellDataType else {
-            return
-        }
-        delegate?.userResetCellData(dataType: dataType)
-    }
-
-    @objc func nextTFResponder(){
-        delegate?.nextTFResponder(tag: self.tag, next: true)
     }
 
     @objc func previewTFResponder(){
-        delegate?.nextTFResponder(tag: self.tag, next: false)
+        delegate?.changeTFResponder(actual: self.tag, next: .previous)
+    }
+
+    @objc func nextTFResponder(){
+        delegate?.changeTFResponder(actual: self.tag, next: .next)
     }
 }

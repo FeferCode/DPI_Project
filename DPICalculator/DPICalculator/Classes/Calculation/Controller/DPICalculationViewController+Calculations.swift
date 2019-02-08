@@ -25,18 +25,43 @@ extension DPICalculationViewController: DPICellDelegate {
     }
 
     func calculate() {
-        self.recalculateData()
-    }
-
-    private func recalculateData(){
+        self.getDataForCalculation()
         if self.calculateData() {
-            self.calculatedDataForCells()
+            self.prepareDataForTBCells()
             self.myTableView.reloadSections([0], with: .middle)
-            hideKeyboard()
+            self.hideKeyboard()
+        } else {
+            self.resetCalculation()
+            self.resetViewJump()
         }
     }
 
-    //MARK :- For testing right now
+    private func getDataForCalculation(){
+        if let cellX = self.myTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? DPICalculationTableViewCellWithTextField {
+            guard let x = Int((cellX.dpiField?.text ?? "0")) else {
+                resetCalculation()
+                return
+            }
+            self.dataForCalculation.x = x
+        }
+
+        if let cellY = self.myTableView.cellForRow(at: IndexPath(row: 1, section: 1)) as? DPICalculationTableViewCellWithTextField {
+            guard let y = Int((cellY.dpiField?.text ?? "0")) else {
+                resetCalculation()
+                return
+            }
+            self.dataForCalculation.y = y
+        }
+
+        if let cellD = self.myTableView.cellForRow(at: IndexPath(row: 2, section: 1)) as? DPICalculationTableViewCellWithTextField {
+            guard let d = Float((cellD.dpiField?.text ?? "0")) else {
+                resetCalculation()
+                return
+            }
+            self.dataForCalculation.diagonal = d
+        }
+    }
+
     private func calculateData() -> Bool {
         guard dataForCalculation.x != 0,
             dataForCalculation.y != 0,
@@ -67,21 +92,7 @@ extension DPICalculationViewController: DPICellDelegate {
 
     func resetCalculation() {
         self.screenData = nil
-        self.calculetedDataForCell.removeAll()
-        self.myTableView.reloadSections([0], with: .middle)
-    }
-
-    func userResetCellData(dataType: DPIUserCellDataEnum) {
-        switch dataType {
-        case .xPixels:
-            dataForCalculation.x = 0
-        case .yPixels:
-            dataForCalculation.y = 0
-        case .diagonalInInch:
-            dataForCalculation.diagonal = 0
-        }
-
-        self.screenData = nil
+        self.dataForCalculation = (x: 0, y: 0, diagonal: 0)
         self.calculetedDataForCell.removeAll()
         self.myTableView.reloadSections([0], with: .middle)
     }

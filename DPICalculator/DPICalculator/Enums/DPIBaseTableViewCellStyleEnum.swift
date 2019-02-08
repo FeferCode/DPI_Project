@@ -19,4 +19,3 @@ enum DPIBaseTableViewHeaderFooterEnum:String {
     case headerView = "headerView"
     case footerView = "footerView"
 }
-

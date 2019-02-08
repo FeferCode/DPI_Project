@@ -45,30 +45,28 @@ extension DPICalculationViewController {
         self.view.endEditing(true)
     }
 
-    func nextTFResponder(tag: Int, next: Bool){
-        var nextFisrtResponder = tag
+    func resetViewJump(){
+        let screenJump = CGFloat(Devices.share.getScreenJump())
+        if (self.calculetedDataForCell.count != 0 && self.viewHeight == -Int(screenJump)) || (self.calculetedDataForCell.count == 0 && self.viewHeight == -Int(screenJump)){
+            self.myTableView.frame.origin.y += screenJump
+            self.viewHeight += Int(screenJump)
+        }
+    }
 
-        if next {
+    func changeTFResponder(actual: Int, next: DPIResponderDirectionEnum){
+        var nextFisrtResponder = actual
+
+        if next == .next {
             nextFisrtResponder += 1
-        } else {
+        } else if next == .previous {
             nextFisrtResponder -= 1
         }
 
-        if (nextFisrtResponder < 0 && next == false) || (nextFisrtResponder > 2 && next == true) {
+        if (nextFisrtResponder < 0 && next == .previous) || (nextFisrtResponder > 2 && next == .next) {
             return
         }
 
         let cell = self.myTableView.cellForRow(at: IndexPath(row: nextFisrtResponder, section: 1)) as! DPIBaseTableViewCellWithTextField
         cell.dpiField?.becomeFirstResponder()
-    }
-
-    func badHideKeyboard(_ newValue: (x:Int, y:Int, diagonal:Float)) {
-        let screenJump = Devices.share.getScreenJump()
-
-        if (newValue.x == 0 || newValue.y == 0 || newValue.diagonal == 0) && self.viewHeight == -screenJump {
-            print("\n\n\nBad Value\n\n\n")
-            self.myTableView.frame.origin.y += CGFloat(screenJump)
-            self.viewHeight -= screenJump
-        }
     }
 }

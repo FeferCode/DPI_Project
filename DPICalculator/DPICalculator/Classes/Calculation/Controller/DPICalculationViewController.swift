@@ -14,11 +14,7 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
     var myTableView: DPIBaseTableView!
     var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
     var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
-    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0) {
-        willSet {
-            self.badHideKeyboard(newValue)
-        }
-    }
+    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0) 
     var screenData: ScreenData?
 
     override func viewDidLoad() {

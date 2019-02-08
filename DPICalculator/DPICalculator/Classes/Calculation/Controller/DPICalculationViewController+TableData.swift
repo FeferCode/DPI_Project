@@ -12,7 +12,7 @@ import UIKit
 extension DPICalculationViewController {
     //MARK: - Only for testing
     //MARK: - Cells for displaying data from calculations, section 0
-    func calculatedDataForCells(){
+    func prepareDataForTBCells(){
         guard let data = self.screenData else {
             return
         }
