@@ -88,5 +88,4 @@ class DPIBaseTableViewCellWithTwoTextLabels: UITableViewCell {
         }
         super.updateConstraints()
     }
-
 }

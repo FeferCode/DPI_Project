@@ -52,6 +52,11 @@ struct DPIMainTableCellDataModel {
         self.cellText = text
         self.cellDataType = dataType
     }
+    init(image: UIImage?, text: String?, cellTag:Int){
+        self.cellImage = image
+        self.cellText = text
+        self.cellTag = cellTag
+    }
 
     init(image: UIImage?, placeholder:String?, dataType: DPIUserCellDataEnum?){
         self.cellImage = image

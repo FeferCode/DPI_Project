@@ -18,6 +18,14 @@ extension String {
     static func textForCalculeted(_ text: textForCalculatedDataEnum) -> String{
         return text.description
     }
+
+    static func textForViewControllerTitle(_ text: textTitleForViewController) -> String{
+        return text.description
+    }
+
+    static func textForSaveViewController(_ text: textForSaveViewController) -> String{
+        return text.description
+    }
 }
 
 enum textForCalculationsEnum:CustomStringConvertible {
@@ -71,6 +79,43 @@ enum textForCalculatedDataEnum:CustomStringConvertible {
             return "Number of pixels: "
         case .numberOfMegapixels:
             return "Number of megapixels: "
+        }
+    }
+}
+
+enum textTitleForViewController: String {
+    case calulationVC
+    case historyVC
+    case aboutVC
+    case saveDataVC
+
+    var description: String {
+        switch self {
+        case .aboutVC:
+            return "aboutVC"
+        case .calulationVC:
+            return "calulationVC"
+        case .historyVC:
+            return "historyVC"
+        case .saveDataVC:
+            return "saveDataVC"
+        }
+    }
+}
+
+enum textForSaveViewController: String {
+    case company
+    case model
+    case year
+
+    var description: String {
+        switch self {
+        case .company:
+            return "Company"
+        case .model:
+            return "Model"
+        case .year:
+            return "Year"
         }
     }
 }

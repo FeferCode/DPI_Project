@@ -40,6 +40,10 @@
 		60A323DE202F1F5B00B732E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A323DC202F1F5B00B732E4 /* LaunchScreen.storyboard */; };
 		60BDC888212ED1A5007FD834 /* ScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDC887212ED1A5007FD834 /* ScreenData.swift */; };
 		60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */; };
+		60C803DB220F6A93003A4240 /* DPISaveScreenDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C803DA220F6A93003A4240 /* DPISaveScreenDataView.swift */; };
+		60C803DD220F7230003A4240 /* DPISaveDataTableViewCellWithLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C803DC220F7230003A4240 /* DPISaveDataTableViewCellWithLabelAndTextField.swift */; };
+		60C803E0220F72B1003A4240 /* DPISaveCellDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C803DF220F72B1003A4240 /* DPISaveCellDataDelegate.swift */; };
+		60C803E2220F743F003A4240 /* DPISaveScreenDataViewController+KeyboardFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C803E1220F743F003A4240 /* DPISaveScreenDataViewController+KeyboardFunctions.swift */; };
 		60CE84D7212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */; };
 		60CE84DB212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */; };
 		60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0C79B212035A700787132 /* BaseTabBarViewController.swift */; };
@@ -51,7 +55,12 @@
 		60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9B1203BFEF70086629C /* ConstantValues.swift */; };
 		60EF96F2220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */; };
 		60EF96F5220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */; };
+		60EF96FB220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */; };
+		60EF96FD220EE8C000AAF8BF /* DPISaveScreenDataViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FC220EE8C000AAF8BF /* DPISaveScreenDataViewController+TableView.swift */; };
+		60EF96FF220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FE220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift */; };
+		60EF9701220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF9700220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift */; };
 		60F1478622061473009E1C0F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1478522061473009E1C0F /* Device.swift */; };
+		60F7D3882210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F7D3872210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +99,10 @@
 		60A323DF202F1F5B00B732E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60BDC887212ED1A5007FD834 /* ScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenData.swift; sourceTree = "<group>"; };
 		60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithTwoTextLabels.swift; sourceTree = "<group>"; };
+		60C803DA220F6A93003A4240 /* DPISaveScreenDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveScreenDataView.swift; sourceTree = "<group>"; };
+		60C803DC220F7230003A4240 /* DPISaveDataTableViewCellWithLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveDataTableViewCellWithLabelAndTextField.swift; sourceTree = "<group>"; };
+		60C803DF220F72B1003A4240 /* DPISaveCellDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveCellDataDelegate.swift; sourceTree = "<group>"; };
+		60C803E1220F743F003A4240 /* DPISaveScreenDataViewController+KeyboardFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+KeyboardFunctions.swift"; sourceTree = "<group>"; };
 		60CE84D6212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60CE84DA212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+Calculations.swift"; sourceTree = "<group>"; };
 		60D0C79B212035A700787132 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +114,12 @@
 		60E0E9B1203BFEF70086629C /* ConstantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValues.swift; sourceTree = "<group>"; };
 		60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+SaveButton.swift"; sourceTree = "<group>"; };
 		60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICalculationTableViewCellWithTextField.swift; sourceTree = "<group>"; };
+		60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveScreenDataViewController.swift; sourceTree = "<group>"; };
+		60EF96FC220EE8C000AAF8BF /* DPISaveScreenDataViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+TableView.swift"; sourceTree = "<group>"; };
+		60EF96FE220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+TableData.swift"; sourceTree = "<group>"; };
+		60EF9700220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60F1478522061473009E1C0F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		60F7D3872210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIBaseTableViewCellWithLabelAndTextFields.swift; sourceTree = "<group>"; };
 		C4C02823162852AF8C030325 /* Pods-DPICalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPICalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPICalculator/Pods-DPICalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76061BF6D78574090EF696 /* Pods_DPICalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPICalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				605A9F16212319E700EED3CD /* DPICellDelegate.swift */,
+				60C803DF220F72B1003A4240 /* DPISaveCellDataDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -175,8 +194,7 @@
 				60A323D0202F1F5B00B732E4 /* AppDelegate.swift */,
 				60D0C79D2120392500787132 /* AppDelegate+SetupTabBar.swift */,
 				600687F5211E532C00A0158E /* Calculation */,
-				60CE84D8212C26940031FF86 /* History */,
-				60CE84D9212C26A70031FF86 /* About */,
+				60EF96F6220DCADF00AAF8BF /* SaveScreenData */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -222,6 +240,7 @@
 				60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */,
 				605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */,
 				604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */,
+				60F7D3872210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift */,
 			);
 			path = BaseTableViewCell;
 			sourceTree = "<group>";
@@ -321,18 +340,12 @@
 			path = DPICalculator;
 			sourceTree = "<group>";
 		};
-		60CE84D8212C26940031FF86 /* History */ = {
+		60C803DE220F7240003A4240 /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				60C803DC220F7230003A4240 /* DPISaveDataTableViewCellWithLabelAndTextField.swift */,
 			);
-			path = History;
-			sourceTree = "<group>";
-		};
-		60CE84D9212C26A70031FF86 /* About */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = About;
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 		60D0C79A2120356D00787132 /* BaseTabBar */ = {
@@ -395,6 +408,44 @@
 				60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */,
 			);
 			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		60EF96F6220DCADF00AAF8BF /* SaveScreenData */ = {
+			isa = PBXGroup;
+			children = (
+				60EF96F7220DCB1500AAF8BF /* Model */,
+				60EF96F8220DCB1C00AAF8BF /* View */,
+				60EF96F9220DCB2300AAF8BF /* Controller */,
+			);
+			path = SaveScreenData;
+			sourceTree = "<group>";
+		};
+		60EF96F7220DCB1500AAF8BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60EF96F8220DCB1C00AAF8BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60C803DA220F6A93003A4240 /* DPISaveScreenDataView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60EF96F9220DCB2300AAF8BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60C803DE220F7240003A4240 /* TableViewController */,
+				60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */,
+				60EF96FC220EE8C000AAF8BF /* DPISaveScreenDataViewController+TableView.swift */,
+				60EF96FE220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift */,
+				60EF9700220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift */,
+				60C803E1220F743F003A4240 /* DPISaveScreenDataViewController+KeyboardFunctions.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,23 +570,29 @@
 				60CE84DB212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift in Sources */,
 				606893D2211B1D2100A91A4B /* BaseNavigationController.swift in Sources */,
 				60D0C79E2120392500787132 /* AppDelegate+SetupTabBar.swift in Sources */,
+				60C803DD220F7230003A4240 /* DPISaveDataTableViewCellWithLabelAndTextField.swift in Sources */,
 				6035F9BF2047DCFD004F5AED /* DisplayDataBuilder.swift in Sources */,
 				60EF96F2220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift in Sources */,
+				60C803E0220F72B1003A4240 /* DPISaveCellDataDelegate.swift in Sources */,
 				600687EC211E483900A0158E /* UIAppColorSet.swift in Sources */,
 				60BDC88A213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift in Sources */,
+				60C803DB220F6A93003A4240 /* DPISaveScreenDataView.swift in Sources */,
 				605A9F2221234B4700EED3CD /* MainTableDataModel.swift in Sources */,
 				604D710B211EF67B00C4EABE /* DPIBaseContainerView.swift in Sources */,
 				60D0C7A62120B96A00787132 /* String+textFor.swift in Sources */,
 				605A9F17212319E700EED3CD /* DPICellDelegate.swift in Sources */,
 				60036D4A2205E193009D0F1B /* DPICalculationViewController+KeyboardFunctions.swift in Sources */,
+				60F7D3882210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift in Sources */,
 				605A9F1F212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift in Sources */,
 				600687E6211E32DF00A0158E /* NavigationEnum.swift in Sources */,
 				6008DE9B2135E0D50024F6BA /* DPICalculationViewController+SectionHeader.swift in Sources */,
+				60EF9701220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift in Sources */,
 				60E0E9AA203BFC740086629C /* BaseScreenData.swift in Sources */,
 				604FA51E2129939A00C7E995 /* UIImageView+AddImage.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				600687F1211E528600A0158E /* DPICalculationViewController.swift in Sources */,
 				600687F3211E52E400A0158E /* DPIMainView.swift in Sources */,
+				60EF96FD220EE8C000AAF8BF /* DPISaveScreenDataViewController+TableView.swift in Sources */,
 				604D710D211F02F600C4EABE /* DPITopSeparatorView.swift in Sources */,
 				60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */,
 				604FA528212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift in Sources */,
@@ -546,11 +603,14 @@
 				60CE84D7212C105F0031FF86 /* DPICalculationViewController+CellForRow.swift in Sources */,
 				60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */,
 				6008DE992135CB950024F6BA /* DPIBaseTableViewHeader.swift in Sources */,
+				60C803E2220F743F003A4240 /* DPISaveScreenDataViewController+KeyboardFunctions.swift in Sources */,
 				604FA526212B10F900C7E995 /* BaseButton.swift in Sources */,
 				604D710F211F1DE100C4EABE /* DPICalculationViewController+TableView.swift in Sources */,
+				60EF96FB220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift in Sources */,
 				60F1478622061473009E1C0F /* Device.swift in Sources */,
 				60BDC888212ED1A5007FD834 /* ScreenData.swift in Sources */,
 				606893D5211C2D2F00A91A4B /* DPIBaseViewController.swift in Sources */,
+				60EF96FF220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift in Sources */,
 				604FA524212B0E2900C7E995 /* DPICalculationViewController+TableData.swift in Sources */,
 				60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */,
 				605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */,

@@ -16,26 +16,24 @@ extension DPICalculationViewController {
     }
 
     @objc private func saveData(){
-        saveAlert()
+        self.saveScreenData()
     }
 
-    private func saveAlert(){
-        let alertController = UIAlertController(title: "Save screen data", message: nil, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Save", style: .default) { (_) in
-            if let txtField = alertController.textFields?.first, let text = txtField.text {
-                if let data = self.screenData {
-                    data.printAllProperties()
-                }
-                print("Text==>" + text)
-            }
+    private func saveScreenData(){
+        guard let navigationVC = self.navigationController as? BaseNavigationController else {
+            return
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Screen name"
-        }
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
 
+        if self.calculetedDataForCell.count == 0 && self.screenData == nil {
+            print("No data for save")
+            return
+        }
+
+        if let newViewController = DPIViewControllers.getViewController(.saveScreenViewController) as? DPISaveScreenViewController {
+            newViewController.calculetedDataForCell = self.calculetedDataForCell
+            newViewController.screenData = self.screenData
+            newViewController.navigationItem.title = String.textForViewControllerTitle(.saveDataVC)
+            navigationVC.pushViewController(newViewController, animated: true)
+        }
+    }
 }

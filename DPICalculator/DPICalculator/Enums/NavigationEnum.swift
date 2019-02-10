@@ -13,6 +13,7 @@ import UIKit
 
 enum viewControllerNavigationEnum {
     case mainViewController
+    case saveScreenViewController
     case noVC
 }
 
@@ -27,6 +28,8 @@ final class DPIViewControllers {
         switch viewController {
         case .mainViewController:
             return DPICalculationViewController()
+        case .saveScreenViewController:
+            return DPISaveScreenViewController()
         case .noVC:
             return NoViewController()
         }

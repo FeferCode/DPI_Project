@@ -25,11 +25,4 @@ class BaseNavigationController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    func pushViewController(_ viewController: viewControllerNavigationEnum, title: String, animated: Bool) {
-        let newViewController = DPIViewControllers.getViewController(viewController)
-        super.pushViewController(newViewController, animated: true)
-        self.navigationItem.title = title
-        self.tabBarController?.navigationController?.title = title
-    }
 }

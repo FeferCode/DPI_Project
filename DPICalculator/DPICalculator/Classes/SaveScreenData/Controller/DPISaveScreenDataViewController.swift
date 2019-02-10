@@ -1,47 +1,44 @@
 //
-//  DPIMainViewController.swift
+//  DPISaveScreenData.swift
 //  DPICalculator
 //
-//  Created by Jakub Majewski on 11.08.2018.
-//  Copyright © 2018 Jakub Majewski. All rights reserved.
+//  Created by Jakub Majewski on 09/02/2019.
+//  Copyright © 2019 Jakub Majewski. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, UITabBarDelegate {
+class DPISaveScreenViewController: DPIBaseViewController, UITextFieldDelegate, UITabBarDelegate {
 
     var viewHeight = 0
     var myTableView: DPIBaseTableView!
     var calculetedDataForCell: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
-    var cellsDataForCalculation: [DPIMainTableDataModel] = [DPIMainTableDataModel]()
-    var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0) 
     var screenData: ScreenData?
 
     override func viewDidLoad() {
         setupViewsForController()
-        keyboardConfiguration()
+        prepareDataForTBCells()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.baseView.updateConstraints()
-        setNavigationBarItem()
+        self.myTableView.reloadData()
     }
 
     //MARK :- Setup Views
     private func setupViewsForController(){
-        self.dataForCalculationsCells()
-        self.baseView = DPIMainView()
-        self.myTableView = (baseView as! DPIMainView).tableView
+        self.baseView = DPISaveScreenDataView()
+        self.myTableView = (baseView as! DPISaveScreenDataView).tableView
         self.view = baseView
-        registerTableViewCells()
-        setNavigationBarItem()
+        self.registerTableViewCells()
     }
 
     private func registerTableViewCells(){
         myTableView.register(DPIBaseTableViewHeader.self,
                              forHeaderFooterViewReuseIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue)
-        myTableView.register(DPICalculationTableViewCellWithTextField.self,
+        myTableView.register(DPISaveDataTableViewCellWithLabelAndTextField.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withTextField.rawValue)
         myTableView.register(DPIBaseTableViewCellWithTextLabel.self,
                              forCellReuseIdentifier: DPIBaseTableViewCellStyleEnum.withLabel.rawValue)
@@ -57,3 +54,5 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
         myTableView.delegate = self
     }
 }
+
+
