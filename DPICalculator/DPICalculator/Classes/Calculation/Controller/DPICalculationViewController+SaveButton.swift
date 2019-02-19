@@ -25,7 +25,8 @@ extension DPICalculationViewController {
         }
 
         if self.calculetedDataForCell.count == 0 && self.screenData == nil {
-            print("No data for save")
+            print("No data for save popup")
+            self.showPopUp()
             return
         }
 
@@ -35,5 +36,12 @@ extension DPICalculationViewController {
             newViewController.navigationItem.title = String.textForViewControllerTitle(.saveDataVC)
             navigationVC.pushViewController(newViewController, animated: true)
         }
+    }
+
+    func showPopUp(){
+        let alertController = UIAlertController(title: "Error", message: "No data to save", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -13,7 +13,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Colours
     - Font-Awesome-Swift
     - LTMorphingLabel
@@ -27,4 +27,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7c1499d1ef2a38ab16c880ced6df78e727e77f9b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0
