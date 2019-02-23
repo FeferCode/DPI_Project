@@ -10,6 +10,11 @@ import Foundation
 
 struct ScreenData {
 
+    public private(set) var company:String?
+    public private(set) var model:String?
+    public private(set) var year:String?
+    private var date:Date?
+
     public private(set) var resolution: (x:Int,y:Int) = (0,0)
     public private(set) var screenDiagonalInInch:Float = 0
     public private(set) var ratio: (x: Int, y: Int) = (0,0)
@@ -59,6 +64,13 @@ struct ScreenData {
 
     }
 
+    mutating func setDisplayData(year:String, model:String, company:String){
+        self.company = company
+        self.model = model
+        self.year = year
+        self.date = Date()
+    }
+
     func printAllProperties(){
         print("=========================")
         print("Screen size: \(self.screenDiagonalInInch) inch")
@@ -72,6 +84,9 @@ struct ScreenData {
         print("Number of pixels: \(self.numberOfPixels)")
         print("Number of megapiksels: \(self.numberOfMegaPixels) Mpix")
         print("Screen PPI: \(self.PPI)")
+        if self.company != nil {
+            print("Company: \(self.company)\nModel: \(self.model)\nYear: \(year)\nDate: \(self.date)")
+        }
         print("=========================")
     }
 }

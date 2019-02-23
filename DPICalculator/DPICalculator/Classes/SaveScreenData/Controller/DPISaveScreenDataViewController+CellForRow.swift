@@ -37,15 +37,7 @@ extension DPISaveScreenViewController {
             return nil
         } else if section == 0 && calculetedDataForCell.count > 0 {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue) as! DPIBaseTableViewHeader? else { return nil }
-            header.setupHeaderView("Your screen data")
-            return header
-        } else if section == 1 && calculetedDataForCell.count == 0 {
-            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue) as! DPIBaseTableViewHeader? else { return nil }
-            header.setupHeaderView("Type data")
-            return header
-        } else if section == 1 && calculetedDataForCell.count > 0 {
-            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue) as! DPIBaseTableViewHeader? else { return nil }
-            header.setupHeaderView("Omg")
+            header.setupHeaderView("Data")
             return header
         }
         return nil

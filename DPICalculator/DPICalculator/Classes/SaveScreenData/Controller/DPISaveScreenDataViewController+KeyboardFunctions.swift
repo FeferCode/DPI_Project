@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 extension DPISaveScreenViewController: DPISaveCellDataDelegate {
 
@@ -41,6 +42,57 @@ extension DPISaveScreenViewController: DPISaveCellDataDelegate {
     }
 
     func save() {
-        print("save")
+        print("Save")
+        self.prepairDataForSave()
+        self.hideKeyboard()
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
+
+    private func prepairDataForSave(){
+
+    }
+
+    private func saveData(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName:  "ScreenDataModel", in: managedContext)!
+        let screen = NSManagedObject(entity: entity, insertInto: managedContext)
+
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "aspect_ratio")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "company")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "model")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "numberOfMegapixels")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "numberOfPixels")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "ppi")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "ratio")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "resolution")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "screenSize_cm")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "screenSize_inch")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "workspace_cm")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "workspace_inch")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "year")
+//        screen.setValue(<#T##value: Any?##Any?#>, forKey: "date")
+
+        do {
+            try managedContext.save()
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -36,10 +36,9 @@ extension DPISaveScreenViewController {
         self.calculetedDataForCell.insert(year, at: 0)
         self.calculetedDataForCell.insert(company, at: 0)
         self.calculetedDataForCell.insert(model, at: 0)
-    }
-
-    func prepareDataForSave(){
-        print("SaveData")
+        for n in calculetedDataForCell {
+            print(n.first.debugDescription)
+        }
     }
 }
 

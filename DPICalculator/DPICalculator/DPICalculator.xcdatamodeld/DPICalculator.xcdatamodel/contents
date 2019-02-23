@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ScreenDataCoreData" representedClassName="ScreenDataCoreData" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ScreenDataModel" representedClassName="ScreenDataModel" syncable="YES" codeGenerationType="class">
+        <attribute name="aspect_ratio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="diagonalInch" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="xPixels" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="yPixels" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfMegapixels" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfPixels" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ppi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ratio_x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ratio_y" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resolution_x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resolution_y" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenSize_cmX" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenSize_cmY" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenSize_inchX" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenSize_inchY" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workspace_cm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workspace_inch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ScreenDataCoreData" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="ScreenDataModel" positionX="-63" positionY="-18" width="128" height="30"/>
     </elements>
 </model>
