@@ -47,9 +47,7 @@ class DPISaveScreenViewController: DPIBaseViewController, UITextFieldDelegate, U
 
         myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero
-        if Devices.share.screenSizeType() != ScreenSizeType.iPhone_4_Inch {
-            myTableView.isScrollEnabled = false
-        }
+        myTableView.isScrollEnabled = false
         myTableView.dataSource = self
         myTableView.delegate = self
     }

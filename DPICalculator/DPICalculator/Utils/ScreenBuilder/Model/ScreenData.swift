@@ -13,7 +13,7 @@ struct ScreenData {
     public private(set) var company:String?
     public private(set) var model:String?
     public private(set) var year:String?
-    private var date:Date?
+    public private(set) var date:Date?
 
     public private(set) var resolution: (x:Int,y:Int) = (0,0)
     public private(set) var screenDiagonalInInch:Float = 0

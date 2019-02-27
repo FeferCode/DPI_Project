@@ -50,6 +50,15 @@ extension DPISaveScreenViewController: UITableViewDelegate, UITableViewDataSourc
         return 40
     }
 
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row >= 0 || indexPath.row <= 2 {
+            print("Small Number")
+        } else {
+            print("Huge Number")
+        }
+
+    }
+
 }
 
 
