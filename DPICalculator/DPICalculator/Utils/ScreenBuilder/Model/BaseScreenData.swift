@@ -25,6 +25,7 @@ struct BaseScreenData: CustomStringConvertible {
             return nil
         }
     }
+
     var description:String {
         return "Resolution: \(resolution.x)x\(resolution.y) with \(screenDiagonalInInch)\""
     }

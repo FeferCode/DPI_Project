@@ -28,7 +28,7 @@ extension DPISaveScreenViewController {
 
         let year = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
                                           firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: String.textForSaveViewController(.year)),
+                                                                               text: String.textForSaveViewController(.screenDescription)),
                                           secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                 text: nil,
                                                                                 cellTag: 2))

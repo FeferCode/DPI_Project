@@ -106,7 +106,7 @@ enum textTitleForViewController: String {
 enum textForSaveViewController: String {
     case company
     case model
-    case year
+    case screenDescription
 
     var description: String {
         switch self {
@@ -114,8 +114,8 @@ enum textForSaveViewController: String {
             return "Company"
         case .model:
             return "Model"
-        case .year:
-            return "Year"
+        case .screenDescription:
+            return "Description"
         }
     }
 }

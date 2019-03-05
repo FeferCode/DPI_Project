@@ -20,3 +20,14 @@ class BaseScreenDataBuilder {
     }
 }
 
+class ScreenDataBuilder {
+    var resolution: (x:Int?,y:Int?)
+    var screenDiagonalInInch:Float?
+
+    typealias BuilderClosure = (ScreenDataBuilder) -> ()
+
+    init(builder: BuilderClosure) {
+        builder(self)
+    }
+}
+
