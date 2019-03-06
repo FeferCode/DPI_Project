@@ -31,7 +31,12 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        if indexPath.row == selectedIndex
+        {
+            return 105
+        }else{
+            return 60
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -40,6 +45,15 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == selectedIndex{
+            selectedIndex = -1
+        }else{
+            selectedIndex = indexPath.row
+        }
+        tableView.reloadData()
     }
 
     func animateTable() {

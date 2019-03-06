@@ -14,6 +14,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     var myTableView: DPIBaseTableView!
     var tableData = [DPIHistoryTableDataModel]()
     var viewHeight = 0
+    var selectedIndex : NSInteger! = -1
 
     override func viewDidLoad() {
         setupViewsForController()
@@ -40,7 +41,6 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         myTableView.register(DPIBaseTableViewCellWittFourLabels.self,
                              forCellReuseIdentifier: DPIHistoryTableViewCellStyleEnum.withFourLabels.rawValue)
 
-        myTableView.allowsSelection = false
         myTableView.separatorInset = UIEdgeInsets.zero
         myTableView.dataSource = self
         myTableView.delegate = self

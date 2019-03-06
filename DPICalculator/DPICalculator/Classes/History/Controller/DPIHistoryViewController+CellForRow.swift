@@ -15,6 +15,7 @@ extension DPIHistoryViewController {
         case .withFourLabels:
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIHistoryTableViewCellStyleEnum.withFourLabels.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWittFourLabels
             cell.setupCellData(cellData)
+            cell.selectionStyle = .none
             return cell
         }
     }

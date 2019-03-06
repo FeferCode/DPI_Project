@@ -41,7 +41,11 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             }
         }
         if let label = self.dpiLabelTwo {
-            label.text = data.cellData.company
+            let screenDiagonalInInch = data.cellData.screenDiagonalInInch
+            let resX = data.cellData.resolution_x
+            let resY = data.cellData.resolution_y
+
+            label.text = String("Resolution: \(resX)x\(resY) Size: \(screenDiagonalInInch)")
         }
     }
 
@@ -81,58 +85,22 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
 
     private func setupConstrains() {
         self.dpiImage?.snp.makeConstraints { (make) -> Void in
-            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(5)
             make.height.equalTo(20)
             make.width.equalTo(20)
-
             make.leading.equalToSuperview().offset(25)
         }
 
         self.dpiLabel?.snp.makeConstraints { (make) -> Void in
-            make.centerY.equalToSuperview()
             make.top.equalToSuperview().offset(5)
-            make.bottom.equalToSuperview().offset(-5)
-            make.width.equalTo(140)
+            make.height.equalTo(20)
             make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
         }
 
         self.dpiLabelTwo?.snp.makeConstraints { (make) -> Void in
-            make.centerY.equalToSuperview()
-            make.top.equalToSuperview().offset(5)
-            make.bottom.equalToSuperview().offset(-5)
-
-            make.leading.equalTo(dpiLabelTwo!.snp.trailing).offset(5)
-            make.trailing.equalToSuperview().offset(-25)
+            make.top.equalTo(dpiLabel!.snp.bottom).offset(5)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
         }
-
-//        self.dpiImage?.snp.makeConstraints { (make) -> Void in
-//            make.left.equalToSuperview().offset(5)
-//            make.top.equalToSuperview().offset(5)
-//            make.height.equalTo(8)
-//            make.width.equalTo(8)
-//        }
-
-//        self.dpiLabel?.snp.makeConstraints { (make) -> Void in
-////            make.top.equalToSuperview().offset(5)
-////            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
-////            make.trailing.equalToSuperview().offset(-5)
-////            make.height.equalTo(15)
-//            make.centerY.equalToSuperview()
-//            make.top.equalToSuperview().offset(5)
-//            make.bottom.equalToSuperview().offset(-5)
-//            make.width.equalTo(140)
-//            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
-//
-//        }
-//
-//        self.dpiLabelTwo?.snp.makeConstraints { (make) -> Void in
-//            make.centerY.equalToSuperview()
-//            make.top.equalToSuperview().offset(5)
-////            make.bottom.equalToSuperview().offset(-5)
-//
-//            make.leading.equalTo(dpiLabel!.snp.trailing).offset(5)
-//            make.trailing.equalToSuperview().offset(-5)
-//        }
 
         super.updateConstraints()
     }
