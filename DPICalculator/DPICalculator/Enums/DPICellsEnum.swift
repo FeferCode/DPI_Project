@@ -11,11 +11,20 @@ import Foundation
 enum DPIBaseTableViewCellStyleEnum:String {
     case withLabel = "withLabel"
     case withTwoLabels = "withTwoLabels"
-    case withTextField = "withTextField"
     case withTwoTextFields = "withTwoTextFields"
+    case withTextField = "withTextField"
+}
+
+enum DPIHistoryTableViewCellStyleEnum:String {
+    case withFourLabels = "withFourLabels"
 }
 
 enum DPIBaseTableViewHeaderFooterEnum:String {
     case headerView = "headerView"
     case footerView = "footerView"
+}
+
+enum DPIHistoryCellState {
+    case open
+    case close
 }

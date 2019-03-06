@@ -103,5 +103,4 @@ class DPIBaseTableViewCellWithTwoTextFields: UITableViewCell {
 
         super.updateConstraints()
     }
-
 }

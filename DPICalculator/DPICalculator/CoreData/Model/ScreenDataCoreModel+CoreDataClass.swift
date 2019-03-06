@@ -30,6 +30,6 @@ public class ScreenDataCoreModel: NSManagedObject {
             print("Number of pixels: \(self.numberOfPixels)")
             print("Number of megapiksels: \(self.numberOfMegapixels) Mpix")
             print("Screen PPI: \(self.ppi)")
-            print("=========================")
+            print("=============================================")
     }
 }

@@ -94,19 +94,6 @@ extension DPISaveScreenViewController: DPISaveCellDataDelegate {
         }
     }
 
-    private func loadData(){
-        CoreDataManager.share.loadScreenData { result in
-            switch result {
-            case .success(let myData):
-                for data in myData {
-                    data.printAllProperties()
-                }
-            case .failure(let error):
-                self.showAllert(error: error)
-            }
-        }
-    }
-
     private func showAllert(error:Error){
         print(error)
     }

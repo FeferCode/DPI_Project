@@ -13,7 +13,7 @@ import Font_Awesome_Swift
 extension AppDelegate {
     func setupTabBarViewControllers() -> [UIViewController]{
         let arrayOfViewControllers  = [DPICalculationViewController(),
-                                       NoViewController(),
+                                       DPIHistoryViewController(),
                                        NoViewController()]
         return arrayOfViewControllers
     }

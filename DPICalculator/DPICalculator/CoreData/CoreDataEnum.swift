@@ -23,6 +23,11 @@ enum deleteCoreDataResult {
     case failure(Error)
 }
 
+enum simpleResult {
+    case success()
+    case failure(Error)
+}
+
 enum coreDataEntityNameEnum:String {
     case screenCoreData = "ScreenDataCoreModel"
 }
