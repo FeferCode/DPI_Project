@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+extension DPIHistoryViewController {
+    func siriTest(){
+        let siriActivity = NSUserActivity(activityType: "pl.fefercode.dpi.history")
+        siriActivity.title = "Show History"
+        siriActivity.isEligibleForSearch = true
+        siriActivity.isEligibleForPrediction = true
+
+        self.userActivity = siriActivity
+        self.userActivity?.becomeCurrent()
+    }
+}

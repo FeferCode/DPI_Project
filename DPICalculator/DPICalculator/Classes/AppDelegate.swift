@@ -23,9 +23,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = BaseNavigationController(rootViewController: tabBarViewController)
 
         window!.rootViewController = navigationController
-//        window!.tintColor = UIAppColorSet.getColor(.white)
         window!.makeKeyAndVisible()
         return true
+    }
+
+    //MARK: - For Siri Action
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        print("======================================================================")
+        print("\(userActivity.activityType)")
+        print("======================================================================")
+
+        if userActivity.activityType == "pl.fefercode.dpi.history" {
+            print("==================================>activity<====================================")
+            if let navigationVC = window!.rootViewController as? BaseNavigationController {
+                print("==================================>navigation<====================================")
+                if let tabBarVC = navigationVC.viewControllers[0] as? BaseTabBarViewController {
+                    print("==================================>tabbar<====================================")
+                    tabBarVC.selectedIndex = 1
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

@@ -18,6 +18,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
 
     override func viewDidLoad() {
         setupViewsForController()
+        siriTest()
     }
 
     override func viewWillAppear(_ animated: Bool) {
