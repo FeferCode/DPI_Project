@@ -34,11 +34,35 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         return 30
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return getHeader(for: tableView, section: section)
+    }
 
-        cell.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-        UIView.animate(withDuration: 1.0) {
-            cell.transform = CGAffineTransform.inverted(CGAffineTransform(scaleX: 0.3, y: 0.3))()
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+
+    func animateTable() {
+        self.myTableView.reloadData()
+
+        let cells = myTableView.visibleCells
+        let tableHeight: CGFloat = myTableView.bounds.size.height
+
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
+        }
+
+        var index = 0
+
+        for a in cells {
+            self.myTableView.isHidden = false
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animate(withDuration: 1.5, delay: 0.04 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromTop, animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0);
+            }, completion: nil)
+
+            index += 1
         }
     }
 }

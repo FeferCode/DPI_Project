@@ -18,4 +18,10 @@ extension DPIHistoryViewController {
             return cell
         }
     }
+
+    func getHeader(for tableView:UITableView, section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DPIBaseTableViewHeaderFooterEnum.headerView.rawValue) as!DPIBaseTableViewHeader? else { return nil }
+        header.setupHeaderView("History")
+        return header
+    }
 }

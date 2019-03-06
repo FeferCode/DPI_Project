@@ -13,12 +13,11 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
     var dpiImage: UIImageView?
     var dpiLabel: UILabel?
     var dpiLabelTwo: UILabel?
-    var dpiLabelThree: UILabel?
-    var dpiLabelFour: UILabel?
+//    var dpiLabelThree: UILabel?
+//    var dpiLabelFour: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
 
     override func didMoveToSuperview() {
@@ -26,14 +25,23 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         self.addSubview(self.dpiImage!)
         self.addSubview(self.dpiLabel!)
         self.addSubview(self.dpiLabelTwo!)
-        self.addSubview(self.dpiLabelThree!)
-        self.addSubview(self.dpiLabelFour!)
+//        self.addSubview(self.dpiLabelThree!)
+//        self.addSubview(self.dpiLabelFour!)
         setupConstrains()
     }
 
     func setupCellData(_ data: DPIHistoryTableDataModel) {
         if let image = data.cellImage {
             self.dpiImage?.addImage(image)
+        }
+
+        if let label = self.dpiLabel {
+            if let company = data.cellData.company, let model = data.cellData.model {
+                label.text = String("\(company) \(model)")
+            }
+        }
+        if let label = self.dpiLabelTwo {
+            label.text = data.cellData.company
         }
     }
 
@@ -42,28 +50,33 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         self.dpiImage = UIImageView()
         self.dpiLabel = UILabel()
         self.dpiLabelTwo = UILabel()
-        self.dpiLabelThree = UILabel()
-        self.dpiLabelFour = UILabel()
+//        self.dpiLabelThree = UILabel()
+//        self.dpiLabelFour = UILabel()
 
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
-        self.dpiLabel = UILabel()
-        self.dpiImage = UIImageView()
         if let label = self.dpiLabel {
             label.textColor = UIAppColorSet.getColor(.white)
             label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12)
         }
         if let label = self.dpiLabelTwo {
             label.textColor = UIAppColorSet.getColor(.white)
             label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
-        if let label = self.dpiLabelThree {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
-        }
-        if let label = self.dpiLabelFour {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
-        }
+//        if let label = self.dpiLabelThree {
+//            label.textColor = UIAppColorSet.getColor(.white)
+//            label.backgroundColor = UIAppColorSet.getColor(.clear)
+//            label.textAlignment = .right
+//            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+//        }
+//        if let label = self.dpiLabelFour {
+//            label.textColor = UIAppColorSet.getColor(.white)
+//            label.backgroundColor = UIAppColorSet.getColor(.clear)
+//            label.textAlignment = .right
+//            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+//        }
     }
 
     private func setupConstrains() {
@@ -72,32 +85,53 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             make.height.equalTo(20)
             make.width.equalTo(20)
 
-            make.leading.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(25)
         }
-//
-//        self.dpiField?.snp.makeConstraints { (make) -> Void in
-//            make.centerY.equalToSuperview()
+
+        self.dpiLabel?.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
+            make.width.equalTo(140)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
+        self.dpiLabelTwo?.snp.makeConstraints { (make) -> Void in
+            make.centerY.equalToSuperview()
+            make.top.equalToSuperview().offset(5)
+            make.bottom.equalToSuperview().offset(-5)
+
+            make.leading.equalTo(dpiLabelTwo!.snp.trailing).offset(5)
+            make.trailing.equalToSuperview().offset(-25)
+        }
+
+//        self.dpiImage?.snp.makeConstraints { (make) -> Void in
+//            make.left.equalToSuperview().offset(5)
 //            make.top.equalToSuperview().offset(5)
-//            make.bottom.equalToSuperview().offset(-5)
-//
-//            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+//            make.height.equalTo(8)
+//            make.width.equalTo(8)
 //        }
 
-//        self.dpiImageTwo?.snp.makeConstraints { (make) -> Void in
-//            make.centerY.equalToSuperview()
-//            make.height.equalTo(20)
-//            make.width.equalTo(20)
-//
-//            make.leading.equalTo(dpiField!.snp.trailing).offset(5)
-//        }
-//
-//        self.dpiFieldTwo?.snp.makeConstraints { (make) -> Void in
+//        self.dpiLabel?.snp.makeConstraints { (make) -> Void in
+////            make.top.equalToSuperview().offset(5)
+////            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+////            make.trailing.equalToSuperview().offset(-5)
+////            make.height.equalTo(15)
 //            make.centerY.equalToSuperview()
 //            make.top.equalToSuperview().offset(5)
 //            make.bottom.equalToSuperview().offset(-5)
+//            make.width.equalTo(140)
+//            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
 //
-//            make.leading.equalTo(dpiImageTwo!.snp.trailing).offset(5)
-//            make.trailing.equalToSuperview().offset(-10)
+//        }
+//
+//        self.dpiLabelTwo?.snp.makeConstraints { (make) -> Void in
+//            make.centerY.equalToSuperview()
+//            make.top.equalToSuperview().offset(5)
+////            make.bottom.equalToSuperview().offset(-5)
+//
+//            make.leading.equalTo(dpiLabel!.snp.trailing).offset(5)
+//            make.trailing.equalToSuperview().offset(-5)
 //        }
 
         super.updateConstraints()
