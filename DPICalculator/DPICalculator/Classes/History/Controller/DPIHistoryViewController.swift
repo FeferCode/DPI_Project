@@ -18,12 +18,15 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
 
     override func viewDidLoad() {
         setupViewsForController()
-        prepareDataForTBCells()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.baseView.updateConstraints()
+        prepareDataForTBCells()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         self.animateTable()
     }
 
@@ -33,7 +36,6 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         self.myTableView = (baseView as! DPIHistoryView).tableView
         self.view = baseView
         self.registerTableViewCells()
-        self.animateTable()
     }
 
     private func registerTableViewCells(){

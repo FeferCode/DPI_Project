@@ -29,11 +29,13 @@ extension DPIHistoryViewController {
     }
 
     private func prepairDataForCells(_ coreData: [ScreenDataCoreModel]){
+        if self.tableData.count > 0 {
+            self.tableData.removeAll()
+        }
         for data in coreData {
             let screenData = DPIHistoryTableDataModel(cellType: .withFourLabels, cellData: data, cellState: .close, cellImage: UIImage(assetIdentifier: .width_dark))
             self.tableData.append(screenData)
         }
-        self.myTableView.reloadData()
     }
 
     private func showAllert(error:Error){
