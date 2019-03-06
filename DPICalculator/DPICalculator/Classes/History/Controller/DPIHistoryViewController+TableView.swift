@@ -37,6 +37,7 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         }else{
             return 60
         }
+
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -53,7 +54,8 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         }else{
             selectedIndex = indexPath.row
         }
-        tableView.reloadData()
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 
     func animateTable() {

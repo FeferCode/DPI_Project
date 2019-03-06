@@ -32,7 +32,8 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         self.baseView = DPIHistoryView()
         self.myTableView = (baseView as! DPIHistoryView).tableView
         self.view = baseView
-        registerTableViewCells()
+        self.registerTableViewCells()
+        self.animateTable()
     }
 
     private func registerTableViewCells(){
