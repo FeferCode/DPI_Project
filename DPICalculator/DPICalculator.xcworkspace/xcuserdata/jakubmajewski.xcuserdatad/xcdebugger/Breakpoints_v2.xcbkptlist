@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DPICalculator/Classes/Calculation/Controller/TableViewController/DPICalculationTableViewCell.swift"
-            timestampString = "571258643.535421"
+            filePath = "DPICalculator/Base Classes/BaseTableView/BaseTableViewCell/DPIBaseTableViewCellWittFourLabels.swift"
+            timestampString = "573597739.915658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "sendDataForCalculation()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setupCellData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DPICalculator/Classes/SaveScreenData/Controller/DPISaveScreenDataViewController+KeyboardFunctions.swift"
-            timestampString = "573476166.864251"
+            filePath = "DPICalculator/Classes/AppDelegate.swift"
+            timestampString = "573597739.915723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "loadData()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

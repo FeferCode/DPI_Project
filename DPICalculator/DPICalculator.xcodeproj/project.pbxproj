@@ -52,6 +52,7 @@
 		60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AF203BFE9C0086629C /* CalculationManager.swift */; };
 		60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9B1203BFEF70086629C /* ConstantValues.swift */; };
 		60EDBC762222864600AFC7AE /* DPISavedScreenDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EDBC752222864600AFC7AE /* DPISavedScreenDataDelegate.swift */; };
+		60EF549622328A7C0014215D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60EF549522328A7C0014215D /* GoogleService-Info.plist */; };
 		60EF96F2220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */; };
 		60EF96F5220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */; };
 		60EF96FB220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */; };
@@ -114,6 +115,7 @@
 		60E0E9AF203BFE9C0086629C /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		60E0E9B1203BFEF70086629C /* ConstantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValues.swift; sourceTree = "<group>"; };
 		60EDBC752222864600AFC7AE /* DPISavedScreenDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISavedScreenDataDelegate.swift; sourceTree = "<group>"; };
+		60EF549522328A7C0014215D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+SaveButton.swift"; sourceTree = "<group>"; };
 		60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICalculationTableViewCellWithTextField.swift; sourceTree = "<group>"; };
 		60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveScreenDataViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				60A323DC202F1F5B00B732E4 /* LaunchScreen.storyboard */,
 				60A323DF202F1F5B00B732E4 /* Info.plist */,
 				60A323D7202F1F5B00B732E4 /* DPICalculator.xcdatamodeld */,
+				60EF549522328A7C0014215D /* GoogleService-Info.plist */,
 			);
 			path = DPICalculator;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			files = (
 				60A323DE202F1F5B00B732E4 /* LaunchScreen.storyboard in Resources */,
 				60A323DB202F1F5B00B732E4 /* Assets.xcassets in Resources */,
+				60EF549622328A7C0014215D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,15 +587,19 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DPICalculator/Pods-DPICalculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
 				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Font_Awesome_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
