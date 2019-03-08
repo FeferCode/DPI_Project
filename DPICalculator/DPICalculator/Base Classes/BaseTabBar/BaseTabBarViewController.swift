@@ -12,13 +12,13 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         UITabBar.appearance().backgroundColor = UIAppColorSet.getColor(.white)
         UITabBar.appearance().barTintColor = UIAppColorSet.getColor(.baseNavigationColor)
         UITabBar.appearance().tintColor = UIAppColorSet.getColor(.white)
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barStyle = .default
         self.title = "DPI Calculator"
-        self.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,16 +32,71 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.navigationItem.rightBarButtonItem = viewController.navigationItem.rightBarButtonItem
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        animateTabBarChange(tabBarController: tabBarController, to: viewController)
-        return true
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return MyTransition(viewControllers: tabBarController.viewControllers)
     }
 
-    func animateTabBarChange(tabBarController: UITabBarController, to viewController: UIViewController) {
-        let fromView: UIView = tabBarController.selectedViewController!.view
-        let toView: UIView = viewController.view
-        if fromView != toView {
-            UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        let fromView: UIView = tabBarController.selectedViewController!.view
+//        let toView: UIView = viewController.view
+//        if fromView != toView {
+//            UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+//        }
+//        return true
+//    }
+}
+
+class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
+
+    let viewControllers: [UIViewController]?
+    let transitionDuration: Double = 0.5
+
+    init(viewControllers: [UIViewController]?) {
+        self.viewControllers = viewControllers
+    }
+
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return TimeInterval(transitionDuration)
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+
+        guard
+            let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let fromView = fromVC.view,
+            let fromIndex = getIndex(forViewController: fromVC),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
+            let toView = toVC.view,
+            let toIndex = getIndex(forViewController: toVC)
+            else {
+                transitionContext.completeTransition(false)
+                return
         }
+
+        let frame = transitionContext.initialFrame(for: fromVC)
+        var fromFrameEnd = frame
+        var toFrameStart = frame
+        fromFrameEnd.origin.x = toIndex > fromIndex ? frame.origin.x - frame.width : frame.origin.x + frame.width
+        toFrameStart.origin.x = toIndex > fromIndex ? frame.origin.x + frame.width : frame.origin.x - frame.width
+        toView.frame = toFrameStart
+
+        DispatchQueue.main.async {
+            transitionContext.containerView.addSubview(toView)
+            UIView.animate(withDuration: self.transitionDuration, animations: {
+                fromView.frame = fromFrameEnd
+                toView.frame = frame
+            }, completion: {success in
+                fromView.removeFromSuperview()
+                transitionContext.completeTransition(success)
+            })
+        }
+    }
+
+    func getIndex(forViewController vc: UIViewController) -> Int? {
+        guard let vcs = self.viewControllers else { return nil }
+        for (index, thisVC) in vcs.enumerated() {
+            if thisVC == vc { return index }
+        }
+        return nil
     }
 }

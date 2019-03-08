@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = BaseNavigationController(rootViewController: tabBarViewController)
 
         window!.rootViewController = navigationController
-//        window!.tintColor = UIAppColorSet.getColor(.white)
         window!.makeKeyAndVisible()
         return true
     }
