@@ -55,6 +55,7 @@
 		60EF548F222F007E0014215D /* DPIHistoryViewController+TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF548E222F007E0014215D /* DPIHistoryViewController+TableData.swift */; };
 		60EF5491222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF5490222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift */; };
 		60EF5493223013D60014215D /* DPIHistoryViewController+TableViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF5492223013D60014215D /* DPIHistoryViewController+TableViewActions.swift */; };
+		60EF54982232A5E40014215D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60EF54972232A5E40014215D /* GoogleService-Info.plist */; };
 		60EF96F2220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */; };
 		60EF96F5220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */; };
 		60EF96FB220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */; };
@@ -125,6 +126,7 @@
 		60EF548E222F007E0014215D /* DPIHistoryViewController+TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+TableData.swift"; sourceTree = "<group>"; };
 		60EF5490222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60EF5492223013D60014215D /* DPIHistoryViewController+TableViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+TableViewActions.swift"; sourceTree = "<group>"; };
+		60EF54972232A5E40014215D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+SaveButton.swift"; sourceTree = "<group>"; };
 		60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICalculationTableViewCellWithTextField.swift; sourceTree = "<group>"; };
 		60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveScreenDataViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				60A323DC202F1F5B00B732E4 /* LaunchScreen.storyboard */,
 				60A323DF202F1F5B00B732E4 /* Info.plist */,
 				60A323D7202F1F5B00B732E4 /* DPICalculator.xcdatamodeld */,
+				60EF54972232A5E40014215D /* GoogleService-Info.plist */,
 			);
 			path = DPICalculator;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 			files = (
 				60A323DE202F1F5B00B732E4 /* LaunchScreen.storyboard in Resources */,
 				60A323DB202F1F5B00B732E4 /* Assets.xcassets in Resources */,
+				60EF54982232A5E40014215D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,15 +611,19 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DPICalculator/Pods-DPICalculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
 				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Font_Awesome_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
