@@ -29,11 +29,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.baseView.updateConstraints()
-        prepareDataForTBCells()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        self.animateTable()
+        self.prepareDataForTBCells()
     }
 
     //MARK :- Setup Views

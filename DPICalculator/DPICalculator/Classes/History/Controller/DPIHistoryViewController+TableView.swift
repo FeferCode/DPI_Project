@@ -62,11 +62,12 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         self.myTableView.reloadData()
 
         let cells = myTableView.visibleCells
-        let tableWidth: CGFloat = myTableView.bounds.size.width
+        let tableHeight: CGFloat = myTableView.bounds.size.height
+//        let tableWidth: CGFloat = myTableView.bounds.size.width
 
         for i in cells {
             let cell: UITableViewCell = i as UITableViewCell
-            cell.transform = CGAffineTransform(translationX: tableWidth, y: 0)
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
         }
 
         var index = 0

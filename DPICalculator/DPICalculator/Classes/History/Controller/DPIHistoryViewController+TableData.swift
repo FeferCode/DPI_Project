@@ -36,6 +36,7 @@ extension DPIHistoryViewController {
             let screenData = DPIHistoryTableDataModel(cellType: .withFourLabels, cellData: data, cellState: .close, cellImage: UIImage(assetIdentifier: .width_dark))
             self.tableData.append(screenData)
         }
+        self.myTableView.reloadData()
     }
 
     private func showAllert(error:Error){
