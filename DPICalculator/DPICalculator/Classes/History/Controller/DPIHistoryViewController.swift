@@ -29,6 +29,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         super.viewWillAppear(animated)
         self.baseView.updateConstraints()
         prepareDataForTBCells()
+        siriTest()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -57,5 +58,15 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     func setTabBarItem(){
         let image = UIImage.fontAwesomeIcon(name: .calendar, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
         self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.historyVC), image: image, tag: 1)
+    }
+
+    func siriTest(){
+        let siriActivity = NSUserActivity(activityType: "pl.fefercode.dpi.history")
+        siriActivity.title = "Show History"
+        siriActivity.isEligibleForSearch = true
+        siriActivity.isEligibleForPrediction = true
+
+        self.userActivity = siriActivity
+        self.userActivity?.becomeCurrent()
     }
 }

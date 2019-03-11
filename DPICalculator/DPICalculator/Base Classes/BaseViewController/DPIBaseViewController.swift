@@ -12,6 +12,10 @@ class DPIBaseViewController: UIViewController {
 
     var baseView = UIView()
 
+    convenience init() {
+        self.init(nibName:nil, bundle:nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,8 +24,14 @@ class DPIBaseViewController: UIViewController {
         self.view.backgroundColor = UIAppColorSet.getColor(.white)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
     }
+
+    
 }

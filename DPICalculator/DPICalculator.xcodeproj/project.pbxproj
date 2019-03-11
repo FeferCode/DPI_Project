@@ -136,6 +136,7 @@
 		60F1478522061473009E1C0F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		60F2115922364BBE00008555 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		60F2115B22364BD600008555 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		60F2115D22366D3000008555 /* DPICalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DPICalculator.entitlements; sourceTree = "<group>"; };
 		60F3E37F222E5DC4002F5E36 /* ScreenDataCoreModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenDataCoreModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60F3E380222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenDataCoreModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60F3E387222EB409002F5E36 /* DPIHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIHistoryView.swift; sourceTree = "<group>"; };
@@ -356,6 +357,7 @@
 		60A323CF202F1F5B00B732E4 /* DPICalculator */ = {
 			isa = PBXGroup;
 			children = (
+				60F2115D22366D3000008555 /* DPICalculator.entitlements */,
 				605A9F232123653000EED3CD /* Extensions */,
 				60D0C7A42120B34100787132 /* Enums */,
 				600687DF211D8F8600A0158E /* Protocols */,
@@ -579,6 +581,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -853,6 +860,7 @@
 			baseConfigurationReference = C4C02823162852AF8C030325 /* Pods-DPICalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DPICalculator/DPICalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 925758Y7C6;
 				INFOPLIST_FILE = DPICalculator/Info.plist;
@@ -870,6 +878,7 @@
 			baseConfigurationReference = 034E1F224334B4A6365E3826 /* Pods-DPICalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DPICalculator/DPICalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 925758Y7C6;
 				INFOPLIST_FILE = DPICalculator/Info.plist;

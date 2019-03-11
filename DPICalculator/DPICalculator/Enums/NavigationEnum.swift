@@ -14,7 +14,10 @@ import UIKit
 enum viewControllerNavigationEnum {
     case mainViewController
     case saveScreenViewController
+    case historyViewController
+    case aboutViewController
     case noVC
+
 }
 
 enum navigationIconStyle {
@@ -30,6 +33,10 @@ final class DPIViewControllers {
             return DPICalculationViewController()
         case .saveScreenViewController:
             return DPISaveScreenViewController()
+        case .historyViewController:
+            return DPIHistoryViewController()
+        case .aboutViewController:
+            return AboutViewController()
         case .noVC:
             return NoViewController()
         }

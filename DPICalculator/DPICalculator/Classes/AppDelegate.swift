@@ -32,6 +32,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    //MARK: - For Siri Action
+    private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        print("======================================================================")
+        print("\(userActivity.activityType)")
+        print("======================================================================")
+
+        if userActivity.activityType == "pl.fefercode.dpi.history" {
+            print("==================================>activity<====================================")
+            if let navigationVC = window!.rootViewController as? BaseNavigationController {
+                print("==================================>navigation<====================================")
+                if let tabBarVC = navigationVC.viewControllers[0] as? BaseTabBarViewController {
+                    print("==================================>tabbar<====================================")
+                    tabBarVC.selectedIndex = 1
+                return true
+                }
+            }
+        }
+        return false
+    }
+
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

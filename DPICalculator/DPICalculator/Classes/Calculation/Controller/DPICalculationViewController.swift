@@ -61,4 +61,9 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
         myTableView.dataSource = self
         myTableView.delegate = self
     }
+
+    func setTabBarItem() {
+        let image = UIImage.fontAwesomeIcon(name: .calculator, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.calulationVC), image: image, tag: 0)
+    }
 }

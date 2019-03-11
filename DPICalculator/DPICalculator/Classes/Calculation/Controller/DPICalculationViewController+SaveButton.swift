@@ -16,11 +16,6 @@ extension DPICalculationViewController {
         self.navigationItem.setRightBarButton(item, animated: true)
     }
 
-    func setTabBarItem() {
-        let image = UIImage.fontAwesomeIcon(name: .calculator, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
-        self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.calulationVC), image: image, tag: 0)
-    }
-
     @objc private func saveData(){
         self.saveScreenData()
     }
