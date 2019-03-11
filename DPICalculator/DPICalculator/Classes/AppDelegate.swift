@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     //MARK: - For Siri Action
-    private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         print("======================================================================")
         print("\(userActivity.activityType)")
         print("======================================================================")
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let tabBarVC = navigationVC.viewControllers[0] as? BaseTabBarViewController {
                     print("==================================>tabbar<====================================")
                     tabBarVC.selectedIndex = 1
-                return true
+                    return true
                 }
             }
         }

@@ -19,6 +19,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     convenience init() {
         self.init(nibName:nil, bundle:nil)
         setTabBarItem()
+        siriActivityHistory()
     }
 
     override func viewDidLoad() {
@@ -29,7 +30,6 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         super.viewWillAppear(animated)
         self.baseView.updateConstraints()
         prepareDataForTBCells()
-        siriTest()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -60,7 +60,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.historyVC), image: image, tag: 1)
     }
 
-    func siriTest(){
+    func siriActivityHistory(){
         let siriActivity = NSUserActivity(activityType: "pl.fefercode.dpi.history")
         siriActivity.title = "Show History"
         siriActivity.isEligibleForSearch = true
