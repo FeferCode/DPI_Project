@@ -17,6 +17,11 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
     var dataForCalculation: (x:Int, y:Int, diagonal:Float) = (x: 0, y: 0, diagonal: 0) 
     var screenData: ScreenData?
 
+    convenience init() {
+        self.init(nibName:nil, bundle:nil)
+        setTabBarItem()
+    }
+
     override func viewDidLoad() {
         setupViewsForController()
         keyboardConfiguration()

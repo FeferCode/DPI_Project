@@ -88,17 +88,20 @@ enum textTitleForViewController: String {
     case historyVC
     case aboutVC
     case saveDataVC
+    case noViewController
 
     var description: String {
         switch self {
         case .aboutVC:
-            return "aboutVC"
+            return "About"
         case .calulationVC:
-            return "calulationVC"
+            return "Calculation"
         case .historyVC:
-            return "historyVC"
+            return "History"
         case .saveDataVC:
-            return "saveDataVC"
+            return "Save Data"
+        case .noViewController:
+            return "NoVC"
         }
     }
 }

@@ -16,6 +16,11 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     var viewHeight = 0
     var selectedIndex : NSInteger! = -1
 
+    convenience init() {
+        self.init(nibName:nil, bundle:nil)
+        setTabBarItem()
+    }
+
     override func viewDidLoad() {
         setupViewsForController()
     }
@@ -47,5 +52,10 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
         myTableView.separatorInset = UIEdgeInsets.zero
         myTableView.dataSource = self
         myTableView.delegate = self
+    }
+
+    func setTabBarItem(){
+        let image = UIImage.fontAwesomeIcon(name: .calendar, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.historyVC), image: image, tag: 1)
     }
 }

@@ -62,6 +62,8 @@
 		60EF96FF220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FE220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift */; };
 		60EF9701220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF9700220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift */; };
 		60F1478622061473009E1C0F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1478522061473009E1C0F /* Device.swift */; };
+		60F2115A22364BBE00008555 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2115922364BBE00008555 /* AboutViewController.swift */; };
+		60F2115C22364BD600008555 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2115B22364BD600008555 /* AboutView.swift */; };
 		60F3E381222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3E37F222E5DC4002F5E36 /* ScreenDataCoreModel+CoreDataClass.swift */; };
 		60F3E382222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3E380222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataProperties.swift */; };
 		60F3E388222EB409002F5E36 /* DPIHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3E387222EB409002F5E36 /* DPIHistoryView.swift */; };
@@ -132,6 +134,8 @@
 		60EF96FE220EE8D100AAF8BF /* DPISaveScreenDataViewController+TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+TableData.swift"; sourceTree = "<group>"; };
 		60EF9700220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPISaveScreenDataViewController+CellForRow.swift"; sourceTree = "<group>"; };
 		60F1478522061473009E1C0F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		60F2115922364BBE00008555 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		60F2115B22364BD600008555 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		60F3E37F222E5DC4002F5E36 /* ScreenDataCoreModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenDataCoreModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60F3E380222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScreenDataCoreModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60F3E387222EB409002F5E36 /* DPIHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPIHistoryView.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				600687F5211E532C00A0158E /* Calculation */,
 				60EF96F6220DCADF00AAF8BF /* SaveScreenData */,
 				60F3E383222EABD1002F5E36 /* History */,
+				60F2115822364B5000008555 /* About */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -472,6 +477,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		60F2115822364B5000008555 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				60F2115922364BBE00008555 /* AboutViewController.swift */,
+				60F2115B22364BD600008555 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		60F3E37A222DAA50002F5E36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +577,7 @@
 				TargetAttributes = {
 					60A323CC202F1F5B00B732E4 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -606,15 +621,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DPICalculator/Pods-DPICalculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
-				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Font_Awesome_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,9 +660,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F2115C22364BD600008555 /* AboutView.swift in Sources */,
 				60F583E62226A980005F8F2B /* CoreDataManager.swift in Sources */,
 				605A9F1921231BCD00EED3CD /* DPICellsEnum.swift in Sources */,
 				60F3E38C222EB55E002F5E36 /* DPIHistoryViewController+TableView.swift in Sources */,
+				60F2115A22364BBE00008555 /* AboutViewController.swift in Sources */,
 				60CE84DB212ECABA0031FF86 /* DPICalculationViewController+Calculations.swift in Sources */,
 				60F3E381222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataClass.swift in Sources */,
 				606893D2211B1D2100A91A4B /* BaseNavigationController.swift in Sources */,
@@ -845,7 +860,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.dpi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -862,7 +877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.fefercode.dpi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

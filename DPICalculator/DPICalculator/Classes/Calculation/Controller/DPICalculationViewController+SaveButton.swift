@@ -8,11 +8,17 @@
 
 import Foundation
 import UIKit
+import FontAwesome_swift
 
 extension DPICalculationViewController {
     func setNavigationBarItem(){
         let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
         self.navigationItem.setRightBarButton(item, animated: true)
+    }
+
+    func setTabBarItem() {
+        let image = UIImage.fontAwesomeIcon(name: .calculator, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.calulationVC), image: image, tag: 0)
     }
 
     @objc private func saveData(){

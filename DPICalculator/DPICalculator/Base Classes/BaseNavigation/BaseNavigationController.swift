@@ -15,8 +15,8 @@ class BaseNavigationController: UINavigationController {
         UINavigationBar.appearance().backgroundColor = UIAppColorSet.getColor(.clear)
         UINavigationBar.appearance().barTintColor = UIAppColorSet.getColor(.baseNavigationColor)
         UINavigationBar.appearance().tintColor = UIAppColorSet.getColor(.white)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white,
-                                                            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 24)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
+                                                            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 24)]
         UINavigationBar.appearance().isOpaque = false
         UINavigationBar.appearance().barStyle = .default
 

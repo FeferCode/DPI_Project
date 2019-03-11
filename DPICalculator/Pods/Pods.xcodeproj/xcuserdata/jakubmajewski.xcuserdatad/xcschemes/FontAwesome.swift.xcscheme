@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE0E68F9E8FAB722BE5A5A7CF821C026"
-               BuildableName = "Pods_DPICalculator.framework"
-               BlueprintName = "Pods-DPICalculator"
+               BlueprintIdentifier = "ADD9F3DD47C12F0136E3ED7EE7141BA4"
+               BuildableName = "FontAwesome_swift.framework"
+               BlueprintName = "FontAwesome.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE0E68F9E8FAB722BE5A5A7CF821C026"
-            BuildableName = "Pods_DPICalculator.framework"
-            BlueprintName = "Pods-DPICalculator"
+            BlueprintIdentifier = "ADD9F3DD47C12F0136E3ED7EE7141BA4"
+            BuildableName = "FontAwesome_swift.framework"
+            BlueprintName = "FontAwesome.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

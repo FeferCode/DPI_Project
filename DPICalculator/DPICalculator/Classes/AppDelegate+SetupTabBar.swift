@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Font_Awesome_Swift
+import FontAwesome_swift
 
 extension AppDelegate {
     func setupTabBarViewControllers() -> [UIViewController]{
@@ -16,16 +16,5 @@ extension AppDelegate {
                                        DPIHistoryViewController(),
                                        NoViewController()]
         return arrayOfViewControllers
-    }
-
-    func customiseTabItems(tabBar: UITabBar) {
-        var itemsTitle:[String] = ["Calculator", "History", "About"]
-        var itemsImage:[FAType] = [.FACalculator, .FACalendar, .FASafari]
-
-        for i in 0...2 {
-            let item = tabBar.items![i]
-            item.title = itemsTitle[i]
-            item.setFAIcon(icon: itemsImage[i])
-        }
     }
 }

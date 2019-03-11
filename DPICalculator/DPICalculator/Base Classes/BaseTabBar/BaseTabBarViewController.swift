@@ -36,14 +36,17 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         return MyTransition(viewControllers: tabBarController.viewControllers)
     }
 
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        let fromView: UIView = tabBarController.selectedViewController!.view
-//        let toView: UIView = viewController.view
-//        if fromView != toView {
-//            UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+    //MARK: - Setup ViewControllers and TabBarItems
+    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+//        var tabBarItems:[UITabBarItem]? = [UITabBarItem]()
+//
+//        if let controllers = viewControllers, var tabBarItems = tabBarItems {
+//            for vc in controllers {
+//                tabBarItems.append(vc.tabBarItem)
+//            }
 //        }
-//        return true
-//    }
+    }
 }
 
 class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
