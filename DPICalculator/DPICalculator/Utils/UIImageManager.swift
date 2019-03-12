@@ -27,6 +27,8 @@ final class UIImageManager {
             return UIImage.fontAwesomeIcon(name: .arrowCircleLeft, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
         case .next:
             return UIImage.fontAwesomeIcon(name: .arrowCircleRight, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
+        case .screen:
+            return UIImage.fontAwesomeIcon(name: .desktop, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
         default:
             return UIImage.fontAwesomeIcon(name: .democrat, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
         }
@@ -40,6 +42,14 @@ final class UIImageManager {
             return UIImage.fontAwesomeIcon(name: .arrowsAltV, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
         case .diagonal:
             return UIImage.fontAwesomeIcon(name: .expandArrowsAlt, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        case .arrowRight:
+            return UIImage.fontAwesomeIcon(name: .arrowRight, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        case .company:
+            return UIImage.fontAwesomeIcon(name: .building, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        case .model:
+            return UIImage.fontAwesomeIcon(name: .desktop, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        case .descryption:
+            return UIImage.fontAwesomeIcon(name: .fileAlt, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
         default:
             return UIImage.fontAwesomeIcon(name: .democrat, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
         }
@@ -54,6 +64,7 @@ enum DPImage {
     case save
     case back
     case next
+    case screen
 
     case noImage
 }
@@ -62,6 +73,10 @@ enum DPICellImageEnum {
     case width
     case height
     case diagonal
+    case arrowRight
+    case company
+    case model
+    case descryption
 
     case noCellImage
 }

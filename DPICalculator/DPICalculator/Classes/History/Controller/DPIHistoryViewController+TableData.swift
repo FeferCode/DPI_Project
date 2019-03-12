@@ -33,7 +33,7 @@ extension DPIHistoryViewController {
             self.tableData.removeAll()
         }
         for data in coreData {
-            let screenData = DPIHistoryTableDataModel(cellType: .withFourLabels, cellData: data, cellState: .close, cellImage: UIImage(assetIdentifier: .width_dark))
+            let screenData = DPIHistoryTableDataModel(cellType: .withFourLabels, cellData: data, cellState: .close, cellImage: UIImageManager.shared.getImage(.screen))
             self.tableData.append(screenData)
         }
         self.myTableView.reloadData()
