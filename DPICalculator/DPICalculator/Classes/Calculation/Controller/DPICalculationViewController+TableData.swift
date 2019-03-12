@@ -18,7 +18,7 @@ extension DPICalculationViewController {
         }
 
         let resolution = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTwoLabels,
-                                               firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
+                                               firstData: DPIMainTableCellDataModel(image: UIImageManager.shared.getImage(.diagonal),
                                                                                     text: String.textForCalculeted(.resolution)),
                                                secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                      text: "\(String(describing: data.resolution.x))x\(String(describing: data.resolution.y))"))
@@ -84,19 +84,19 @@ extension DPICalculationViewController {
     func dataForCalculationsCells(){
 
         let xPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                            firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
+                                            firstData: DPIMainTableCellDataModel(image: UIImageManager.shared.getImage(.width),
                                                                                  placeholder: String.textForCalculations(.xPixel),
                                                                                  dataType: .xPixels,
                                                                                  cellTag: 0))
 
         let yPixels = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                            firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.height_dark),
+                                            firstData: DPIMainTableCellDataModel(image: UIImageManager.shared.getImage(.height),
                                                                                  placeholder: String.textForCalculations(.yPixel),
                                                                                  dataType: .yPixels,
                                                                                  cellTag: 1))
 
         let diagonalInInch = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                                   firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.aspect_ratio_dark),
+                                                   firstData: DPIMainTableCellDataModel(image: UIImageManager.shared.getImage(.diagonal),
                                                                                         placeholder: String.textForCalculations(.diagonalInInch),
                                                                                         dataType: .diagonalInInch,
                                                                                         cellTag: 2))

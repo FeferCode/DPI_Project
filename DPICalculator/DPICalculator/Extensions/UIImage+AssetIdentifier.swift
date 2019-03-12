@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FontAwesome_swift
 
 extension UIImage {
     enum AssetIdentifier:String {
@@ -34,3 +35,7 @@ extension UIImage {
         self.init(named: assetIdentifier.rawValue)
     }
 }
+
+
+
+

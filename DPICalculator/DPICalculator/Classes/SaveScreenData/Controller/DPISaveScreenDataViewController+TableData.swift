@@ -12,33 +12,30 @@ import UIKit
 extension DPISaveScreenViewController {
     func prepareDataForTBCells(){
 
+        let company = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
+                                            firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
+                                                                                 text: String.textForSaveViewController(.company)),
+                                            secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
+                                                                                  text: nil,
+                                                                                  cellTag: 0))
+
         let model = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
                                                firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                     text: String.textForSaveViewController(.model)),
                                                secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                      text: nil,
-                                                                                     cellTag: 0))
+                                                                                     cellTag: 1))
 
-        let company = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
-                                         firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                              text: String.textForSaveViewController(.company)),
-                                         secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
-                                                                               text: nil,
-                                                                               cellTag: 1))
-
-        let year = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
+        let description = DPIMainTableDataModel(type: DPIBaseTableViewCellStyleEnum.withTextField,
                                           firstData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                text: String.textForSaveViewController(.screenDescription)),
                                           secondData: DPIMainTableCellDataModel(image: UIImage(assetIdentifier: UIImage.AssetIdentifier.width_dark),
                                                                                 text: nil,
                                                                                 cellTag: 2))
 
-        self.calculetedDataForCell.insert(year, at: 0)
-        self.calculetedDataForCell.insert(company, at: 0)
+        self.calculetedDataForCell.insert(description, at: 0)
         self.calculetedDataForCell.insert(model, at: 0)
-        for n in calculetedDataForCell {
-            print(n.first.debugDescription)
-        }
+        self.calculetedDataForCell.insert(company, at: 0)
     }
 }
 

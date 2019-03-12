@@ -12,7 +12,8 @@ import FontAwesome_swift
 
 extension DPICalculationViewController {
     func setNavigationBarItem(){
-        let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
+//        let item = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveData))
+        let item = UIBarButtonItem(image: UIImageManager.shared.getImage(.save), style: .done, target: self, action: #selector(saveData))
         self.navigationItem.setRightBarButton(item, animated: true)
     }
 

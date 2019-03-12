@@ -25,7 +25,7 @@ class NoViewController: DPIBaseViewController {
     }
 
     func setTabBarItem(){
-        let image = UIImage.fontAwesomeIcon(name: .notesMedical, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        let image = UIImageManager.shared.getImage(.noImage)
         self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.noViewController), image: image, tag: 2)
     }
 }

@@ -24,11 +24,11 @@ class DPISaveDataTableViewCellWithLabelAndTextField: DPIBaseTableViewCellWithLab
     private func addButtons(){
         let bar = UIToolbar()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let back = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(previewTFResponder))
+        let back = UIBarButtonItem(image: UIImageManager.shared.getImage(.back), style: .done, target: self, action: #selector(previewTFResponder))
         let reset = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(deleteTextFieldData))
         let hide = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(hideKeyboard))
         let save = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveData))
-        let next = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(nextTFResponder))
+        let next = UIBarButtonItem(image: UIImageManager.shared.getImage(.next), style: .done, target: self, action: #selector(nextTFResponder))
         bar.items = [back, flexibleSpace, reset, flexibleSpace, save, flexibleSpace, hide, flexibleSpace, next]
         bar.sizeToFit()
         dpiField?.inputAccessoryView = bar

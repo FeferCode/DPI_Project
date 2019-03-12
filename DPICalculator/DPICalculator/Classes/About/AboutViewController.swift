@@ -17,7 +17,7 @@ class AboutViewController:DPIBaseViewController {
     }
 
     func setTabBarItem(){
-        let image = UIImage.fontAwesomeIcon(name: .calendar, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        let image = UIImageManager.shared.getImage(.about)
         self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.historyVC), image: image, tag: 1)
     }
 }

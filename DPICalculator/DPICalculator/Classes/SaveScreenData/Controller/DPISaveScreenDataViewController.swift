@@ -56,8 +56,8 @@ class DPISaveScreenViewController: DPIBaseViewController, UITextFieldDelegate, U
 
     func setupBackButton(){
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(self.backButtonAction(sender:)))
-        self.navigationItem.leftBarButtonItem = newBackButton
+        let backButton = UIBarButtonItem(image: UIImageManager.shared.getImage(.back), style: .done, target: self, action: #selector(self.backButtonAction(sender:)))
+        self.navigationItem.leftBarButtonItem = backButton
     }
 
     @objc func backButtonAction(sender: UIBarButtonItem){
@@ -69,9 +69,6 @@ class DPISaveScreenViewController: DPIBaseViewController, UITextFieldDelegate, U
     func showPopUp(){
         let alertController = UIAlertController(title: "Alert", message: "Would you go back to calculation without saving?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Continue editing", style: .default))
-//        alertController.addAction(UIAlertAction(title: "Save and dismiss alert", style: .default, handler: { (alert) in
-//            self.save()
-//        }))
         alertController.addAction(UIAlertAction(title: "Back without saving", style: .cancel, handler: { (alert) in
             _ = self.navigationController?.popViewController(animated: true)
         }))

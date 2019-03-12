@@ -63,7 +63,7 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
     }
 
     func setTabBarItem() {
-        let image = UIImage.fontAwesomeIcon(name: .calculator, style: .solid, textColor: .white, size: CGSize(width: 40, height: 40))
+        let image = UIImageManager.shared.getImage(.calculator)
         self.tabBarItem = UITabBarItem(title: String.textForViewControllerTitle(.calulationVC), image: image, tag: 0)
     }
 }
