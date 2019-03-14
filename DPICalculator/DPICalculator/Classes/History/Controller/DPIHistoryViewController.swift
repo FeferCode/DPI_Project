@@ -14,7 +14,8 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
     var myTableView: DPIBaseTableView!
     var tableData = [DPIHistoryTableDataModel]()
     var viewHeight = 0
-    var selectedIndex : NSInteger! = -1
+    var newSelectedIndex : NSInteger! = -1
+    var oldSelectedIndex : NSInteger! = -1
 
     convenience init() {
         self.init(nibName:nil, bundle:nil)

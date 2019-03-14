@@ -16,7 +16,18 @@ extension DPIHistoryViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: DPIHistoryTableViewCellStyleEnum.withFourLabels.rawValue, for: indexPath as IndexPath) as! DPIBaseTableViewCellWittFourLabels
             cell.setupCellData(cellData)
             cell.selectionStyle = .none
+            cellState(indexPath: indexPath.row, cell: cell)
             return cell
+        }
+    }
+
+    private func cellState(indexPath:Int, cell:DPIBaseTableViewCellWittFourLabels){
+        if indexPath == self.newSelectedIndex {
+            cell.setCellState(.open)
+        } else if indexPath == self.oldSelectedIndex {
+            cell.setCellState(.close)
+        } else {
+            cell.setCellState(.close)
         }
     }
 

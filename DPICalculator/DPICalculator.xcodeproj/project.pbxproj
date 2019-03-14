@@ -52,9 +52,10 @@
 		60E0E9B0203BFE9C0086629C /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9AF203BFE9C0086629C /* CalculationManager.swift */; };
 		60E0E9B2203BFEF70086629C /* ConstantValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E0E9B1203BFEF70086629C /* ConstantValues.swift */; };
 		60EDBC762222864600AFC7AE /* DPISavedScreenDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EDBC752222864600AFC7AE /* DPISavedScreenDataDelegate.swift */; };
+		60EF3866223A53C6007BD465 /* DPIBaseTableViewCellWittFourLabels+Expandable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF3865223A53C6007BD465 /* DPIBaseTableViewCellWittFourLabels+Expandable.swift */; };
 		60EF548F222F007E0014215D /* DPIHistoryViewController+TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF548E222F007E0014215D /* DPIHistoryViewController+TableData.swift */; };
 		60EF5491222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF5490222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift */; };
-		60EF5493223013D60014215D /* DPIHistoryViewController+TableViewActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF5492223013D60014215D /* DPIHistoryViewController+TableViewActions.swift */; };
+		60EF5493223013D60014215D /* DPIHistoryViewController+TableViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF5492223013D60014215D /* DPIHistoryViewController+TableViewAnimations.swift */; };
 		60EF96F2220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */; };
 		60EF96F5220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */; };
 		60EF96FB220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */; };
@@ -125,9 +126,10 @@
 		60E0E9AF203BFE9C0086629C /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		60E0E9B1203BFEF70086629C /* ConstantValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantValues.swift; sourceTree = "<group>"; };
 		60EDBC752222864600AFC7AE /* DPISavedScreenDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISavedScreenDataDelegate.swift; sourceTree = "<group>"; };
+		60EF3865223A53C6007BD465 /* DPIBaseTableViewCellWittFourLabels+Expandable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIBaseTableViewCellWittFourLabels+Expandable.swift"; sourceTree = "<group>"; };
 		60EF548E222F007E0014215D /* DPIHistoryViewController+TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+TableData.swift"; sourceTree = "<group>"; };
 		60EF5490222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+CellForRow.swift"; sourceTree = "<group>"; };
-		60EF5492223013D60014215D /* DPIHistoryViewController+TableViewActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+TableViewActions.swift"; sourceTree = "<group>"; };
+		60EF5492223013D60014215D /* DPIHistoryViewController+TableViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPIHistoryViewController+TableViewAnimations.swift"; sourceTree = "<group>"; };
 		60EF96F1220C36F900AAF8BF /* DPICalculationViewController+SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPICalculationViewController+SaveButton.swift"; sourceTree = "<group>"; };
 		60EF96F4220CA56300AAF8BF /* DPICalculationTableViewCellWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPICalculationTableViewCellWithTextField.swift; sourceTree = "<group>"; };
 		60EF96FA220EE2DA00AAF8BF /* DPISaveScreenDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPISaveScreenDataViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				605A9F1E212325AB00EED3CD /* DPIBaseTableViewCellWithTextLabel.swift */,
 				60BDC889213014D5007FD834 /* DPIBaseTableViewCellWithTwoTextLabels.swift */,
 				60F3E38D222EEA85002F5E36 /* DPIBaseTableViewCellWittFourLabels.swift */,
+				60EF3865223A53C6007BD465 /* DPIBaseTableViewCellWittFourLabels+Expandable.swift */,
 				605A9F1C2123225C00EED3CD /* DPIBaseTableViewCellWithTextField.swift */,
 				604FA527212B5EE400C7E995 /* DPIBaseTableViewCellWithTwoTextFields.swift */,
 				60F7D3872210AF220012045E /* DPIBaseTableViewCellWithLabelAndTextFields.swift */,
@@ -515,7 +518,7 @@
 			children = (
 				60F3E389222EB4A4002F5E36 /* DPIHistoryViewController.swift */,
 				60F3E38B222EB55E002F5E36 /* DPIHistoryViewController+TableView.swift */,
-				60EF5492223013D60014215D /* DPIHistoryViewController+TableViewActions.swift */,
+				60EF5492223013D60014215D /* DPIHistoryViewController+TableViewAnimations.swift */,
 				60EF548E222F007E0014215D /* DPIHistoryViewController+TableData.swift */,
 				60EF5490222FAEA50014215D /* DPIHistoryViewController+CellForRow.swift */,
 			);
@@ -701,6 +704,7 @@
 				60EF9701220EEA3A00AAF8BF /* DPISaveScreenDataViewController+CellForRow.swift in Sources */,
 				60F3E382222E5DC5002F5E36 /* ScreenDataCoreModel+CoreDataProperties.swift in Sources */,
 				60E0E9AA203BFC740086629C /* BaseScreenData.swift in Sources */,
+				60EF3866223A53C6007BD465 /* DPIBaseTableViewCellWittFourLabels+Expandable.swift in Sources */,
 				604FA51E2129939A00C7E995 /* UIImageView+AddImage.swift in Sources */,
 				60A323D9202F1F5B00B732E4 /* DPICalculator.xcdatamodeld in Sources */,
 				600687F1211E528600A0158E /* DPICalculationViewController.swift in Sources */,
@@ -730,7 +734,7 @@
 				604FA524212B0E2900C7E995 /* DPICalculationViewController+TableData.swift in Sources */,
 				60D0C79C212035A700787132 /* BaseTabBarViewController.swift in Sources */,
 				605A9F252123655000EED3CD /* UIImage+AssetIdentifier.swift in Sources */,
-				60EF5493223013D60014215D /* DPIHistoryViewController+TableViewActions.swift in Sources */,
+				60EF5493223013D60014215D /* DPIHistoryViewController+TableViewAnimations.swift in Sources */,
 				60E0E9AD203BFC8A0086629C /* BaseScreenDataBuilder.swift in Sources */,
 				600687EA211E356600A0158E /* NoViewController.swift in Sources */,
 				60A323D1202F1F5B00B732E4 /* AppDelegate.swift in Sources */,

@@ -31,13 +31,12 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == selectedIndex
+        if indexPath.row == newSelectedIndex
         {
-            return 105
-        }else{
-            return 60
+            return 135
+        } else {
+            return 55
         }
-
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -49,37 +48,24 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == selectedIndex{
-            selectedIndex = -1
-        }else{
-            selectedIndex = indexPath.row
+        oldSelectedIndex = newSelectedIndex
+
+        if indexPath.row == newSelectedIndex{
+            newSelectedIndex = -1
+        } else {
+            newSelectedIndex = indexPath.row
         }
+
         tableView.beginUpdates()
+        if oldSelectedIndex != -1 {
+            tableView.reloadRows(at: [IndexPath(row: oldSelectedIndex, section: 0), indexPath], with: .automatic)
+        } else {
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
         tableView.endUpdates()
     }
 
-    func animateTable() {
-        self.myTableView.reloadData()
 
-        let cells = myTableView.visibleCells
-        let tableHeight: CGFloat = myTableView.bounds.size.height
-//        let tableWidth: CGFloat = myTableView.bounds.size.width
 
-        for i in cells {
-            let cell: UITableViewCell = i as UITableViewCell
-            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
-        }
-
-        var index = 0
-
-        for a in cells {
-            self.myTableView.isHidden = false
-            let cell: UITableViewCell = a as UITableViewCell
-            UIView.animate(withDuration: 1.5, delay: 0.04 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromTop, animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0);
-            }, completion: nil)
-
-            index += 1
-        }
-    }
+    
 }

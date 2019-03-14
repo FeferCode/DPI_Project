@@ -29,4 +29,8 @@ struct DPIHistoryTableDataModel {
         self.cellType = cellType
         self.cellState = cellState
     }
+
+    mutating func changeCellState(to state:DPIHistoryCellState){
+        self.cellState = state
+    }
 }
