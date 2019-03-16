@@ -21,7 +21,7 @@ class DPIBaseViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.view.backgroundColor = UIAppColorSet.getColor(.white)
+        self.view.backgroundColor = UIAppColorSet.shared.getColor(.white)
     }
 
     override func viewWillDisappear(_ animated: Bool) {

@@ -64,8 +64,4 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.endUpdates()
     }
-
-
-
-    
 }

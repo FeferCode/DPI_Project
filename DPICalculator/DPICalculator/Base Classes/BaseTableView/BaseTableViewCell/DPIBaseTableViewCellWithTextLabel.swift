@@ -35,12 +35,12 @@ class DPIBaseTableViewCellWithTextLabel: UITableViewCell {
     }
 
     private func configureCellSubViews() {
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
+        self.backgroundColor = UIAppColorSet.shared.getColor(.clear)
         self.dpiLabel = UILabel()
         self.dpiImage = UIImageView()
         if let label = self.dpiLabel {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
         }
     }
 

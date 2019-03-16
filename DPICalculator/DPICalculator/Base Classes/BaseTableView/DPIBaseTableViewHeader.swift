@@ -32,11 +32,11 @@ class DPIBaseTableViewHeader: UITableViewHeaderFooterView {
     }
 
     private func configureCellSubViews() {
-        self.contentView.backgroundColor = UIAppColorSet.getColor(.baseNavigationColor)
+        self.contentView.backgroundColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
         self.dpiLabel = UILabel()
         if let label = self.dpiLabel {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .center
             label.font = UIFont.boldSystemFont(ofSize: 16.0)
         }

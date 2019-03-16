@@ -46,10 +46,10 @@ class DPIMainView: UIView {
     }
 
     private func setupViewColor(){
-        self.backgroundColor = UIColor.white
-        self.containerView.backgroundColor = UIAppColorSet.getColor(.baseBackgroundColor)
-        self.tableView.backgroundColor = UIAppColorSet.getColor(.clear)
-        self.tableView.separatorColor = UIAppColorSet.getColor(.clear)
+        self.backgroundColor = UIAppColorSet.shared.getColor(.white)
+        self.containerView.backgroundColor = UIAppColorSet.shared.getColor(.baseBackgroundColor)
+        self.tableView.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+        self.tableView.separatorColor = UIAppColorSet.shared.getColor(.clear)
     }
 
     private func setupConstraints(){

@@ -17,7 +17,7 @@ class DPIBaseTableView: UITableView {
                                     .layerMinXMaxYCorner,
                                     .layerMinXMinYCorner]
         self.clipsToBounds = true
-        self.layer.borderColor = UIAppColorSet.getColor(.white).cgColor
+        self.layer.borderColor = UIAppColorSet.shared.getColor(.white).cgColor
         self.layer.borderWidth = 1
     }
 }

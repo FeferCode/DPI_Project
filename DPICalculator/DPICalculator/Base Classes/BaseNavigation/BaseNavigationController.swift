@@ -12,9 +12,9 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().backgroundColor = UIAppColorSet.getColor(.clear)
-        UINavigationBar.appearance().barTintColor = UIAppColorSet.getColor(.baseNavigationColor)
-        UINavigationBar.appearance().tintColor = UIAppColorSet.getColor(.white)
+        UINavigationBar.appearance().backgroundColor = UIAppColorSet.shared.getColor(.clear)
+        UINavigationBar.appearance().barTintColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
+        UINavigationBar.appearance().tintColor = UIAppColorSet.shared.getColor(.white)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white,
                                                             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 24)]
         UINavigationBar.appearance().isOpaque = false

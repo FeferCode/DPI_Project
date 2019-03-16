@@ -15,6 +15,8 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
     var dpiLabelTwo: UILabel?
     var dpiLabelThree: UILabel?
     var dpiLabelFour: UILabel?
+    var dpiLabelFive: UILabel?
+    var dpiLabelSix: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +29,8 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         self.addSubview(self.dpiLabelTwo!)
         self.addSubview(self.dpiLabelThree!)
         self.addSubview(self.dpiLabelFour!)
+        self.addSubview(self.dpiLabelFive!)
+        self.addSubview(self.dpiLabelSix!)
         setupConstrains()
     }
 
@@ -58,6 +62,16 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             label.text = String("Ratio: \(ratioX)x\(ratioY) PPI: \(ppi)")
         }
         if let label = self.dpiLabelFour {
+            let aspect_ratio = data.cellData.aspect_ratio
+
+            label.text = String("Aspect ratio: : \(aspect_ratio)")
+        }
+        if let label = self.dpiLabelFive {
+            let megaPix = data.cellData.numberOfMegapixels
+
+            label.text = String("Number of megapixels: \(megaPix) MPix")
+        }
+        if let label = self.dpiLabelSix {
             let pixels = data.cellData.numberOfPixels
 
             label.text = String("Number of Pixels: \(pixels)")
@@ -65,34 +79,48 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
     }
 
     private func configureCellSubViews() {
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
+        self.backgroundColor = UIAppColorSet.shared.getColor(.clear)
         self.dpiImage = UIImageView()
         self.dpiLabel = UILabel()
         self.dpiLabelTwo = UILabel()
         self.dpiLabelThree = UILabel()
         self.dpiLabelFour = UILabel()
+        self.dpiLabelFive = UILabel()
+        self.dpiLabelSix = UILabel()
 
         if let label = self.dpiLabel {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .left
             label.font = UIFont.boldSystemFont(ofSize: 12)
         }
         if let label = self.dpiLabelTwo {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .left
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
         if let label = self.dpiLabelThree {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .left
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
         if let label = self.dpiLabelFour {
-            label.textColor = UIAppColorSet.getColor(.white)
-            label.backgroundColor = UIAppColorSet.getColor(.clear)
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelFive {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelSix {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .left
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
@@ -130,6 +158,18 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
         }
 
+        self.dpiLabelFive?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelFour!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
+        self.dpiLabelSix?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelFive!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
         super.updateConstraints()
     }
 
@@ -138,11 +178,15 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         case .open:
             self.addSubview(self.dpiLabelThree!)
             self.addSubview(self.dpiLabelFour!)
+            self.addSubview(self.dpiLabelFive!)
+            self.addSubview(self.dpiLabelSix!)
             self.setupConstrains()
             break
         case .close:
             self.dpiLabelThree!.removeFromSuperview()
             self.dpiLabelFour!.removeFromSuperview()
+            self.dpiLabelFive!.removeFromSuperview()
+            self.dpiLabelSix!.removeFromSuperview()
             break
         }
     }

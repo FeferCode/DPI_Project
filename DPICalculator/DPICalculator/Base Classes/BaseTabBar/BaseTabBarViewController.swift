@@ -13,9 +13,9 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        UITabBar.appearance().backgroundColor = UIAppColorSet.getColor(.white)
-        UITabBar.appearance().barTintColor = UIAppColorSet.getColor(.baseNavigationColor)
-        UITabBar.appearance().tintColor = UIAppColorSet.getColor(.white)
+        UITabBar.appearance().backgroundColor = UIAppColorSet.shared.getColor(.white)
+        UITabBar.appearance().barTintColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
+        UITabBar.appearance().tintColor = UIAppColorSet.shared.getColor(.white)
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barStyle = .default
         self.title = "DPI Calculator"
@@ -37,22 +37,15 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
 
     //MARK: - Setup ViewControllers and TabBarItems
-    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
-        super.setViewControllers(viewControllers, animated: animated)
-//        var tabBarItems:[UITabBarItem]? = [UITabBarItem]()
-//
-//        if let controllers = viewControllers, var tabBarItems = tabBarItems {
-//            for vc in controllers {
-//                tabBarItems.append(vc.tabBarItem)
-//            }
-//        }
-    }
+//    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+//        super.setViewControllers(viewControllers, animated: animated)
+//    }
 }
 
 class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
     let viewControllers: [UIViewController]?
-    let transitionDuration: Double = 0.5
+    let transitionDuration: Double = 0.25
 
     init(viewControllers: [UIViewController]?) {
         self.viewControllers = viewControllers

@@ -46,19 +46,19 @@ class DPIBaseTableViewCellWithLabelAndTextFields: UITableViewCell {
         }
 
         private func configureCellSubViews() {
-            self.backgroundColor = UIAppColorSet.getColor(.clear)
+            self.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             self.dpiImage = UIImageView()
             self.dpiLabel = UILabel()
             self.dpiField = UITextField()
             if let label = self.dpiLabel {
-                label.textColor = UIAppColorSet.getColor(.white)
-                label.backgroundColor = UIAppColorSet.getColor(.clear)
+                label.textColor = UIAppColorSet.shared.getColor(.white)
+                label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
                 label.textAlignment = .right
                 label.font = UIFont.boldSystemFont(ofSize: 12.0)
             }
             if let label = self.dpiField {
-                label.textColor = UIAppColorSet.getColor(.white)
-                label.backgroundColor = UIAppColorSet.getColor(.clear)
+                label.textColor = UIAppColorSet.shared.getColor(.white)
+                label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
                 label.textAlignment = .left
                 label.font = UIFont.boldSystemFont(ofSize: 12.0)
             }

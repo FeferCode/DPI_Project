@@ -43,24 +43,24 @@ class DPIBaseTableViewCellWithTwoTextFields: UITableViewCell {
     }
 
     private func configureCellSubViews() {
-        self.backgroundColor = UIAppColorSet.getColor(.clear)
+        self.backgroundColor = UIAppColorSet.shared.getColor(.clear)
         self.dpiField = UITextField()
         self.dpiImage = UIImageView()
         self.dpiFieldTwo = UITextField()
         self.dpiImageTwo = UIImageView()
 
         if let textField = self.dpiField {
-            textField.tintColor = UIAppColorSet.getColor(.white)
-            textField.backgroundColor = UIAppColorSet.getColor(.clear)
-            textField.textColor = UIAppColorSet.getColor(.white)
+            textField.tintColor = UIAppColorSet.shared.getColor(.white)
+            textField.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            textField.textColor = UIAppColorSet.shared.getColor(.white)
             textField.keyboardType = .numberPad
             textField.textAlignment = .left
             textField.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
         if let textField = self.dpiFieldTwo {
-            textField.tintColor = UIAppColorSet.getColor(.white)
-            textField.backgroundColor = UIAppColorSet.getColor(.clear)
-            textField.textColor = UIAppColorSet.getColor(.white)
+            textField.tintColor = UIAppColorSet.shared.getColor(.white)
+            textField.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            textField.textColor = UIAppColorSet.shared.getColor(.white)
             textField.keyboardType = .numberPad
             textField.textAlignment = .left
             textField.font = UIFont.boldSystemFont(ofSize: 12.0)
