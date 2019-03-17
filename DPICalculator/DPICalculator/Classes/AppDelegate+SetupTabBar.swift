@@ -14,7 +14,7 @@ extension AppDelegate {
     func setupTabBarViewControllers() -> [UIViewController]{
         let arrayOfViewControllers  = [DPICalculationViewController(),
                                        DPIHistoryViewController(),
-                                       NoViewController()]
+                                       DPIAboutViewController()]
         return arrayOfViewControllers
     }
 }

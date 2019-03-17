@@ -57,7 +57,7 @@ struct AppThemeColor {
 
     init() {
 //        self.defaultTheme()
-        self.newTheme()
+//        self.newTheme()
     }
     
     mutating public func defaultTheme(){
@@ -87,28 +87,6 @@ struct AppThemeColor {
         self.baseBackgroundColor = UIColor(rgb: 0xffc300)
     }
 
-}
-//
-//struct Theme {
-//
-//    static var backgroundColor:UIColor?
-//    static var buttonTextColor:UIColor?
-//    static var buttonBackgroundColor:UIColor?
-//
-//    static public func defaultTheme() {
-//        self.backgroundColor = UIColor.white
-//        self.buttonTextColor = UIColor.blue
-//        self.buttonBackgroundColor = UIColor.white
-//        updateDisplay()
-//    }
-//
-//    static public func darkTheme() {
-//        self.backgroundColor = UIColor.darkGray
-//        self.buttonTextColor = UIColor.white
-//        self.buttonBackgroundColor = UIColor.black
-//        updateDisplay()
-//    }
-//
 //    static public func updateDisplay() {
 //        let proxyButton = UIButton.appearance()
 //        proxyButton.setTitleColor(Theme.buttonTextColor, for: .normal)
@@ -117,14 +95,6 @@ struct AppThemeColor {
 //        let proxyView = UIView.appearance()
 //        proxyView.backgroundColor = backgroundColor
 //    }
-//}
-//
-//
 
-
-//view0.backgroundColor = UIColor(rgb: 0x581845)
-//view1.backgroundColor = UIColor(rgb: 0x900c3f)
-//view2.backgroundColor = UIColor(rgb: 0xc70039)
-//view3.backgroundColor = UIColor(rgb: 0xff5733)
-//view4.backgroundColor = UIColor(rgb: 0xffc300)
+}
 

@@ -36,7 +36,7 @@ final class DPIViewControllers {
         case .historyViewController:
             return DPIHistoryViewController()
         case .aboutViewController:
-            return AboutViewController()
+            return DPIAboutViewController()
         case .noVC:
             return NoViewController()
         }
