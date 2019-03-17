@@ -11,6 +11,7 @@ import UIKit
 
 class DPIAboutViewController:DPIBaseViewController {
 
+
     convenience init(){
         self.init(nibName:nil, bundle:nil)
         setTabBarItem()

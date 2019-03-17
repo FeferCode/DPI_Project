@@ -14,6 +14,7 @@ class DPIAboutView: UIView {
     var containerView: DPIBaseContainerView
     var DPILabel:UILabel?
     var DPILabelTwo:UILabel?
+    var DPIButton:UIButton?
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -30,6 +31,7 @@ class DPIAboutView: UIView {
         self.configureSubViews()
         self.addSubview(self.DPILabel!)
         self.addSubview(self.DPILabelTwo!)
+        self.addSubview(self.DPIButton!)
         self.setupConstraints()
     }
 
@@ -45,6 +47,7 @@ class DPIAboutView: UIView {
     private func configureSubViews(){
         self.DPILabel = UILabel()
         self.DPILabelTwo = UILabel()
+        self.DPIButton = UIButton()
 
         if let label = self.DPILabel {
             label.textColor = UIAppColorSet.shared.getColor(.white)
@@ -63,11 +66,19 @@ class DPIAboutView: UIView {
             label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .center
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
+            label.layer.cornerRadius = 5
+            label.layer.maskedCorners = [.layerMinXMinYCorner,
+                                         .layerMaxXMaxYCorner]
+            label.clipsToBounds = true
             label.text = "OMG WTF"
         }
-//        if let link = URL(string: "https://fefercode.pl") {
-//            UIApplication.shared.open(link)
-//        }
+
+        if let button = self.DPIButton {
+            button.setTitle("Open WWW", for: .normal)
+            button.backgroundColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        }
+
     }
 
     private func setupConstraints(){
@@ -93,6 +104,32 @@ class DPIAboutView: UIView {
             make.centerX.equalToSuperview()
 
         }
+        self.DPIButton!.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(DPILabelTwo!).offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.left.equalToSuperview().offset(30)
+            make.centerX.equalToSuperview()
+
+        }
         super.updateConstraints()
+    }
+
+    @objc private func buttonAction(){
+        let alertController = UIAlertController(title: "Alert", message: "Do you want to open fefercode web page?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Open", style: .default, handler: { (nil) in
+            if let link = URL(string: "http://fefercode.pl") {
+                UIApplication.shared.open(link)
+            }
+        }))
+
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            topController.present(alertController, animated: true, completion: nil)
+        }
+
+
     }
 }
