@@ -65,6 +65,9 @@ class DPIAboutView: UIView {
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
             label.text = "OMG WTF"
         }
+//        if let link = URL(string: "https://fefercode.pl") {
+//            UIApplication.shared.open(link)
+//        }
     }
 
     private func setupConstraints(){
