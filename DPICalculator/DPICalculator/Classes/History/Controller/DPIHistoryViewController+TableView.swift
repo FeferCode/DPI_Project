@@ -33,7 +33,7 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == newSelectedIndex
         {
-            return 135
+            return 155
         } else {
             return 55
         }

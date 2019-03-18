@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension DPICalculationViewController: DPICellDelegate {
 
@@ -65,7 +66,9 @@ extension DPICalculationViewController: DPICellDelegate {
     private func calculateData() -> Bool {
         guard dataForCalculation.x != 0,
             dataForCalculation.y != 0,
-            dataForCalculation.diagonal != 0 else { return false }
+            dataForCalculation.diagonal != 0 else {
+                self.alertActionNoDataForCalculation()
+                return false }
 
         guard let baseScreenData = createMonitor(x: dataForCalculation.x,
                                                  y: dataForCalculation.y,
@@ -95,5 +98,13 @@ extension DPICalculationViewController: DPICellDelegate {
         self.dataForCalculation = (x: 0, y: 0, diagonal: 0)
         self.calculetedDataForCell.removeAll()
         self.myTableView.reloadSections([0], with: .middle)
+    }
+
+    private func alertActionNoDataForCalculation(){
+        let alertController = UIAlertController(title: "Error", message: "No data for calculation", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }

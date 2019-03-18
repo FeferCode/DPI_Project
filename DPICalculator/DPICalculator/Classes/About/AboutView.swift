@@ -13,7 +13,8 @@ class DPIAboutView: UIView {
 
     var containerView: DPIBaseContainerView
     var DPILabel:UILabel?
-    var DPILabelTwo:UILabel?
+    var DPIimage:UIImageView?
+    var DPITextView:UILabel?
     var DPIButton:UIButton?
 
     required init(coder aDecoder: NSCoder) {
@@ -30,8 +31,9 @@ class DPIAboutView: UIView {
     override func didMoveToSuperview() {
         self.configureSubViews()
         self.addSubview(self.DPILabel!)
-        self.addSubview(self.DPILabelTwo!)
+        self.addSubview(self.DPITextView!)
         self.addSubview(self.DPIButton!)
+        self.addSubview(self.DPIimage!)
         self.setupConstraints()
     }
 
@@ -46,35 +48,47 @@ class DPIAboutView: UIView {
 
     private func configureSubViews(){
         self.DPILabel = UILabel()
-        self.DPILabelTwo = UILabel()
+        self.DPITextView = UILabel()
         self.DPIButton = UIButton()
+        self.DPIimage = UIImageView()
 
         if let label = self.DPILabel {
             label.textColor = UIAppColorSet.shared.getColor(.white)
             label.backgroundColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
             label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 16.0)
+            label.font = UIFont.boldSystemFont(ofSize: 18.0)
             label.layer.cornerRadius = 5
             label.layer.maskedCorners = [.layerMinXMinYCorner,
                                         .layerMaxXMaxYCorner]
             label.clipsToBounds = true
-            label.text = "OMG WTF"
+            label.text = "DPI Calculator"
         }
 
-        if let label = self.DPILabelTwo {
-            label.textColor = UIAppColorSet.shared.getColor(.white)
-            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
-            label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 12.0)
-            label.layer.cornerRadius = 5
-            label.layer.maskedCorners = [.layerMinXMinYCorner,
+        if let image = self.DPIimage {
+            image.addImage(UIImage(named: "Startup_iCon")!)
+            image.contentMode = .scaleAspectFit
+            image.layer.borderWidth = 2
+            image.layer.borderColor =  UIAppColorSet.shared.getColor(.white).cgColor
+            image.layer.cornerRadius = 10
+            image.layer.shadowRadius = 5
+            image.layer.shadowColor = UIAppColorSet.shared.getColor(.black).cgColor
+        }
+
+        if let textView = self.DPITextView {
+            textView.textColor = UIAppColorSet.shared.getColor(.white)
+            textView.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            textView.textAlignment = .center
+            textView.numberOfLines = 0
+            textView.font = UIFont.boldSystemFont(ofSize: 12.0)
+            textView.layer.cornerRadius = 5
+            textView.layer.maskedCorners = [.layerMinXMinYCorner,
                                          .layerMaxXMaxYCorner]
-            label.clipsToBounds = true
-            label.text = "OMG WTF"
+            textView.clipsToBounds = true
+            textView.text = "This app was create by Jakub Majewski. \nFor more information please visit fefercode.pl."
         }
 
         if let button = self.DPIButton {
-            button.setTitle("Open WWW", for: .normal)
+            button.setTitle("Open FeferCode.pl", for: .normal)
             button.backgroundColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             button.layer.cornerRadius = 5
@@ -101,15 +115,24 @@ class DPIAboutView: UIView {
 
         }
 
-        self.DPILabelTwo!.snp.makeConstraints{(make) -> Void in
-            make.top.equalTo(DPILabel!).offset(30)
+        self.DPIimage!.snp.makeConstraints{(make) -> Void in
+            make.height.width.equalTo(200)
+            make.top.equalTo(DPILabel!.snp.bottom).offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.left.equalToSuperview().offset(30)
+            make.centerX.equalToSuperview()
+        }
+
+        self.DPITextView!.snp.makeConstraints{(make) -> Void in
+            make.height.equalTo(60)
+            make.top.equalTo(DPIimage!.snp.bottom).offset(30)
             make.right.equalToSuperview().offset(-30)
             make.left.equalToSuperview().offset(30)
             make.centerX.equalToSuperview()
 
         }
         self.DPIButton!.snp.makeConstraints{(make) -> Void in
-            make.top.equalTo(DPILabelTwo!).offset(30)
+            make.bottom.equalToSuperview().offset(-30)
             make.right.equalToSuperview().offset(-30)
             make.left.equalToSuperview().offset(30)
             make.centerX.equalToSuperview()
@@ -133,7 +156,5 @@ class DPIAboutView: UIView {
             }
             topController.present(alertController, animated: true, completion: nil)
         }
-
-
     }
 }
