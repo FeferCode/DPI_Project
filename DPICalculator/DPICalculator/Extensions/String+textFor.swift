@@ -26,6 +26,9 @@ extension String {
     static func textForSaveViewController(_ text: textForSaveViewController) -> String{
         return text.description
     }
+    static func textForAboutViewController(_ text: textForAboutApp) -> String{
+        return text.description
+    }
 }
 
 enum textForCalculationsEnum:CustomStringConvertible {
@@ -84,6 +87,7 @@ enum textForCalculatedDataEnum:CustomStringConvertible {
 }
 
 enum textTitleForViewController: String {
+    case dpiTitle
     case calulationVC
     case historyVC
     case aboutVC
@@ -92,6 +96,8 @@ enum textTitleForViewController: String {
 
     var description: String {
         switch self {
+        case .dpiTitle:
+            return "DPI Calculator"
         case .aboutVC:
             return "About"
         case .calulationVC:
@@ -119,6 +125,23 @@ enum textForSaveViewController: String {
             return "Model"
         case .screenDescription:
             return "Description"
+        }
+    }
+}
+
+enum textForAboutApp: String {
+    case title
+    case abutoText
+    case buttonText
+
+    var description: String {
+        switch self {
+        case .title:
+            return "About App"
+        case .abutoText:
+            return "About text"
+        case .buttonText:
+            return "Open WWW"
         }
     }
 }

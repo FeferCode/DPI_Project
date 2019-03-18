@@ -19,6 +19,7 @@ class DPIHistoryViewController: DPIBaseViewController, UITextFieldDelegate, UITa
 
     convenience init() {
         self.init(nibName:nil, bundle:nil)
+        self.title = String.textForViewControllerTitle(.historyVC)
         setTabBarItem()
         siriActivityHistory()
     }

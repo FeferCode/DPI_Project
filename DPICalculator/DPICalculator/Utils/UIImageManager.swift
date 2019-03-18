@@ -28,6 +28,8 @@ final class UIImageManager {
             return UIImage.fontAwesomeIcon(name: .arrowCircleLeft, style: .solid, textColor: iConColor, size: CGSize(width: 30, height: 30))
         case .next:
             return UIImage.fontAwesomeIcon(name: .arrowCircleRight, style: .solid, textColor: iConColor, size: CGSize(width: 30, height: 30))
+        case .alert:
+            return UIImage.fontAwesomeIcon(name: .exclamationCircle, style: .solid, textColor: iConColor, size: CGSize(width: 30, height: 30))
         case .screen:
             return UIImage.fontAwesomeIcon(name: .desktop, style: .solid, textColor: iConColor, size: CGSize(width: 30, height: 30))
         default:
@@ -66,6 +68,7 @@ enum DPImage {
     case save
     case back
     case next
+    case alert
     case screen
 
     case noImage

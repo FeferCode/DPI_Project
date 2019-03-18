@@ -77,6 +77,10 @@ class DPIAboutView: UIView {
             button.setTitle("Open WWW", for: .normal)
             button.backgroundColor = UIAppColorSet.shared.getColor(.baseNavigationColor)
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            button.layer.cornerRadius = 5
+            button.layer.maskedCorners = [.layerMinXMinYCorner,
+                                         .layerMaxXMaxYCorner]
+            button.clipsToBounds = true
         }
 
     }

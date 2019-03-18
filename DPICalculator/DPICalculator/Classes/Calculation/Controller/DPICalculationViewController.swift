@@ -19,6 +19,7 @@ class DPICalculationViewController: DPIBaseViewController, UITextFieldDelegate, 
 
     convenience init() {
         self.init(nibName:nil, bundle:nil)
+        self.title = String.textForViewControllerTitle(.dpiTitle)
         setTabBarItem()
     }
 

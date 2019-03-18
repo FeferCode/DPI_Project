@@ -23,6 +23,7 @@ extension DPICalculationViewController {
         } else if self.calculetedDataForCell.count != 0 && self.viewHeight == 0 {
             self.myTableView.frame.origin.y -= screenJump
             self.viewHeight -= Int(screenJump)
+            self.alertActionNoDataForCalculation()
         }
     }
 
@@ -68,5 +69,13 @@ extension DPICalculationViewController {
 
         let cell = self.myTableView.cellForRow(at: IndexPath(row: nextFisrtResponder, section: 1)) as! DPIBaseTableViewCellWithTextField
         cell.dpiField?.becomeFirstResponder()
+    }
+
+    private func alertActionNoDataForCalculation(){
+        let alertController = UIAlertController(title: "Error", message: "No data for calculation", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }

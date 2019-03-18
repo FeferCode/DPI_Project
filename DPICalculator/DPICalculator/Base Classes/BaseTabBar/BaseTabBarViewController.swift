@@ -30,16 +30,14 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         self.navigationItem.rightBarButtonItem = viewController.navigationItem.rightBarButtonItem
+        self.title = viewController.title
     }
 
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return MyTransition(viewControllers: tabBarController.viewControllers)
     }
 
-    //MARK: - Setup ViewControllers and TabBarItems
-//    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
-//        super.setViewControllers(viewControllers, animated: animated)
-//    }
+
 }
 
 class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {

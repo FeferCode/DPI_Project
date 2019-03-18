@@ -27,19 +27,19 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aspect_ratio_light" translatesAutoresizingMaskIntoConstraints="NO" id="PTA-AX-Yyb">
-                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="0R9-rX-kNQ"/>
-                                    <constraint firstAttribute="height" constant="150" id="X2l-PK-yAQ"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Jakub Majewski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXc-dQ-wgi">
                                 <rect key="frame" x="20" y="629" width="335" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Startup_iCon" translatesAutoresizingMaskIntoConstraints="NO" id="PTA-AX-Yyb">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0R9-rX-kNQ"/>
+                                    <constraint firstAttribute="height" constant="250" id="X2l-PK-yAQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.33725490196078434" green="0.63921568627450975" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -61,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aspect_ratio_light" width="75" height="75"/>
+        <image name="Startup_iCon" width="1024" height="1024"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
 </document>
