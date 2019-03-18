@@ -75,7 +75,6 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
                     switch result {
                     case .success():
                         self.tableData.remove(at: indexPath.row)
-//                        self.myTableView.reloadData()
                         self.animateTable()
 
                     case .failure( _): break

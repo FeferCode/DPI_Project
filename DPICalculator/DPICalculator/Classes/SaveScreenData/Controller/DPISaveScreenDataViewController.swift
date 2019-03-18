@@ -72,6 +72,11 @@ class DPISaveScreenViewController: DPIBaseViewController, UITextFieldDelegate, U
         alertController.addAction(UIAlertAction(title: "Back without saving", style: .cancel, handler: { (alert) in
             _ = self.navigationController?.popViewController(animated: true)
         }))
+
+        let imgViewTitle = UIImageView(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
+        imgViewTitle.image = UIImageManager.shared.getImage(.alert)
+        alertController.view.addSubview(imgViewTitle)
+
         self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -150,6 +150,10 @@ class DPIAboutView: UIView {
             }
         }))
 
+        let imgViewTitle = UIImageView(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
+        imgViewTitle.image = UIImageManager.shared.getImage(.alert)
+        alertController.view.addSubview(imgViewTitle)
+
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController

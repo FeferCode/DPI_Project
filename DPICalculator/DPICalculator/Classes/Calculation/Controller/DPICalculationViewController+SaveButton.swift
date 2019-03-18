@@ -44,7 +44,7 @@ extension DPICalculationViewController {
         let alertController = UIAlertController(title: "Error", message: "No data to save", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
 
-        let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        let imgViewTitle = UIImageView(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
         imgViewTitle.image = UIImageManager.shared.getImage(.alert)
         alertController.view.addSubview(imgViewTitle)
 
