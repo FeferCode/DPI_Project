@@ -14,12 +14,12 @@ extension DPIHistoryViewController {
         self.myTableView.reloadData()
 
         let cells = myTableView.visibleCells
-        let tableHeight: CGFloat = myTableView.bounds.size.height
-        //        let tableWidth: CGFloat = myTableView.bounds.size.width
+//        let tableHeight: CGFloat = myTableView.bounds.size.height
+        let tableWidth: CGFloat = myTableView.bounds.size.width
 
         for i in cells {
             let cell: UITableViewCell = i as UITableViewCell
-            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
+            cell.transform = CGAffineTransform(translationX: tableWidth, y: 0)
         }
 
         var index = 0
@@ -27,7 +27,7 @@ extension DPIHistoryViewController {
         for a in cells {
             self.myTableView.isHidden = false
             let cell: UITableViewCell = a as UITableViewCell
-            UIView.animate(withDuration: 1.5, delay: 0.04 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromTop, animations: {
+            UIView.animate(withDuration: 0.25, delay: 0.04 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .transitionFlipFromTop, animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0);
             }, completion: nil)
 

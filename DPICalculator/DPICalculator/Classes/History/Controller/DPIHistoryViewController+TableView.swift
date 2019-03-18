@@ -64,4 +64,30 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.endUpdates()
     }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let shareAction = UITableViewRowAction(style: .default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+            let shareMenu = UIAlertController(title: nil, message: "Do you want to delete screen calculations?", preferredStyle: .actionSheet)
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let twitterAction = UIAlertAction(title: "Delete", style: .default, handler: { (alert) in
+                CoreDataManager.share.deleteScreenData(screenData: self.tableData[indexPath.row].cellData, completionHandler: { (result) in
+                    switch result {
+                    case .success():
+                        self.tableData.remove(at: indexPath.row)
+//                        self.myTableView.reloadData()
+                        self.animateTable()
+
+                    case .failure( _): break
+                    }
+                })
+            })
+
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(cancelAction)
+
+            self.present(shareMenu, animated: true, completion: nil)
+        })
+        return [shareAction]
+    }
 }

@@ -62,10 +62,6 @@ class CoreDataManager {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ScreenDataCoreModel")
 
-        //        fetchRequest.fetchLimit = 1
-        //        fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur")
-        //        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "email", ascending: false)]
-
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
@@ -83,8 +79,19 @@ class CoreDataManager {
         completionHandler(.success(screenDataTable))
     }
 
-    private func deleteScreenData(screenData:ScreenData, completionHandler: @escaping (deleteCoreDataResult) -> ()){
+    func deleteScreenData(screenData:ScreenDataCoreModel, completionHandler: @escaping (deleteCoreDataResult) -> ()){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
 
+        do{
+            let objectToDelete = screenData
+            managedContext.delete(objectToDelete)
+
+            try managedContext.save()
+            completionHandler(.success())
+        } catch {
+            print(error)
+            completionHandler(.failure(error))
+        }
     }
-
 }
