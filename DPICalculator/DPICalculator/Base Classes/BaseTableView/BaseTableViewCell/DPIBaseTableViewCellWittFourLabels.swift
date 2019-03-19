@@ -17,6 +17,10 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
     var dpiLabelFour: UILabel?
     var dpiLabelFive: UILabel?
     var dpiLabelSix: UILabel?
+    var dpiLabelSeven: UILabel?
+    var dpiLabelEight: UILabel?
+    var dpiLabelNine: UILabel?
+    var dpiLabelTen: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +35,10 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         self.addSubview(self.dpiLabelFour!)
         self.addSubview(self.dpiLabelFive!)
         self.addSubview(self.dpiLabelSix!)
+        self.addSubview(self.dpiLabelSeven!)
+        self.addSubview(self.dpiLabelEight!)
+        self.addSubview(self.dpiLabelNine!)
+        self.addSubview(self.dpiLabelTen!)
         setupConstrains()
     }
 
@@ -51,7 +59,7 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             let resX = data.cellData.resolution_x
             let resY = data.cellData.resolution_y
 
-            label.text = String("Resolution: \(resX)x\(resY) Size: \(screenDiagonalInInch)")
+            label.text = String("Resolution: \(resX)x\(resY) Size: \(screenDiagonalInInch) inch")
         }
 
         if let label = self.dpiLabelThree {
@@ -76,6 +84,28 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
 
             label.text = String("Number of Pixels: \(pixels)")
         }
+        if let label = self.dpiLabelSeven {
+            let screenSizeX = data.cellData.screenSize_cmX
+            let screenSizeY = data.cellData.screenSize_cmX
+
+            label.text = String("Screen size: \(screenSizeX)x\(screenSizeY) cm")
+        }
+        if let label = self.dpiLabelEight {
+            let workspace = data.cellData.workspace_cm
+
+            label.text = String("Workspace: \(workspace) cm2")
+        }
+        if let label = self.dpiLabelNine {
+            let screenSizeX = data.cellData.screenSize_inchX
+            let screenSizeY = data.cellData.screenSize_inchY
+
+            label.text = String("Screen size: \(screenSizeX)x\(screenSizeY) inch")
+        }
+        if let label = self.dpiLabelTen {
+            let workspace = data.cellData.workspace_inch
+
+            label.text = String("Workspace: \(workspace) inch2")
+        }
     }
 
     private func configureCellSubViews() {
@@ -87,6 +117,10 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
         self.dpiLabelFour = UILabel()
         self.dpiLabelFive = UILabel()
         self.dpiLabelSix = UILabel()
+        self.dpiLabelSeven = UILabel()
+        self.dpiLabelEight = UILabel()
+        self.dpiLabelNine = UILabel()
+        self.dpiLabelTen = UILabel()
 
         if let label = self.dpiLabel {
             label.textColor = UIAppColorSet.shared.getColor(.white)
@@ -119,6 +153,30 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             label.font = UIFont.boldSystemFont(ofSize: 12.0)
         }
         if let label = self.dpiLabelSix {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelSeven {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelEight {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelNine {
+            label.textColor = UIAppColorSet.shared.getColor(.white)
+            label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
+            label.textAlignment = .left
+            label.font = UIFont.boldSystemFont(ofSize: 12.0)
+        }
+        if let label = self.dpiLabelTen {
             label.textColor = UIAppColorSet.shared.getColor(.white)
             label.backgroundColor = UIAppColorSet.shared.getColor(.clear)
             label.textAlignment = .left
@@ -170,6 +228,29 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
         }
 
+        self.dpiLabelSeven?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelSix!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
+        self.dpiLabelEight?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelSeven!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
+        self.dpiLabelNine?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelEight!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+        self.dpiLabelTen?.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(dpiLabelNine!.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.leading.equalTo(dpiImage!.snp.trailing).offset(5)
+        }
+
         super.updateConstraints()
     }
 
@@ -180,14 +261,20 @@ class DPIBaseTableViewCellWittFourLabels: UITableViewCell {
             self.addSubview(self.dpiLabelFour!)
             self.addSubview(self.dpiLabelFive!)
             self.addSubview(self.dpiLabelSix!)
+            self.addSubview(self.dpiLabelSeven!)
+            self.addSubview(self.dpiLabelEight!)
+            self.addSubview(self.dpiLabelNine!)
+            self.addSubview(self.dpiLabelTen!)
             self.setupConstrains()
-            break
         case .close:
             self.dpiLabelThree!.removeFromSuperview()
             self.dpiLabelFour!.removeFromSuperview()
             self.dpiLabelFive!.removeFromSuperview()
             self.dpiLabelSix!.removeFromSuperview()
-            break
+            self.dpiLabelSeven!.removeFromSuperview()
+            self.dpiLabelEight!.removeFromSuperview()
+            self.dpiLabelNine!.removeFromSuperview()
+            self.dpiLabelTen!.removeFromSuperview()
         }
     }
 }

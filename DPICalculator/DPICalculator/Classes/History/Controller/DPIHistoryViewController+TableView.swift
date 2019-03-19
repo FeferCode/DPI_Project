@@ -33,7 +33,7 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == newSelectedIndex
         {
-            return 155
+            return 255
         } else {
             return 55
         }
@@ -70,11 +70,13 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
             let shareMenu = UIAlertController(title: nil, message: "Do you want to delete screen calculations?", preferredStyle: .actionSheet)
 
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let twitterAction = UIAlertAction(title: "Delete", style: .default, handler: { (alert) in
+            let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: { (alert) in
                 CoreDataManager.share.deleteScreenData(screenData: self.tableData[indexPath.row].cellData, completionHandler: { (result) in
                     switch result {
                     case .success():
                         self.tableData.remove(at: indexPath.row)
+                        self.newSelectedIndex = -1
+                        self.oldSelectedIndex = -1
                         self.animateTable()
 
                     case .failure( _): break
@@ -82,7 +84,7 @@ extension DPIHistoryViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             })
 
-            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(deleteAction)
             shareMenu.addAction(cancelAction)
 
             self.present(shareMenu, animated: true, completion: nil)
