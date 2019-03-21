@@ -38,7 +38,7 @@ class DPIBaseTableViewCellWithLabelAndTextFields: UITableViewCell {
             }
 
             if let secondData = data.second {
-                self.dpiField?.text = secondData.cellText
+                self.dpiField?.placeholder = secondData.cellText
             }
             if let cellTag = data.second?.cellTag {
                 self.tag = cellTag

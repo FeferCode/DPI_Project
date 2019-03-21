@@ -84,7 +84,7 @@ class DPIAboutView: UIView {
             textView.layer.maskedCorners = [.layerMinXMinYCorner,
                                          .layerMaxXMaxYCorner]
             textView.clipsToBounds = true
-            textView.text = "This app was create by Jakub Majewski. \nFor more information please visit fefercode.pl."
+            textView.text = "This app was create by Jakub Majewski. \nThis is my little project for learn ios purpose.\nMain goal was to create an app without storyboards in swift language. \nYou can find source code on my github repo.\nFor more information please visit my blog fefercode.pl."
         }
 
         if let button = self.DPIButton {
@@ -124,7 +124,7 @@ class DPIAboutView: UIView {
         }
 
         self.DPITextView!.snp.makeConstraints{(make) -> Void in
-            make.height.equalTo(60)
+            make.height.equalTo(120)
             make.top.equalTo(DPIimage!.snp.bottom).offset(30)
             make.right.equalToSuperview().offset(-30)
             make.left.equalToSuperview().offset(30)
