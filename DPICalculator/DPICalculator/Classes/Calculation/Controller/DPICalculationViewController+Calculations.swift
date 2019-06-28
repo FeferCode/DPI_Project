@@ -55,7 +55,7 @@ extension DPICalculationViewController: DPICellDelegate {
         }
 
         if let cellD = self.myTableView.cellForRow(at: IndexPath(row: 2, section: 1)) as? DPICalculationTableViewCellWithTextField {
-            guard let d = Float((cellD.dpiField?.text ?? "0")) else {
+            guard let d = Float((cellD.dpiField?.text?.replacingOccurrences(of: ",", with: ".") ?? "0")) else {
                 resetCalculation()
                 return
             }
